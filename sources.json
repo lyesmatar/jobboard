@@ -1,0 +1,121 @@
+{
+  "_comment": "Edit this file to add/remove job sources. No code changes needed. After editing, the next scheduled GitHub Action run picks it up (or run it manually from the Actions tab).",
+
+  "_hard_rule": "max_days_old is a hard cap - the fetcher DROPS anything older, on every source, because expired postings can't be detected reliably. Keep it at 7 unless you have a reason.",
+  "max_days_old": 7,
+
+  "_configured_for": "Environmental technician / ecological restoration / GIS / field & lab roles, plus educational-assistant & science-teaching roles, in the Toronto / GTA area, transit-accessible (no personal vehicle).",
+
+  "keywords": {
+    "environmental": ["environmental", "ecolog", "conservation", "restoration", "watershed", "wetland", "habitat", "stream monitoring", "water quality", "biomonitoring", "invasive species", "biodiversity", "naturalist", "stewardship", "urban forestry", "arborist", "forestry", "tree planting", "vegetation", "terrestrial monitoring", "hydrolog", "soil sampling", "erosion", "fisheries", "shoreline", "field technician", "field assistant", "environmental technician", "environmental technologist", "sustainability", "climate", "GIS", "remote sensing", "spatial analysis", "conservation authority"],
+    "research": ["research assistant", "research analyst", "research associate", "research technician", "research coordinator", "laboratory technician", "lab technician", "field research", "data analyst", "monitoring technician", "biologist", "limnologist", "ecologist"],
+    "education": ["educational assistant", "education assistant", "teaching assistant", "instructional assistant", "supply teacher", "occasional teacher", "science teacher", "environmental educator", "outdoor educator", "interpretive guide", "camp instructor", "nature interpreter", "lab demonstrator", "aide-enseignant", "enseignant"]
+  },
+
+  "search_terms": [
+    "environmental technician", "environmental technologist", "ecological restoration",
+    "restoration technician", "field technician", "GIS technician", "GIS analyst",
+    "stream monitoring", "water quality technician", "biomonitoring", "invasive species",
+    "urban forestry", "arborist", "forestry technician", "tree planting",
+    "naturalist", "interpretive guide", "environmental educator", "outdoor educator",
+    "conservation authority", "watershed", "vegetation technician", "terrestrial monitoring",
+    "research assistant environmental", "field assistant ecology", "wetland restoration",
+    "remote sensing technician", "environmental monitoring",
+    "educational assistant", "supply teacher", "science teacher", "laboratory technician"
+  ],
+
+  "locations": ["Toronto ON", "Mississauga ON", "Vaughan ON", "Ontario", "Canada"],
+
+  "_vehicle_rule": "The site owner drives (Ontario G2) but has no vehicle of their own. The fetcher flags a job only if its text requires the applicant's OWN vehicle ('own/personal/reliable vehicle', 'access to a vehicle', 'provide your own transportation') OR a FULL Class G licence (not G2). The site hides flagged jobs by default. A plain 'valid driver's licence', 'G2 acceptable', crew transport, or a provided company/fleet vehicle is NOT flagged.",
+
+  "_relocation_rule": "Temp/seasonal/contract: GTA only (no relocating for a short contract). Permanent/full-time: GTA preferred but out-of-GTA permanent roles are surfaced in a separate section. Out-of-GTA seasonal roles are dropped entirely.",
+
+  "sources": [
+    {
+      "id": "jobbank-ca",
+      "type": "atom",
+      "enabled": true,
+      "source_name": "Job Bank Canada",
+      "url_template": "https://www.jobbank.gc.ca/jobsearch/feed/jobSearchRSSfeed?searchstring={term}&sort=D",
+      "per_term": true,
+      "note": "CONFIRMED WORKING (2026-09-01). Canada's aggregator - pulls from Jobillico, CareerBeacon, direct employers, some government. One request per search term. NOTE: the RSS feed only returns the ~13 most recent postings per term (no pagination), so on a 6-hourly schedule it captures new jobs as they appear but a cold start only sees the last day or two. No closing dates in the feed - these jobs rely on the 7-day cap. Lots of Quebec results for generic terms; the site filters by location client-side."
+    },
+    {
+      "id": "adzuna-ca",
+      "type": "adzuna",
+      "enabled": true,
+      "country": "ca",
+      "note": "Free API, big coverage + salary data. Register at https://developer.adzuna.com/signup and add ADZUNA_APP_ID / ADZUNA_APP_KEY as GitHub repo secrets. Skipped automatically if the secrets are missing - everything else still runs."
+    },
+
+    {
+      "id": "greenhouse-orgs",
+      "type": "greenhouse",
+      "enabled": true,
+      "boards": [],
+      "note": "Public Greenhouse boards, one slug per org (the <slug> in job-boards.greenhouse.io/<slug>). Wrong slugs are skipped silently. Check whether your target ENGOs / research institutes use Greenhouse before adding."
+    },
+    {
+      "id": "lever-orgs",
+      "type": "lever",
+      "enabled": true,
+      "boards": [],
+      "note": "Public Lever boards (the <slug> in jobs.lever.co/<slug>)."
+    },
+
+    {
+      "id": "goodwork",
+      "type": "rss",
+      "enabled": false,
+      "source_name": "GoodWork.ca",
+      "url": "",
+      "note": "NO PUBLIC FEED as of 2026-09. GoodWork only offers email alerts, not RSS. Covering it means HTML scraping, which breaks whenever they restyle the page. Many GoodWork postings also appear on Job Bank / Adzuna. Ask Claude to build a scraper for it as a follow-up if you want it anyway."
+    },
+    {
+      "id": "ecoworks",
+      "type": "rss",
+      "enabled": false,
+      "source_name": "ECOWorks (ECO Canada)",
+      "url": "",
+      "note": "NO PUBLIC FEED as of 2026-09 (ecoworks.eco.ca - custom platform, email alerts only). Same situation as GoodWork - needs scraping."
+    },
+    {
+      "id": "university-affairs",
+      "type": "rss",
+      "enabled": false,
+      "source_name": "University Affairs",
+      "url": "https://www.universityaffairs.ca/search-job/?_job_feed=rss",
+      "note": "UNVERIFIED URL - Canadian academic job board. Confirm the real feed URL (look for an RSS link on universityaffairs.ca/search-job) then set enabled to true."
+    },
+    {
+      "id": "academic-positions",
+      "type": "rss",
+      "enabled": false,
+      "source_name": "Academic Positions",
+      "url": "https://academicpositions.com/rss/country/canada",
+      "note": "UNVERIFIED URL - has Canada listings, usually offers RSS. Confirm and enable."
+    },
+    {
+      "id": "charity-village",
+      "type": "rss",
+      "enabled": false,
+      "source_name": "CharityVillage",
+      "url": "",
+      "note": "Nonprofit sector (many environmental NGOs post here). Look for a jobs RSS on charityvillage.com, paste it, enable."
+    }
+  ],
+
+  "_more_boards_to_investigate": [
+    "GoodWork.ca (goodwork.ca/jobs) - largest CA environmental board, needs scraping",
+    "ECOWorks / ECO Canada (ecoworks.eco.ca) - needs scraping",
+    "Green Careers Canada (greencareerscanada.ca/find-a-job)",
+    "Conservation Job Board (conservationjobboard.com) - has US+CA, check for RSS",
+    "Ontario Nature, Ducks Unlimited Canada, Nature Conservancy of Canada - own career pages",
+    "Conservation authorities: TRCA, Credit Valley, Conservation Halton, Lake Simcoe (careers pages / often ADP or BambooHR)",
+    "GC Jobs / jobs.canada.ca - federal science (no RSS; comes through Job Bank)",
+    "Ontario Public Service (gojobs.gov.on.ca) - MECP, MNR jobs",
+    "University career sites: U of T, TMU, York, McMaster, Guelph, Waterloo (mostly Workday - unofficial JSON endpoints exist)",
+    "HigherEdJobs, Times Higher Education - academic, have RSS",
+    "Idealist.org - nonprofit/mission-driven"
+  ]
+}
