@@ -51,10 +51,13 @@ function blocks(xml, name) {
   return [...xml.matchAll(new RegExp(`<${name}[^>]*>[\\s\\S]*?</${name}>`, "gi"))].map(m => m[0]);
 }
 
+// Match a keyword at a word boundary (prefix ok, so "ecolog" catches "ecology"/"ecologist"),
+// NOT as a bare substring — otherwise "GIS" matches "reGIStered" / "technoloGISt" / "loGIStics"
+// and the whole feed gets mis-tagged.
+const kwRe = w => new RegExp("\\b" + w.toLowerCase().trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
 function categorize(text) {
-  const t = text.toLowerCase();
   const k = cfg.keywords;
-  const hit = list => (list || []).some(w => t.includes(w.toLowerCase()));
+  const hit = list => (list || []).some(w => kwRe(w).test(text));
   // environmental is the primary field — check it first
   if (hit(k.environmental)) return "environmental";
   if (hit(k.education)) return "education";
