@@ -16,9 +16,14 @@ const UA = "JobScout/1.0 (+personal job aggregator)";
 const now = Date.now();
 const MAX_AGE_MS = (cfg.max_days_old || 7) * 86400000;
 
-const CANADA_HINTS = ["canada", "ontario", " on,", " on ", ", on", "quebec", "british columbia",
-  " bc", "alberta", "manitoba", "saskatchewan", "nova scotia", "new brunswick",
-  "newfoundland", "prince edward", "yukon", "northwest territories", "nunavut", "remote"];
+// Province names + the "City (PROV)" / "City, PROV" abbreviation forms Job Bank and
+// Adzuna both use. Tested against a real Job Bank feed: locations look like "Toronto (ON)".
+const CANADA_PROV = ["on", "qc", "bc", "ab", "mb", "sk", "ns", "nb", "nl", "pe", "yt", "nt", "nu"];
+const CANADA_RE = new RegExp(
+  "\\b(canada|canadian|ontario|quebec|qu[eé]bec|british columbia|alberta|manitoba|"
+  + "saskatchewan|nova scotia|new brunswick|newfoundland|labrador|prince edward|"
+  + "yukon|northwest territories|nunavut|remote|work from home|t[eé]l[eé]travail)\\b"
+  + "|[(,]\\s*(" + CANADA_PROV.join("|") + ")(?=[)\\s,.]|$)", "i");
 
 /* ----------------------------- helpers ----------------------------- */
 
@@ -97,8 +102,7 @@ function parseSalary(text) {
   return { salaryMin: Math.min(...vals), salaryMax: Math.max(...vals) };
 }
 function looksCanadian(loc, extra = "") {
-  const s = (loc + " " + extra).toLowerCase();
-  return CANADA_HINTS.some(h => s.includes(h));
+  return CANADA_RE.test(loc + " " + extra);
 }
 function ageOK(iso) {
   const t = new Date(iso).getTime();
@@ -107,6 +111,9 @@ function ageOK(iso) {
 
 function normalize(raw) {
   const blob = `${raw.title} ${raw.org} ${raw.summary || ""} ${raw.location || ""}`;
+  // Categorize on the TITLE (+ description) only — NOT the employer name, which throws
+  // false positives like "helper, mason" @ "Concrete Restoration Canada".
+  const catBlob = `${raw.title} ${raw.summary || ""}`;
   const sal = (raw.salaryMin || raw.salaryMax) ? raw
     : { ...raw, ...parseSalary(raw.salaryText || raw.summary) };
   return {
@@ -118,7 +125,7 @@ function normalize(raw) {
     salaryMin: sal.salaryMin || null,
     salaryMax: sal.salaryMax || null,
     salaryText: raw.salaryText || null,
-    category: raw.category || categorize(blob),
+    category: raw.category || categorize(catBlob),
     url: raw.url,
     source: raw.source,
     posted: raw.posted,
@@ -194,7 +201,10 @@ function parseAtom(xml, sourceName) {
       url: link,
       source: sourceName,
       posted: tag(e, "updated") || tag(e, "published") || new Date().toISOString(),
-      summary: salText ? summary.replace(/Job number:\s*\S+\s*/i, "") : summary,
+      // Job Bank's <summary> is only the structured fields we've already pulled out
+      // (job #, location, employer, salary). Keeping it would pollute categorization
+      // with the employer name, so drop it — the title is the real signal here.
+      summary: null,
     });
   });
 }
@@ -307,14 +317,17 @@ for (const src of cfg.sources) {
   } catch (e) { err = e.message; console.log(`  ${src.id} failed: ${e.message}`); }
 
   const got = all.length - before;
-  const needsConfig = (src.type === "adzuna" && !(process.env.ADZUNA_APP_ID && process.env.ADZUNA_APP_KEY))
-    || ((src.type === "rss" || src.type === "atom") && !src.url && !src.url_template)
+  // "needs-setup" = a source that would clearly add coverage if you spent 2 minutes on it.
+  const needsSetup = src.type === "adzuna" && !(process.env.ADZUNA_APP_ID && process.env.ADZUNA_APP_KEY);
+  // "off" = optional and simply not configured yet (no feed URL / no board slugs).
+  const notConfigured = ((src.type === "rss" || src.type === "atom") && !src.url && !src.url_template)
     || ((src.type === "greenhouse" || src.type === "lever") && !(src.boards || []).length);
   status.push({
     id: src.id, name, raw: got,
-    state: err ? "error" : needsConfig ? "needs-setup" : got > 0 ? "ok" : "empty",
+    state: err ? "error" : needsSetup ? "needs-setup" : notConfigured ? "off" : got > 0 ? "ok" : "empty",
     message: err ? `Last run failed: ${err}`
-      : needsConfig ? (src.note || "Needs configuration before it can run.")
+      : needsSetup ? "Add a free Adzuna API key (ADZUNA_APP_ID / ADZUNA_APP_KEY repo secrets) to roughly triple coverage."
+      : notConfigured ? "Optional — not set up yet. Add feed URLs / board names in sources.json to enable."
       : got > 0 ? `Fetched ${got} raw postings this run.`
       : "Ran OK but returned nothing this run (may just mean no new matching jobs).",
   });
