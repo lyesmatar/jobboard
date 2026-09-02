@@ -338,11 +338,23 @@ for (const src of cfg.sources) {
 
 console.log(`\nCollected ${all.length} raw postings`);
 
+// Job titles that are clearly NOT in scope, even if "environmental" / "sustainability"
+// shows up somewhere in the description (ESG counsel, an accountant at a green firm, etc.)
+const TITLE_BLOCK = /\b(counsel|lawyer|paralegal|attorney|accountant|accounting|bookkeeper|payroll|auditor|actuary|underwriter|sales representative|account executive|business development|marketing manager|recruiter|talent acquisition|realtor|real estate|insurance broker|financial advisor|loan officer|barista|cashier|server|dishwasher|line cook|warehouse associate|forklift|truck driver|delivery driver|heavy duty (mechanic|technician)|heavy equipment|\bmechanic\b|millwright|welder|electrician|plumber|hvac|roofer|carpenter|mason|nurse|physician|pharmacist|dental|veterinari|paramedic|personal support worker|\bpsw\b)\b/i;
+
+// "restoration" also means building/damage/disaster restoration — exclude those by employer.
+const BUILDING_RESTO = /building|masonry|concrete|property|disaster|\bdki\b|damage|abatement|remediation contractor|fire & flood|water damage/i;
+const isBuildingResto = j =>
+  /restoration/i.test(j.title) && !/ecolog|habitat|wetland|stream|shoreline|riparian|ecosystem|land|native|forest/i.test(j.title + " " + (j.summary || ""))
+  && BUILDING_RESTO.test(j.org);
+
 // filter
 const todayStr = new Date().toISOString().slice(0, 10);
 let jobs = all.filter(j =>
   j.url && j.title && j.posted && ageOK(j.posted)
   && wantedCats.has(j.category)
+  && !TITLE_BLOCK.test(j.title)
+  && !isBuildingResto(j)
   && looksCanadian(j.location, j.summary || "")
   && !(j.closingDate && j.closingDate < todayStr)   // drop postings past their stated closing date
 );
