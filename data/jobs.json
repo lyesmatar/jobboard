@@ -1,5 +1,116 @@
 {
-  "generated": null,
-  "note": "Placeholder. The GitHub Action overwrites this file with live results on its first run. Until then the site falls back to data/jobs.sample.json.",
-  "jobs": []
+ "generated": "2026-09-02T03:25:24.549Z",
+ "count": 2,
+ "sources": [
+  {
+   "id": "jobbank-ca",
+   "name": "Job Bank Canada",
+   "raw": 477,
+   "state": "ok",
+   "message": "Fetched 477 raw postings this run.",
+   "kept": 2
+  },
+  {
+   "id": "adzuna-ca",
+   "name": "adzuna-ca",
+   "raw": 0,
+   "state": "needs-setup",
+   "message": "Free API, big coverage + salary data. Register at https://developer.adzuna.com/signup and add ADZUNA_APP_ID / ADZUNA_APP_KEY as GitHub repo secrets. Skipped automatically if the secrets are missing - everything else still runs.",
+   "kept": 0
+  },
+  {
+   "id": "greenhouse-orgs",
+   "name": "greenhouse-orgs",
+   "raw": 0,
+   "state": "needs-setup",
+   "message": "Public Greenhouse boards, one slug per org (the <slug> in job-boards.greenhouse.io/<slug>). Wrong slugs are skipped silently. Check whether your target ENGOs / research institutes use Greenhouse before adding.",
+   "kept": 0
+  },
+  {
+   "id": "lever-orgs",
+   "name": "lever-orgs",
+   "raw": 0,
+   "state": "needs-setup",
+   "message": "Public Lever boards (the <slug> in jobs.lever.co/<slug>).",
+   "kept": 0
+  },
+  {
+   "id": "goodwork",
+   "name": "GoodWork.ca",
+   "state": "off",
+   "raw": 0,
+   "message": "NO PUBLIC FEED as of 2026-09.",
+   "kept": 0
+  },
+  {
+   "id": "ecoworks",
+   "name": "ECOWorks (ECO Canada)",
+   "state": "off",
+   "raw": 0,
+   "message": "NO PUBLIC FEED as of 2026-09 (ecoworks.eco.ca - custom platform, email alerts only).",
+   "kept": 0
+  },
+  {
+   "id": "university-affairs",
+   "name": "University Affairs",
+   "state": "off",
+   "raw": 0,
+   "message": "UNVERIFIED URL - Canadian academic job board.",
+   "kept": 0
+  },
+  {
+   "id": "academic-positions",
+   "name": "Academic Positions",
+   "state": "off",
+   "raw": 0,
+   "message": "UNVERIFIED URL - has Canada listings, usually offers RSS.",
+   "kept": 0
+  },
+  {
+   "id": "charity-village",
+   "name": "CharityVillage",
+   "state": "off",
+   "raw": 0,
+   "message": "Nonprofit sector (many environmental NGOs post here).",
+   "kept": 0
+  }
+ ],
+ "jobs": [
+  {
+   "id": "Job Bank Canada-id=3662023",
+   "title": "helper, mason",
+   "org": "Concrete Restoration Canada",
+   "location": "Rocanville (SK)",
+   "remote": "unknown",
+   "salaryMin": 45760,
+   "salaryMax": 45760,
+   "salaryText": "$22.00 hourly",
+   "category": "environmental",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50201710",
+   "source": "Job Bank Canada",
+   "posted": "2026-09-01T12:10:00Z",
+   "closingDate": null,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "Location: Rocanville (SK) Employer: Concrete Restoration Canada Salary: $22.00 hourly"
+  },
+  {
+   "id": "Job Bank Canada-id=49785",
+   "title": "technician, forestry",
+   "org": "The Government of Nova Scotia",
+   "location": "East Lake Ainslie (NS)",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": "$1,905.03 to $3,182.69 biweekly",
+   "category": "environmental",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50194083",
+   "source": "Job Bank Canada",
+   "posted": "2026-08-31T11:00:00Z",
+   "closingDate": null,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "Location: East Lake Ainslie (NS) Employer: The Government of Nova Scotia Salary: $1,905.03 to $3,182.69 biweekly"
+  }
+ ]
 }
