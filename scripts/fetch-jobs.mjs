@@ -215,11 +215,17 @@ function parseAtom(xml, sourceName) {
 function parseRSS(xml, sourceName) {
   return blocks(xml, "item").map(it => {
     const desc = tag(it, "description") || tag(it, "content:encoded");
+    // WP Job Manager feeds (WorkCabin etc.) carry structured job_listing:* fields —
+    // the plain <location> tag is empty on those, so fall back to job_listing:location.
+    const jmOrg = tag(it, "job_listing:company");
+    const jmLoc = tag(it, "job_listing:location");
+    const jmSal = tag(it, "job_listing:salary");
     return normalize({
       id: sourceName + "-" + (tag(it, "guid") || tag(it, "link")),
       title: tag(it, "title"),
-      org: sourceName,
-      location: tag(it, "location") || "",
+      org: jmOrg || sourceName,
+      location: jmLoc || tag(it, "location") || "",
+      salaryText: jmSal || null,
       url: tag(it, "link"),
       source: sourceName,
       posted: tag(it, "pubDate") ? new Date(tag(it, "pubDate")).toISOString() : new Date().toISOString(),
