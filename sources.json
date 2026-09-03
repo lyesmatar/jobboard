@@ -49,6 +49,14 @@
       "source_name": "Adzuna",
       "note": "Free API, big coverage + salary data. Register at https://developer.adzuna.com/signup and add ADZUNA_APP_ID / ADZUNA_APP_KEY as GitHub repo secrets. Skipped automatically if the secrets are missing - everything else still runs."
     },
+    {
+      "id": "workcabin",
+      "type": "rss",
+      "enabled": true,
+      "source_name": "WorkCabin",
+      "url": "https://www.workcabin.ca/?feed=job_feed",
+      "note": "CONFIRMED WORKING (2026-09-03). Canada's conservation & wildlife jobs board (WP Job Manager feed). Carries structured job_listing:company / job_listing:location / job_listing:salary tags. Location is a coarse region ('Central Canada', 'North', 'Other') not a city - 'Central Canada' passes the Canadian filter, the rest are out-of-GTA and correctly dropped. Strong local coverage: conservation authorities (Credit Valley, Grand River, TRCA), Ontario Nature, EcoSpark, Earth Rangers. Feed returns the ~10-30 newest postings, no pagination."
+    },
 
     {
       "id": "greenhouse-orgs",
