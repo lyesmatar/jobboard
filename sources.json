@@ -8,7 +8,7 @@
 
   "keywords": {
     "environmental": ["environmental", "ecolog", "conservation", "conservation authority", "ecological restoration", "habitat restoration", "wetland restoration", "stream restoration", "ecosystem restoration", "shoreline restoration", "land restoration", "riparian", "naturalization", "restoration technician", "restoration crew", "restoration project", "restoration ecolog", "watershed", "wetland", "habitat", "stream monitoring", "water quality", "biomonitoring", "benthic", "invasive species", "invasive plant", "invasive phragmites", "vegetation management", "integrated pest management", "pesticide", "herbicide", "exterminator", "plant health care", "biodiversity", "naturalist", "stewardship", "urban forestry", "arborist", "forestry", "silviculture", "tree planting", "reforestation", "vegetation", "terrestrial monitoring", "hydrolog", "soil sampling", "erosion", "fisheries", "shoreline", "field technician", "field assistant", "field crew", "environmental technician", "environmental technologist", "environmental monitoring", "environmental educ", "sustainability", "climate change", "climate adaptation", "climate resilience", "climate action", "GIS", "geospatial", "remote sensing", "spatial analysis"],
-    "research": ["research assistant", "research analyst", "research associate", "research technician", "research coordinator", "laboratory technician", "lab technician", "field research", "data analyst", "monitoring technician", "biologist", "limnologist", "ecologist"],
+    "research": ["research assistant", "research analyst", "research associate", "research technician", "research coordinator", "laboratory technician", "lab technician", "field research", "data analyst", "monitoring technician", "biologist", "limnologist", "ecologist", "phd position", "phd student", "phd candidate", "phd studentship", "doctoral", "graduate researcher", "graduate research assistant", "postdoctoral", "post-doctoral", "postdoc"],
     "education": ["educational assistant", "education assistant", "teaching assistant", "instructional assistant", "supply teacher", "occasional teacher", "science teacher", "environmental educator", "outdoor educator", "interpretive guide", "camp instructor", "nature interpreter", "lab demonstrator", "aide-enseignant", "enseignant"]
   },
 
@@ -22,7 +22,9 @@
     "research assistant environmental", "field assistant ecology", "wetland restoration",
     "remote sensing technician", "environmental monitoring", "vegetation management",
     "invasive plant technician", "exterminator", "plant health care technician",
-    "educational assistant", "supply teacher", "science teacher", "laboratory technician"
+    "educational assistant", "supply teacher", "science teacher", "laboratory technician",
+    "PhD position ecology", "doctoral researcher environment", "graduate research assistant ecology",
+    "PhD student environmental science", "postdoctoral fellow ecology"
   ],
 
   "locations": ["Toronto ON", "Mississauga ON", "Vaughan ON", "Ontario", "Canada"],
