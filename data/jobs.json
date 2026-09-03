@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-03T14:11:19.845Z",
- "count": 124,
+ "generated": "2026-09-03T14:58:40.314Z",
+ "count": 125,
  "sources": [
   {
    "id": "jobbank-ca",
    "name": "Job Bank Canada",
-   "raw": 471,
+   "raw": 510,
    "state": "ok",
-   "message": "Fetched 471 raw postings this run.",
-   "kept": 16
+   "message": "Fetched 510 raw postings this run.",
+   "kept": 17
   },
   {
    "id": "adzuna-ca",
@@ -94,13 +94,31 @@
    "salaryMax": null,
    "salaryText": null,
    "category": "environmental",
-   "url": "https://www.adzuna.ca/land/ad/5868704335?se=aiVYRaGn8RGzEp-eIl8cbw&utm_medium=api&utm_source=cc077b69&v=7E6C3498726C8FF8BD1A9E10CBA437A9EDB77F62",
+   "url": "https://www.adzuna.ca/land/ad/5868704335?se=_Ilt4qen8RGFQ8r7cmJIsQ&utm_medium=api&utm_source=cc077b69&v=7E6C3498726C8FF8BD1A9E10CBA437A9EDB77F62",
    "source": "Adzuna",
    "posted": "2026-09-03T06:38:56Z",
    "closingDate": null,
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "Job Description Job Description About BinSentry BinSentry is an extremely fast-growing ag-tech company started in KW, Ontario, Canada. BinSentry is focused on providing solutions for the agriculture supply chain that help increase efficiency, reduce costs, and enhance profitability. As a leader in the use of artificial intelligence, BinSentry offers technology solutions that pair best-in-class optical sensors with user-friendly software to provide our customers with enhanced forecasting and dec…"
+  },
+  {
+   "id": "Job Bank Canada-id=3662956",
+   "title": "research biologist",
+   "org": "Université de Montréal",
+   "location": "Montréal (QC)",
+   "remote": "unknown",
+   "salaryMin": 72904,
+   "salaryMax": 72904,
+   "salaryText": "$72,904.00 annually",
+   "category": "research",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50214426",
+   "source": "Job Bank Canada",
+   "posted": "2026-09-03T06:32:00Z",
+   "closingDate": null,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": null
   },
   {
    "id": "Job Bank Canada-id=17498823",
