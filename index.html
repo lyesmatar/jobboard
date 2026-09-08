@@ -4,11 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Job Scout</title>
+<script>
+  /* Apply the saved theme before first paint so there's no flash. */
+  try{ var _t = JSON.parse(localStorage.getItem("js_theme"));
+    if(_t === "light" || _t === "dark") document.documentElement.setAttribute("data-theme", _t);
+  }catch(e){}
+</script>
 <style>
-  :root{
+  /* Dark is the default palette (also used when the OS is in dark mode or "no preference"). */
+  :root, :root[data-theme="dark"]{
     --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
     --text:#e7e9ee; --muted:#9aa3b2; --accent:#4a9d7f; --accent2:#6db3ff;
-    --warn:#d8a657; --radius:12px;
+    --warn:#d8a657; --radius:12px; --shadow:none;
+    --cat-env:#8fd3b6; --cat-res:#9db8ff; --cat-edu:#d3a0ff;
+    --car-fg:#e5928a; --car-line:#7d3f3f;
+    --comm-ttc-fg:#8fd3b6; --comm-ttc-line:#3f6d5a;
+    --comm-go-fg:#9db8ff; --comm-go-line:#3f4f7d;
+    --comm-hard-fg:#e5928a; --comm-hard-line:#7d3f3f;
+    --comm-remote-fg:#c9b3e6;
+    --dot-ok:#4a9d7f; --dot-empty:#6b7280; --dot-warn:#d8a657; --dot-error:#e5675c; --dot-off:#3a3f4a;
+  }
+  /* Light palette — applied for an explicit Light choice, or when the OS prefers
+     light and the user hasn't forced Dark. */
+  :root[data-theme="light"]{
+    --bg:#f4f6f8; --panel:#ffffff; --panel2:#eef1f4; --line:#d7dce2;
+    --text:#1b232e; --muted:#5c6672; --accent:#2f7d63; --accent2:#1f6feb;
+    --warn:#8a5a12; --shadow:0 1px 2px rgba(20,30,45,.06), 0 1px 3px rgba(20,30,45,.10);
+    --cat-env:#1f7a5c; --cat-res:#2f5fc7; --cat-edu:#8a3fc0;
+    --car-fg:#b23b30; --car-line:#e3b4af;
+    --comm-ttc-fg:#1f7a5c; --comm-ttc-line:#a9d6c6;
+    --comm-go-fg:#2f5fc7; --comm-go-line:#b7c6ef;
+    --comm-hard-fg:#b23b30; --comm-hard-line:#e3b4af;
+    --comm-remote-fg:#7a4fb0;
+    --dot-ok:#2f7d63; --dot-empty:#9aa3b2; --dot-warn:#b9820f; --dot-error:#d64530; --dot-off:#c2c8d0;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f4f6f8; --panel:#ffffff; --panel2:#eef1f4; --line:#d7dce2;
+      --text:#1b232e; --muted:#5c6672; --accent:#2f7d63; --accent2:#1f6feb;
+      --warn:#8a5a12; --shadow:0 1px 2px rgba(20,30,45,.06), 0 1px 3px rgba(20,30,45,.10);
+      --cat-env:#1f7a5c; --cat-res:#2f5fc7; --cat-edu:#8a3fc0;
+      --car-fg:#b23b30; --car-line:#e3b4af;
+      --comm-ttc-fg:#1f7a5c; --comm-ttc-line:#a9d6c6;
+      --comm-go-fg:#2f5fc7; --comm-go-line:#b7c6ef;
+      --comm-hard-fg:#b23b30; --comm-hard-line:#e3b4af;
+      --comm-remote-fg:#7a4fb0;
+      --dot-ok:#2f7d63; --dot-empty:#9aa3b2; --dot-warn:#b9820f; --dot-error:#d64530; --dot-off:#c2c8d0;
+    }
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -26,14 +68,28 @@
   }
   header h1{font-size:19px; margin:0; letter-spacing:.3px}
   header .meta{color:var(--muted); font-size:13px}
+  header .spacer{flex:1}
+  #themeBtn{
+    align-self:center; background:var(--panel2); border:1px solid var(--line); color:var(--text);
+    border-radius:8px; padding:6px 12px; font:inherit; font-size:13px; cursor:pointer; white-space:nowrap;
+  }
+  #themeBtn:hover{border-color:var(--accent)}
   .wrap{max-width:1100px; margin:0 auto; padding:20px}
   .layout{display:grid; grid-template-columns:260px 1fr; gap:22px; align-items:start}
-  @media(max-width:820px){ .layout{grid-template-columns:1fr} .filters{position:static !important} }
+  @media(max-width:820px){
+    .layout{grid-template-columns:1fr}
+    .filters{position:static !important; max-height:none !important; overflow:visible !important}
+  }
 
   .filters{
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
     padding:16px; position:sticky; top:74px;
+    /* Give the filter pane its own scrollbar so it isn't pinned to the page scroll
+       when it's taller than the viewport. */
+    max-height:calc(100vh - 90px); overflow-y:auto; overscroll-behavior:contain;
   }
+  .filters::-webkit-scrollbar{width:10px}
+  .filters::-webkit-scrollbar-thumb{background:var(--line); border-radius:8px; border:3px solid var(--panel)}
   .filters h2{font-size:12px; text-transform:uppercase; letter-spacing:.8px; color:var(--muted); margin:0 0 8px}
   .fgroup{margin-bottom:16px}
   .fgroup:last-child{margin-bottom:0}
@@ -67,7 +123,7 @@
 
   .card{
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
-    padding:14px 16px; margin-bottom:10px;
+    padding:14px 16px; margin-bottom:10px; box-shadow:var(--shadow);
   }
   .card.hidden-job{opacity:.45}
   .card h3{margin:0 0 4px; font-size:16px}
@@ -79,28 +135,29 @@
     border-radius:999px; padding:2px 9px; color:var(--muted);
   }
   .tag.sal{color:var(--accent); border-color:var(--accent)}
-  .tag.cat-environmental{color:#8fd3b6}
-  .tag.cat-research{color:#9db8ff}
-  .tag.cat-education{color:#d3a0ff}
+  .tag.cat-environmental{color:var(--cat-env)}
+  .tag.cat-research{color:var(--cat-res)}
+  .tag.cat-education{color:var(--cat-edu)}
   .tag.cat-other{color:var(--muted)}
-  .tag.car{color:#e5928a; border-color:#7d3f3f}
+  .tag.car{color:var(--car-fg); border-color:var(--car-line)}
   .tag.tenure{color:var(--muted)}
   .card .summary{font-size:13.5px; color:var(--muted); margin:6px 0 0}
   .card .actions{display:flex; gap:6px; margin-top:10px}
   .hint{color:var(--muted); font-size:11.5px; margin-top:6px; line-height:1.4}
   .tag.closing{color:var(--warn); border-color:var(--warn)}
-  .tag.comm-ttc{color:#8fd3b6; border-color:#3f6d5a}
-  .tag.comm-go{color:#9db8ff; border-color:#3f4f7d}
-  .tag.comm-hard{color:#e5928a; border-color:#7d3f3f}
-  .tag.comm-remote{color:#c9b3e6}
+  .tag.comm-ttc{color:var(--comm-ttc-fg); border-color:var(--comm-ttc-line)}
+  .tag.comm-go{color:var(--comm-go-fg); border-color:var(--comm-go-line)}
+  .tag.comm-hard{color:var(--comm-hard-fg); border-color:var(--comm-hard-line)}
+  .tag.comm-remote{color:var(--comm-remote-fg)}
   .empty{color:var(--muted); padding:40px 10px; text-align:center}
   .sources-panel{margin-top:26px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); padding:12px 16px}
   .sources-panel summary{cursor:pointer; font-size:13px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted)}
   .src-row{display:flex; align-items:baseline; gap:10px; padding:7px 0; border-top:1px solid var(--line); font-size:13px}
   .src-row:first-of-type{border-top:0; margin-top:8px}
   .dot{width:8px; height:8px; border-radius:50%; flex:0 0 auto; align-self:center}
-  .dot.ok{background:var(--accent)} .dot.empty{background:#6b7280}
-  .dot.needs-setup{background:var(--warn)} .dot.error{background:#e5675c} .dot.off{background:#3a3f4a}
+  .dot.ok{background:var(--dot-ok)} .dot.empty{background:var(--dot-empty)}
+  .dot.needs-setup{background:var(--dot-warn)} .dot.error{background:var(--dot-error)} .dot.off{background:var(--dot-off)}
+  .src-row.src-off{color:var(--muted); font-size:12px}
   .src-row .nm{font-weight:600; min-width:150px}
   .src-row .ms{color:var(--muted); flex:1}
   .foot{color:var(--muted); font-size:12px; margin-top:20px; border-top:1px solid var(--line); padding-top:14px}
@@ -110,6 +167,8 @@
 <header>
   <h1>Job Scout</h1>
   <span class="meta" id="dataMeta">loading…</span>
+  <span class="spacer"></span>
+  <button id="themeBtn" data-action="theme" type="button" title="Switch theme: auto / light / dark">◐ Auto</button>
 </header>
 
 <div class="wrap">
@@ -207,8 +266,8 @@
       </label>
     </div>
 
-    <div id="overqualified"></div>
     <div id="list"></div>
+    <div id="overqualified"></div>
 
     <details class="sources-panel" id="sourcesPanel">
       <summary>Source status <span id="srcSummary"></span></summary>
@@ -232,21 +291,23 @@
 const SAMPLE = {"generated":null,
 "sources":[
 {"id":"jobbank-ca","name":"Job Bank Canada","state":"ok","kept":4,"message":"Fetched 38 raw postings this run."},
-{"id":"adzuna-ca","name":"Adzuna","state":"needs-setup","kept":0,"message":"Add ADZUNA_APP_ID / ADZUNA_APP_KEY as repo secrets (free key from developer.adzuna.com)."},
-{"id":"ecoworks","name":"ECOWorks (ECO Canada)","state":"off","kept":0,"message":"No public feed as of 2026-09 — needs a scraper. ECO Canada recently rebuilt the site."},
-{"id":"goodwork","name":"GoodWork.ca","state":"off","kept":0,"message":"No public feed — email alerts only. Needs a scraper."},
-{"id":"university-affairs","name":"University Affairs","state":"off","kept":0,"message":"Feed URL not yet confirmed."}
+{"id":"workcabin","name":"WorkCabin","state":"ok","kept":2,"message":"Fetched 14 raw postings this run."},
+{"id":"goodwork","name":"GoodWork.ca","state":"ok","kept":3,"message":"Fetched 92 raw postings this run."},
+{"id":"ecoworks","name":"ECOWorks (ECO Canada)","state":"ok","kept":1,"message":"Fetched 60 raw postings this run."},
+{"id":"adzuna-ca","name":"Adzuna","state":"needs-setup","kept":0,"message":"Add a free Adzuna API key (ADZUNA_APP_ID / ADZUNA_APP_KEY repo secrets) to roughly triple coverage."},
+{"id":"greenhouse-orgs","name":"Greenhouse boards","state":"off","kept":0,"message":"Optional — add board slugs in sources.json to enable."},
+{"id":"lever-orgs","name":"Lever boards","state":"off","kept":0,"message":"Optional — add board slugs in sources.json to enable."}
 ],
 "jobs":[
-{"id":"sample-1","title":"Ecological Restoration Technician (Seasonal)","org":"Toronto and Region Conservation Authority","location":"Vaughan, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":49000,"salaryMax":56000,"salaryText":"$23.50–$27.00 / hour","category":"environmental","url":"https://example.com/job/sample-1","source":"Sample","posted":"2026-08-29T00:00:00Z","closingDate":"2026-09-08","summary":"Native planting, invasive species removal and site prep across TRCA restoration sites. Crew meets at the Vaughan yard; transport to sites provided. Chainsaw and OBBN certification an asset."},
-{"id":"sample-2","title":"GIS Technician, Watershed Data","org":"Credit Valley Conservation","location":"Mississauga, ON","remote":"hybrid","tenure":"permanent","vehicleRequired":false,"salaryMin":60000,"salaryMax":71000,"salaryText":"$60,000–$71,000","category":"environmental","url":"https://example.com/job/sample-2","source":"Sample","posted":"2026-08-30T00:00:00Z","closingDate":"2026-09-15","summary":"Maintain spatial datasets, produce maps and field-collection apps (Field Maps / ArcGIS) for watershed monitoring programs. Diploma or degree in GIS, geography or environmental science."},
-{"id":"sample-3","title":"Field Assistant, Stream Monitoring","org":"University of Toronto — Physical Geography","location":"Toronto, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":null,"salaryMax":null,"salaryText":"$25 / hour","category":"research","url":"https://example.com/job/sample-3","source":"Sample","posted":"2026-08-31T00:00:00Z","closingDate":"2026-09-19","summary":"Assist a graduate research project on urban stream geomorphology: bank pin surveys, cross-section resurveys, water quality sampling. Fieldwork accessible by TTC. 6-month contract."},
-{"id":"sample-4","title":"Educational Assistant (French-language)","org":"Conseil scolaire catholique MonAvenir","location":"Toronto, ON","remote":"onsite","tenure":"permanent","vehicleRequired":false,"salaryMin":47000,"salaryMax":53000,"salaryText":"$47,000–$53,000","category":"education","url":"https://example.com/job/sample-4","source":"Sample","posted":"2026-08-28T00:00:00Z","closingDate":"2026-09-06","summary":"Support students in a French-language elementary classroom. Bilingual (FR/EN) required. Experience with diverse learners an asset."},
-{"id":"sample-5","title":"Restoration Crew Lead","org":"Conservation Halton","location":"Burlington, ON","remote":"onsite","tenure":"temporary","vehicleRequired":true,"salaryMin":52000,"salaryMax":60000,"salaryText":"$25–$29 / hour","category":"environmental","url":"https://example.com/job/sample-5","source":"Sample","posted":"2026-08-27T00:00:00Z","closingDate":"2026-09-12","summary":"Lead a small planting and maintenance crew. Valid Ontario G licence and use of a personal vehicle required to travel between sites."},
-{"id":"sample-6","title":"Environmental Technician","org":"WSP Canada","location":"Toronto, ON","remote":"hybrid","tenure":"permanent","vehicleRequired":true,"salaryMin":54000,"salaryMax":64000,"salaryText":"$54,000–$64,000","category":"environmental","url":"https://example.com/job/sample-6","source":"Sample","posted":"2026-08-30T00:00:00Z","closingDate":null,"summary":"Phase I/II ESA support, soil and groundwater sampling, monitoring. Full G licence and reliable vehicle required for site visits."},
-{"id":"sample-7","title":"Nature Interpreter (Fall Contract)","org":"City of Toronto — Parks, Forestry & Recreation","location":"Scarborough, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":null,"salaryMax":null,"salaryText":"$26.14 / hour","category":"education","url":"https://example.com/job/sample-7","source":"Sample","posted":"2026-08-31T00:00:00Z","closingDate":"2026-09-07","summary":"Deliver school and public nature programs at a TTC-accessible environmental centre. Background in biology, environmental science or education."},
-{"id":"sample-8","title":"Water Quality Field Technician (OBBN)","org":"Toronto and Region Conservation Authority","location":"Toronto, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":null,"salaryMax":null,"salaryText":"$24.75 / hour","category":"environmental","url":"https://example.com/job/sample-8","source":"Sample","posted":"2026-08-26T00:00:00Z","closingDate":"2026-09-10","summary":"Benthic sampling and water quality assessment under OBBN protocols. Crew transport provided from Downsview. OBBN certification an asset."},
-{"id":"sample-9","title":"Watershed Resources Technician","org":"Grand River Conservation Authority","location":"Cambridge, ON","remote":"onsite","tenure":"permanent","vehicleRequired":false,"salaryMin":58000,"salaryMax":67000,"salaryText":"$58,000–$67,000","category":"environmental","url":"https://example.com/job/sample-9","source":"Sample","posted":"2026-08-28T00:00:00Z","closingDate":"2026-09-21","summary":"Permanent role in stream monitoring and data management for the Grand River watershed. Example of a permanent position outside the GTA."}
+{"id":"sample-1","title":"Ecological Restoration Technician (Seasonal)","org":"Toronto and Region Conservation Authority","location":"Vaughan, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":49000,"salaryMax":56000,"salaryText":"$23.50–$27.00 / hour","category":"environmental","url":"https://example.com/job/sample-1","source":"Sample","posted":"2026-09-05T00:00:00Z","closingDate":"2026-09-19","summary":"Native planting, invasive species removal and site prep across TRCA restoration sites. Crew meets at the Vaughan yard; transport to sites provided. Chainsaw and OBBN certification an asset."},
+{"id":"sample-2","title":"GIS Technician, Watershed Data","org":"Credit Valley Conservation","location":"Mississauga, ON","remote":"hybrid","tenure":"permanent","vehicleRequired":false,"salaryMin":60000,"salaryMax":71000,"salaryText":"$60,000–$71,000","category":"environmental","url":"https://example.com/job/sample-2","source":"Sample","posted":"2026-09-05T00:00:00Z","closingDate":"2026-09-24","summary":"Maintain spatial datasets, produce maps and field-collection apps (Field Maps / ArcGIS) for watershed monitoring programs. Diploma or degree in GIS, geography or environmental science."},
+{"id":"sample-3","title":"Field Assistant, Stream Monitoring","org":"University of Toronto — Physical Geography","location":"Toronto, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":null,"salaryMax":null,"salaryText":"$25 / hour","category":"research","url":"https://example.com/job/sample-3","source":"Sample","posted":"2026-09-06T00:00:00Z","closingDate":"2026-09-26","summary":"Assist a graduate research project on urban stream geomorphology: bank pin surveys, cross-section resurveys, water quality sampling. Fieldwork accessible by TTC. 6-month contract."},
+{"id":"sample-4","title":"Educational Assistant (French-language)","org":"Conseil scolaire catholique MonAvenir","location":"Toronto, ON","remote":"onsite","tenure":"permanent","vehicleRequired":false,"salaryMin":47000,"salaryMax":53000,"salaryText":"$47,000–$53,000","category":"education","url":"https://example.com/job/sample-4","source":"Sample","posted":"2026-09-04T00:00:00Z","closingDate":"2026-09-18","summary":"Support students in a French-language elementary classroom. Bilingual (FR/EN) required. Experience with diverse learners an asset."},
+{"id":"sample-5","title":"Restoration Crew Lead","org":"Conservation Halton","location":"Burlington, ON","remote":"onsite","tenure":"temporary","vehicleRequired":true,"salaryMin":52000,"salaryMax":60000,"salaryText":"$25–$29 / hour","category":"environmental","url":"https://example.com/job/sample-5","source":"Sample","posted":"2026-09-03T00:00:00Z","closingDate":"2026-09-20","summary":"Lead a small planting and maintenance crew. Valid Ontario G licence and use of a personal vehicle required to travel between sites."},
+{"id":"sample-6","title":"Environmental Technician","org":"WSP Canada","location":"Toronto, ON","remote":"hybrid","tenure":"permanent","vehicleRequired":true,"salaryMin":54000,"salaryMax":64000,"salaryText":"$54,000–$64,000","category":"environmental","url":"https://example.com/job/sample-6","source":"Sample","posted":"2026-09-05T00:00:00Z","closingDate":null,"summary":"Phase I/II ESA support, soil and groundwater sampling, monitoring. Full G licence and reliable vehicle required for site visits."},
+{"id":"sample-7","title":"Nature Interpreter (Fall Contract)","org":"City of Toronto — Parks, Forestry & Recreation","location":"Scarborough, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":null,"salaryMax":null,"salaryText":"$26.14 / hour","category":"education","url":"https://example.com/job/sample-7","source":"Sample","posted":"2026-09-06T00:00:00Z","closingDate":"2026-09-17","summary":"Deliver school and public nature programs at a TTC-accessible environmental centre. Background in biology, environmental science or education."},
+{"id":"sample-8","title":"Water Quality Field Technician (OBBN)","org":"Toronto and Region Conservation Authority","location":"Toronto, ON","remote":"onsite","tenure":"temporary","vehicleRequired":false,"salaryMin":null,"salaryMax":null,"salaryText":"$24.75 / hour","category":"environmental","url":"https://example.com/job/sample-8","source":"Sample","posted":"2026-09-02T00:00:00Z","closingDate":"2026-09-19","summary":"Benthic sampling and water quality assessment under OBBN protocols. Crew transport provided from Downsview. OBBN certification an asset."},
+{"id":"sample-9","title":"Watershed Resources Technician","org":"Grand River Conservation Authority","location":"Cambridge, ON","remote":"onsite","tenure":"permanent","vehicleRequired":false,"salaryMin":58000,"salaryMax":67000,"salaryText":"$58,000–$67,000","category":"environmental","url":"https://example.com/job/sample-9","source":"Sample","posted":"2026-09-04T00:00:00Z","closingDate":"2026-09-28","summary":"Permanent role in stream monitoring and data management for the Grand River watershed. Example of a permanent position outside the GTA."}
 ]};
 
 const GTA = ["toronto","mississauga","brampton","markham","vaughan","richmond hill","oakville","burlington","pickering","ajax","whitby","oshawa","milton","newmarket","aurora","caledon","halton hills","georgina","uxbridge","stouffville","etobicoke","scarborough","north york","east york","york region","durham region","peel region","gta","greater toronto"];
@@ -471,6 +532,15 @@ function cardHTML(j){
 }
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
+/* ---------- theme ---------- */
+const THEME_LABEL = { auto:"◐ Auto", light:"☀ Light", dark:"☾ Dark" };
+function applyTheme(t){
+  if(t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  else document.documentElement.removeAttribute("data-theme");
+  if(el("themeBtn")) el("themeBtn").textContent = THEME_LABEL[t] || THEME_LABEL.auto;
+}
+let theme = load("js_theme", "auto");
+
 /* ---------- events ---------- */
 document.addEventListener("input", e => {
   if(e.target.dataset.action === "filter"){
@@ -490,6 +560,10 @@ document.addEventListener("click", e => {
   if(act === "reset"){
     location.href = location.pathname;
   }
+  if(act === "theme"){
+    theme = theme === "auto" ? "light" : theme === "light" ? "dark" : "auto";
+    save("js_theme", theme); applyTheme(theme);
+  }
   if(act === "hide"){
     const id = a.dataset.id;
     state.hidden = state.hidden.includes(id) ? state.hidden.filter(x=>x!==id) : [...state.hidden, id];
@@ -504,6 +578,7 @@ document.addEventListener("click", e => {
 
 /* ---------- load data ---------- */
 async function boot(){
+  applyTheme(theme);
   readURL();
   el("salLabel").textContent = +el("salMin").value ? money(+el("salMin").value) : "any";
   let data;
@@ -543,17 +618,27 @@ function renderSourcePanel(rows){
     return;
   }
   panel.hidden = false;
-  const words = {ok:"working", empty:"nothing new", "needs-setup":"needs setup", error:"failing", off:"off"};
-  const order = {error:0, "needs-setup":1, empty:2, ok:3, off:4};
+  const words = {ok:"working", empty:"nothing new", "needs-setup":"needs setup", error:"failing"};
+  const order = {error:0, "needs-setup":1, empty:2, ok:3};
   const bad = rows.filter(r => r.state === "error" || r.state === "needs-setup").length;
   el("srcSummary").textContent = bad ? `— ${bad} need attention` : "— all clear";
-  el("srcRows").innerHTML = rows
+
+  // Sources deliberately switched off (empty Greenhouse/Lever board lists, etc.) are
+  // collapsed into one muted line rather than listed as if something's wrong.
+  const active = rows.filter(r => r.state !== "off");
+  const offRows = rows.filter(r => r.state === "off");
+  el("srcRows").innerHTML = active
     .slice().sort((a,b) => (order[a.state]??9) - (order[b.state]??9))
     .map(r => `<div class="src-row">
       <span class="dot ${r.state}"></span>
       <span class="nm">${esc(r.name)}</span>
       <span class="ms">${esc(words[r.state]||r.state)}${typeof r.kept === "number" && r.state==="ok" ? ` · ${r.kept} live` : ""} — ${esc(r.message||"")}</span>
-    </div>`).join("");
+    </div>`).join("")
+    + (offRows.length ? `<div class="src-row src-off">
+      <span class="dot off"></span>
+      <span class="nm">Not set up</span>
+      <span class="ms">${offRows.map(r => esc(r.name)).join(", ")} — optional; add config in <code>sources.json</code> to enable.</span>
+    </div>` : "");
 }
 boot();
 </script>

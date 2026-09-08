@@ -13,6 +13,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const cfg = JSON.parse(await readFile(join(ROOT, "sources.json"), "utf8"));
 
 const UA = "JobScout/1.0 (+personal job aggregator)";
+// Some HTML job boards 403 a bot User-Agent. The scraper adapters send this instead.
+const BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36";
+const BROWSER_HEADERS = { "User-Agent": BROWSER_UA, "Accept": "text/html,application/xhtml+xml" };
 const now = Date.now();
 const MAX_AGE_MS = (cfg.max_days_old || 7) * 86400000;
 
@@ -32,10 +35,19 @@ async function getJSON(url, opts) {
   if (!r.ok) throw new Error(`${r.status} ${url}`);
   return r.json();
 }
-async function getText(url) {
-  const r = await fetch(url, { headers: { "User-Agent": UA } });
+async function getText(url, headers) {
+  const r = await fetch(url, { headers: { "User-Agent": UA, ...headers } });
   if (!r.ok) throw new Error(`${r.status} ${url}`);
   return r.text();
+}
+
+// "3d ago" / "2w ago" / "5h ago" -> ISO timestamp.
+function relativeAgeToISO(text) {
+  const m = String(text || "").match(/(\d+)\s*([hdwmy])(?:ay|ays|our|ours|eek|eeks|onth|onths|ear|ears)?\s*ago/i);
+  if (!m) return null;
+  const unit = { h: 3.6e6, d: 8.64e7, w: 6.048e8, m: 2.63e9, y: 3.156e10 }[m[2].toLowerCase()];
+  const d = new Date(now - Number(m[1]) * unit);
+  return isNaN(d) ? null : d.toISOString();
 }
 
 const stripTags = s => String(s || "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ")
@@ -298,6 +310,115 @@ async function fromLever(src) {
   return out;
 }
 
+// GoodWork.ca — Canada's largest environmental / conservation / sustainability board.
+// No feed; server-rendered HTML. Each listing row:
+//   <div class="listingthumb row"> … <a href="/jobs/<slug>-<id>"><span>TITLE</span></a>,
+//   <type>, <org>, <city PROV / mode> … <span title="… Date posted: Mon D, YYYY.">
+// Pages are /jobs, /jobs/2, /jobs/3 … Sorted newest-first, so a couple of pages
+// covers everything inside the 7-day window. No per-job closing date in the list.
+async function fromGoodwork(src) {
+  const base = (src.url || "https://www.goodwork.ca/jobs").replace(/\/+$/, "");
+  const pages = Math.max(1, src.max_pages || 3);
+  const TYPE_RE = /^(full[- ]?time|part[- ]?time|contract|casual|seasonal|temporary|permanent|volunteer|internship|intern|co-?op|term|freelance|flexible|summer)/i;
+  const LOC_RE = /\b(ON|QC|BC|AB|MB|SK|NS|NB|NL|PE|YT|NT|NU)\b|remote|hybrid|virtual|anywhere in canada|\bcanada\b|\bGTA\b/i;
+  const out = [];
+  for (let p = 1; p <= pages; p++) {
+    const u = p === 1 ? base : `${base}/${p}`;
+    try {
+      const html = await getText(u, BROWSER_HEADERS);
+      const chunks = html.split(/<div [^>]*listingthumb[^>]*>/i).slice(1);
+      for (const c of chunks) {
+        const idM = c.match(/\/jobs\/([a-z0-9-]+-(\d{3,}))/i);
+        if (!idM) continue;
+        let title = null, trailing = "";
+        const aRe = /<a\s[^>]*href="\/jobs\/[^"]*"[^>]*>([\s\S]*?)<\/a>([^<]*)/gi;
+        let am;
+        while ((am = aRe.exec(c))) {
+          const t = stripTags(am[1]);
+          if (t) { title = t; trailing = stripTags(am[2]); break; }
+        }
+        if (!title) continue;
+        const dM = c.match(/Date posted:\s*([A-Za-z.]{3,10}\s+\d{1,2},?\s+\d{4})/i);
+        const posted = dM ? new Date(dM[1]) : null;
+        // trailing looks like ", full-time, Metcalf Foundation, Toronto ON / Hybrid"
+        let parts = trailing.replace(/^[,\s]+/, "").split(/\s*,\s*/).filter(Boolean);
+        let employmentType = null;
+        if (parts.length && TYPE_RE.test(parts[0])) employmentType = parts.shift();
+        let location = "";
+        for (let k = parts.length - 1; k >= 0; k--) {
+          if (LOC_RE.test(parts[k])) { location = parts.slice(k).join(", "); parts = parts.slice(0, k); break; }
+        }
+        const org = parts.join(", ") || "GoodWork.ca";
+        out.push(normalize({
+          id: "goodwork-" + idM[2],
+          title,
+          org,
+          location,
+          url: "https://www.goodwork.ca" + idM[0],
+          source: "GoodWork.ca",
+          posted: posted && !isNaN(posted) ? posted.toISOString() : new Date().toISOString(),
+          employmentType,
+          summary: [employmentType, org, location].filter(Boolean).join(" · ") || null,
+        }));
+      }
+    } catch (e) { console.log(`  goodwork p${p}: ${e.message}`); }
+    await sleep(500);
+  }
+  return out;
+}
+
+// ECOWorks (ECO Canada) — environmental job board, no feed, server-rendered HTML.
+// Each listing: <div class="… job-listings-item …"> with
+//   <a href="/jobs/<id>-<slug>">TITLE</a>, <span class="jb-tag-underline-on-hover">EMPLOYER</span>,
+//   a "• Type • Location • $Salary" run, and <span class="job-posted-date">Nd ago</span>.
+// Pages are /jobs?page=N. Newest-first.
+async function fromEcoworks(src) {
+  const base = src.url || "https://ecoworks.eco.ca/jobs";
+  const pages = Math.max(1, src.max_pages || 3);
+  const TYPE_RE = /^(full[- ]?time|part[- ]?time|contract|casual|season|tempor|permanent|intern|co-?op|freelance|volunteer)/i;
+  const LOC_RE = /(canada|ontario|alberta|qu[eé]bec|british columbia|manitoba|nova scotia|saskatchewan|yukon|newfoundland|new brunswick|prince edward|remote|hybrid)/i;
+  const out = [];
+  for (let p = 1; p <= pages; p++) {
+    const u = p === 1 ? base : base + (base.includes("?") ? "&" : "?") + "page=" + p;
+    try {
+      const html = await getText(u, BROWSER_HEADERS);
+      const chunks = html.split(/job-listings-item/).slice(1);
+      for (const c0 of chunks) {
+        const c = c0.slice(0, 8000);
+        const idM = c.match(/\/jobs\/(\d{3,})-[a-z0-9-]+/i);
+        if (!idM) continue;
+        const aM = c.match(/<a\s[^>]*href="[^"]*\/jobs\/\d{3,}-[^"]*"[^>]*>([\s\S]*?)<\/a>/i);
+        const title = aM ? stripTags(aM[1]) : null;
+        if (!title) continue;
+        const empM = c.match(/jb-tag-underline-on-hover[\s\S]{0,40}?>([\s\S]*?)<\/a>/i);
+        const org = (empM && stripTags(empM[1])) || "ECOWorks";
+        const posted = relativeAgeToISO(c) || new Date().toISOString();
+        let rest = stripTags(c);
+        rest = rest.replace(title, "");
+        if (org && rest.includes(org)) rest = rest.split(org).slice(1).join(" ");
+        const segs = rest.split(/\s*[•·|]\s*/).map(s => s.trim()).filter(Boolean);
+        const salaryText = segs.find(s => /\$\s?\d/.test(s)) || null;
+        const employmentType = segs.find(s => TYPE_RE.test(s)) || null;
+        const location = segs.find(s => s !== salaryText && s !== employmentType && LOC_RE.test(s)) || "";
+        out.push(normalize({
+          id: "ecoworks-" + idM[1],
+          title,
+          org,
+          location,
+          salaryText,
+          url: "https://ecoworks.eco.ca" + idM[0],
+          source: "ECOWorks",
+          posted,
+          employmentType,
+          summary: [employmentType, location].filter(Boolean).join(" · ") || null,
+        }));
+      }
+    } catch (e) { console.log(`  ecoworks p${p}: ${e.message}`); }
+    await sleep(500);
+  }
+  return out;
+}
+
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 /* ----------------------------- run ----------------------------- */
@@ -322,6 +443,8 @@ for (const src of cfg.sources) {
     else if (src.type === "rss") all.push(...await fromFeed(src, "rss"));
     else if (src.type === "greenhouse") all.push(...await fromGreenhouse(src));
     else if (src.type === "lever") all.push(...await fromLever(src));
+    else if (src.type === "goodwork") all.push(...await fromGoodwork(src));
+    else if (src.type === "ecoworks") all.push(...await fromEcoworks(src));
     else { err = `unknown source type "${src.type}"`; console.log("  " + err); }
   } catch (e) { err = e.message; console.log(`  ${src.id} failed: ${e.message}`); }
 

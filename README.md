@@ -84,8 +84,14 @@ Edit `sources.json` on GitHub (open the file → pencil icon → commit). The ne
 | `greenhouse` | add a company slug to `"boards"` (the name in `job-boards.greenhouse.io/<slug>`) |
 | `lever` | add a slug to `"boards"` (the name in `jobs.lever.co/<slug>`) |
 
+`goodwork` and `ecoworks` are dedicated scrapers for two boards that have no feed
+(GoodWork.ca, ECOWorks). They read the sites' listing pages directly, so if either board
+redesigns its pages the scraper can break — it then shows as **failing** in the source
+panel and needs a code update.
+
 The **"Source status"** panel at the bottom of the site shows which sources are working,
-need setup, or have stopped — so you can tell when one needs attention.
+need setup, or have stopped — so you can tell when one needs attention. Sources you've
+deliberately left unconfigured are folded into a single muted line.
 
 ## Tuning
 
@@ -97,6 +103,8 @@ need setup, or have stopped — so you can tell when one needs attention.
 
 ## Notes
 
+- The button in the top-right switches the colour theme: **Auto** (follows your device's
+  light/dark setting), **Light**, or **Dark**. Your choice is remembered on that device.
 - Every listing links to the **original posting** — apply there.
 - The fetcher only keeps Canadian jobs posted in the last **7 days**, and drops any job
   past its stated closing date. Stale postings can't be detected reliably, so the window

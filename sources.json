@@ -79,50 +79,28 @@
 
     {
       "id": "goodwork",
-      "type": "rss",
-      "enabled": false,
+      "type": "goodwork",
+      "enabled": true,
       "source_name": "GoodWork.ca",
-      "url": "",
-      "note": "NO PUBLIC FEED as of 2026-09. GoodWork only offers email alerts, not RSS. Covering it means HTML scraping, which breaks whenever they restyle the page. Many GoodWork postings also appear on Job Bank / Adzuna. Ask Claude to build a scraper for it as a follow-up if you want it anyway."
+      "url": "https://www.goodwork.ca/jobs",
+      "max_pages": 3,
+      "note": "CONFIRMED WORKING (2026-09-08). Canada's largest environmental / conservation / sustainability board. No public feed - a dedicated HTML scraper (type 'goodwork' in fetch-jobs.mjs) reads the server-rendered listing pages (/jobs, /jobs/2, /jobs/3). Each row carries title, org, city, and a real 'Date posted'. No per-job closing date. Fragile by nature: if GoodWork restyles the listing page the scraper needs updating - it will show as 'failing' in the site's source panel if that happens. Strong local coverage: TRCA, Credit Valley, Ontario Nature, EcoSpark, Earth Rangers, Metcalf Foundation."
     },
     {
       "id": "ecoworks",
-      "type": "rss",
-      "enabled": false,
+      "type": "ecoworks",
+      "enabled": true,
       "source_name": "ECOWorks (ECO Canada)",
-      "url": "",
-      "note": "NO PUBLIC FEED as of 2026-09 (ecoworks.eco.ca - custom platform, email alerts only). Same situation as GoodWork - needs scraping."
-    },
-    {
-      "id": "university-affairs",
-      "type": "rss",
-      "enabled": false,
-      "source_name": "University Affairs",
-      "url": "https://www.universityaffairs.ca/search-job/?_job_feed=rss",
-      "note": "UNVERIFIED URL - Canadian academic job board. Confirm the real feed URL (look for an RSS link on universityaffairs.ca/search-job) then set enabled to true."
-    },
-    {
-      "id": "academic-positions",
-      "type": "rss",
-      "enabled": false,
-      "source_name": "Academic Positions",
-      "url": "https://academicpositions.com/rss/country/canada",
-      "note": "UNVERIFIED URL - has Canada listings, usually offers RSS. Confirm and enable."
-    },
-    {
-      "id": "charity-village",
-      "type": "rss",
-      "enabled": false,
-      "source_name": "CharityVillage",
-      "url": "",
-      "note": "Nonprofit sector (many environmental NGOs post here). Look for a jobs RSS on charityvillage.com, paste it, enable."
+      "url": "https://ecoworks.eco.ca/jobs",
+      "max_pages": 3,
+      "note": "CONFIRMED WORKING (2026-09-08). ECO Canada's environmental job board. No public feed - dedicated HTML scraper (type 'ecoworks') reads the server-rendered listing pages (/jobs?page=N). Rows carry title, employer, type, location, sometimes salary, and a relative 'Nd ago' posted date. Same fragility caveat as GoodWork."
     }
   ],
 
   "_more_boards_to_investigate": [
-    "GoodWork.ca (goodwork.ca/jobs) - largest CA environmental board, needs scraping",
-    "ECOWorks / ECO Canada (ecoworks.eco.ca) - needs scraping",
+    "DONE: GoodWork.ca + ECOWorks now have dedicated scrapers (types 'goodwork' / 'ecoworks')",
     "Green Careers Canada (greencareerscanada.ca/find-a-job)",
+    "University Affairs / Academic Positions / CharityVillage - removed 2026-09-08; no confirmed RSS. Re-add with a verified feed URL if one turns up.",
     "Conservation Job Board (conservationjobboard.com) - has US+CA, check for RSS",
     "Ontario Nature, Ducks Unlimited Canada, Nature Conservancy of Canada - own career pages",
     "Conservation authorities: TRCA, Credit Valley, Conservation Halton, Lake Simcoe (careers pages / often ADP or BambooHR)",
