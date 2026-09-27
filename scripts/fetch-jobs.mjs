@@ -469,7 +469,12 @@ console.log(`\nCollected ${all.length} raw postings`);
 
 // Job titles that are clearly NOT in scope, even if "environmental" / "sustainability"
 // shows up somewhere in the description (ESG counsel, an accountant at a green firm, etc.)
-const TITLE_BLOCK = /\b(counsel|lawyer|paralegal|attorney|accountant|accounting|bookkeeper|payroll|auditor|actuary|underwriter|sales representative|account executive|business development|marketing manager|recruiter|talent acquisition|realtor|real estate|insurance broker|financial advisor|loan officer|barista|cashier|server|dishwasher|line cook|warehouse associate|forklift|truck driver|delivery driver|heavy duty (mechanic|technician)|heavy equipment|\bmechanic\b|millwright|welder|electrician|plumber|hvac|roofer|carpenter|mason|nurse|physician|pharmacist|dental|veterinari|paramedic|personal support worker|\bpsw\b)\b/i;
+// Also excludes senior/leadership titles (owner is early-career, "Senior"/"Manager"/"Director"/
+// "VP" roles at any employer are out of reach) and IT/customer-service roles that get mis-tagged
+// "environmental" because they're posted by an environmental/forestry-sector employer
+// (e.g. "Customer Service Administrator" at an eco-instruments company, "Network & Security
+// Specialist" at a forestry company) rather than because the role itself is environmental.
+const TITLE_BLOCK = /\b(counsel|lawyer|paralegal|attorney|accountant|accounting|bookkeeper|payroll|auditor|actuary|underwriter|sales representative|account executive|business development|marketing manager|recruiter|talent acquisition|realtor|real estate|insurance broker|financial advisor|loan officer|barista|cashier|server|dishwasher|line cook|warehouse associate|forklift|truck driver|delivery driver|heavy duty (mechanic|technician)|heavy equipment|\bmechanic\b|millwright|welder|electrician|plumber|hvac|roofer|carpenter|mason|nurse|physician|pharmacist|dental|veterinari|paramedic|personal support worker|\bpsw\b|vice president|\bvp\b|\bdirector\b|head of|\bchief\b|\bsenior\b|\bmanager\b|customer service|network (&|and)? ?security|network specialist|network administrator|network engineer|systems administrator|\bit support\b|help desk)\b/i;
 
 // "restoration" also means building/damage/disaster restoration — exclude those by employer.
 const BUILDING_RESTO = /building|masonry|concrete|property|disaster|\bdki\b|damage|abatement|remediation contractor|fire & flood|water damage/i;
