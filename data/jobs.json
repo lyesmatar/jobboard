@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-27T18:34:41.124Z",
- "count": 143,
+ "generated": "2026-09-27T19:07:20.091Z",
+ "count": 123,
  "sources": [
   {
    "id": "jobbank-ca",
    "name": "Job Bank Canada",
-   "raw": 308,
+   "raw": 292,
    "state": "ok",
-   "message": "Fetched 308 raw postings this run.",
+   "message": "Fetched 292 raw postings this run.",
    "kept": 7
   },
   {
@@ -16,7 +16,7 @@
    "raw": 658,
    "state": "ok",
    "message": "Fetched 658 raw postings this run.",
-   "kept": 123
+   "kept": 110
   },
   {
    "id": "workcabin",
@@ -24,7 +24,7 @@
    "raw": 10,
    "state": "ok",
    "message": "Fetched 10 raw postings this run.",
-   "kept": 2
+   "kept": 0
   },
   {
    "id": "greenhouse-orgs",
@@ -48,7 +48,7 @@
    "raw": 99,
    "state": "ok",
    "message": "Fetched 99 raw postings this run.",
-   "kept": 2
+   "kept": 1
   },
   {
    "id": "ecoworks",
@@ -421,24 +421,6 @@
    "summary": null
   },
   {
-   "id": "adzuna-5899642999",
-   "title": "Senior Field Technician",
-   "org": "Fuze HR Solutions Inc.",
-   "location": "Guelph, Wellington region",
-   "remote": "unknown",
-   "salaryMin": 100000,
-   "salaryMax": 150000,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5899642999?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-26T07:11:11Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "permanent",
-   "summary": "Job Description Job Description Senior Field Technician Location: Guelph, ON Job Type: Full-Time | Permanent Salary Range: $100,000 to $150,000 Our client is a leading environmental and engineering consulting firm specializing in air quality, emissions testing, environmental compliance, and industrial performance. They partner with clients across a wide range of industrial sectors, providing innovative technical solutions that support regulatory compliance and operational excellence. Due to con…"
-  },
-  {
    "id": "adzuna-5899635961",
    "title": "Site Superintendent - BC",
    "org": "Milestone Environmental Contracting Inc.",
@@ -455,24 +437,6 @@
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "Job Description Job Description Milestone is looking for creative people who enjoy a challenge. We provide contracting excellence to our clients, daring them to let us collaborate on their toughest and most sensitive projects across Canada. Specializing in soil and ground remediation, water treatment, heavy civil construction, building decommissioning, land reclamation and rehabilitating sensitive habitats; our people thrive in a fast paced and everchanging environment. Everyone on our team bel…"
-  },
-  {
-   "id": "adzuna-5899617075",
-   "title": "MANAGER OF ENVIRONMENTAL PROGRAMS AND COMPLIANCE (Permanent, Full-time; Exempt)",
-   "org": "Regional District of Fraser - Fort George",
-   "location": "Prince George, Fraser-Fort George",
-   "remote": "unknown",
-   "salaryMin": 108500,
-   "salaryMax": 125000,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5899617075?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-26T07:04:34Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "permanent",
-   "summary": "MANAGER OF ENVIRONMENTAL PROGRAMS AND COMPLIANCE The Regional District of Fraser-Fort George (RDFFG) is one of 27 regional districts in BC. We are a local government that provides governance and delivers a wide range of services to people living in seven electoral areas and four member municipalities that include, the City of Prince George, the District of Mackenzie, and the Villages of McBride and Valemount. Our administrative office is in Prince George, in North Central, BC on the unceded anc…"
   },
   {
    "id": "adzuna-5899465881",
@@ -871,24 +835,6 @@
    "summary": "What if you could redefine what's possible? With us, you can. With us, you can. You want Purpose. Growth. Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers. We are WSP The Opportunity Shape the World Around You Bring scientific insight and practical …"
   },
   {
-   "id": "adzuna-5899384983",
-   "title": "Senior Technical Writing Ecologist",
-   "org": "WSP USA",
-   "location": "Toronto, Ontario",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5899384983?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-26T03:15:52Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "What if you could redefine what's possible? With us, you can. With us, you can. You want Purpose. Growth. Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers. We are WSP The Opportunity Shape What Comes Next Bring your technical expertise and scientifi…"
-  },
-  {
    "id": "adzuna-5899384893",
    "title": "NPI Specialist II",
    "org": "Teledyne",
@@ -941,24 +887,6 @@
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "veritree and Job Overview veritree is an award-winning climate tech start-up based in Vancouver. Launched in 2021, our technology measures and verifies the impact of global restoration efforts from the ground up. We are on a mission to plant 1 billion verified trees by 2030, collaborating with businesses, planting organizations, and consumers who believe in the transformative power of verified restoration projects to create real and meaningful impact for the planet, nature, and people. veritree…"
-  },
-  {
-   "id": "ecoworks-726749254",
-   "title": "Senior Environmental Scientist or Engineer",
-   "org": "AtkinsRealis",
-   "location": "Nelson, British Columbia, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/726749254-senior-environmental-scientist-or-engineer",
-   "source": "ECOWorks",
-   "posted": "2026-09-25T18:33:34.704Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Part-time · Nelson, British Columbia, Canada"
   },
   {
    "id": "Job Bank Canada-id=10274916562",
@@ -1411,24 +1339,6 @@
    "summary": "Milestone is looking for creative people who enjoy a challenge. We provide contracting excellence to our clients, daring them to let us collaborate on their toughest and most sensitive projects across Canada. Specializing in soil and ground remediation, water treatment, heavy civil construction, building decommissioning, land reclamation and rehabilitating sensitive habitats; our people thrive in a fast paced and everchanging environment. Everyone on our team believes in finding creative soluti…"
   },
   {
-   "id": "adzuna-5898014579",
-   "title": "Human Resources Director",
-   "org": "Teledyne",
-   "location": "Richmond, Greater Vancouver",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5898014579?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-25T03:12:18Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Canada - Waterloo, ON Canada - Montreal, QC (TDY) Canada - Richmond, BC Full time REQ36942 Be visionary Teledyne Technologies Incorporated provides enabling technologies for industrial growth markets that require advanced technology and high reliability. These markets include aerospace and defense, factory automation, air and water quality environmental monitoring, electronics design and development, oceanographic research, deepwater oil and gas exploration and production, medical imaging and p…"
-  },
-  {
    "id": "adzuna-5897875276",
    "title": "Arborist Climber",
    "org": "Bartlett Tree Experts",
@@ -1445,24 +1355,6 @@
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "Spend your days outdoors, tackle rewarding challenges, and enjoy a view that few people ever get to see. As an Arborist Climber, you'll work on residential and commercial properties throughout the South Okanagan, applying specialized skills as part of a team dedicated to scientific tree and shrub care. This is an opportunity to take on increasingly complex work, grow your career, and be part of a supportive team culture that values safety, professionalism, and continuous learning. We offer comp…"
-  },
-  {
-   "id": "adzuna-5897472448",
-   "title": "Senior Technical Writing Ecologist",
-   "org": "WSP Canada",
-   "location": "Toronto, Ontario",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5897472448?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-24T19:33:04Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "What if you could redefine what's possible? With us, you can. With us, you can. You want Purpose. Growth. Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers. We are WSP The Opportunity Shape What Comes Next Bring your technical expertise and scientifi…"
   },
   {
    "id": "adzuna-5897472446",
@@ -1494,7 +1386,7 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/723401393-intermediate-environmental-planner",
    "source": "ECOWorks",
-   "posted": "2026-09-24T18:33:34.704Z",
+   "posted": "2026-09-24T19:06:15.669Z",
    "closingDate": null,
    "vehicleRequired": false,
    "tenure": "unknown",
@@ -1512,47 +1404,11 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/722760600-environmental-professional-level-2",
    "source": "ECOWorks",
-   "posted": "2026-09-24T18:33:34.704Z",
+   "posted": "2026-09-24T19:06:15.669Z",
    "closingDate": null,
    "vehicleRequired": false,
    "tenure": "temporary",
    "summary": "Contract · British Columbia, BC, CA"
-  },
-  {
-   "id": "ecoworks-723401394",
-   "title": "Senior Regulatory and Environmental Compliance Specialist - Contract",
-   "org": "Wolf Midstream",
-   "location": "Calgary, Alberta, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/723401394-senior-regulatory-and-environmental-compliance-specialist-contract",
-   "source": "ECOWorks",
-   "posted": "2026-09-24T18:33:34.704Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "temporary",
-   "summary": "Contract · Calgary, Alberta, Canada"
-  },
-  {
-   "id": "ecoworks-723401397",
-   "title": "Senior Environmental Professional (Biologist or Environmental Scientist)",
-   "org": "GEMTEC Consulting Engineers and Scientists Limited.",
-   "location": "Hanwell, New Brunswick, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/723401397-senior-environmental-professional-biologist-or-environmental-scientist",
-   "source": "ECOWorks",
-   "posted": "2026-09-24T18:33:34.704Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Full-time · Hanwell, New Brunswick, Canada"
   },
   {
    "id": "ecoworks-721959861",
@@ -1566,29 +1422,11 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/721959861-mine-environmental-technologist",
    "source": "ECOWorks",
-   "posted": "2026-09-24T18:33:34.704Z",
+   "posted": "2026-09-24T19:06:15.669Z",
    "closingDate": null,
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "Full-time · Nova Scotia, Canada, CA"
-  },
-  {
-   "id": "adzuna-5897122112",
-   "title": "Human Resources Director",
-   "org": "FLIR Systems, Inc.",
-   "location": "Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5897122112?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-24T12:38:56Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Human Resources Director, Machine Vision Cameras Be visionary Teledyne Technologies Incorporated provides enabling technologies for industrial growth markets that require advanced technology and high reliability. These markets include aerospace and defense, factory automation, air and water quality environmental monitoring, electronics design and development, oceanographic research, deepwater oil and gas exploration and production, medical imaging and pharmaceutical research. We are looking for…"
   },
   {
    "id": "adzuna-5896883466",
@@ -1672,7 +1510,7 @@
    "salaryMax": null,
    "salaryText": null,
    "category": "environmental",
-   "url": "https://www.adzuna.ca/land/ad/5896661377?se=TmHdBKK68RG3jpCv9xpWmA&utm_medium=api&utm_source=cc077b69&v=66FBF11202C654CFD56134DE1352FFED6C902F4D",
+   "url": "https://www.adzuna.ca/land/ad/5896661377?se=sK27lqa68RGSGMeOY8TrLw&utm_medium=api&utm_source=cc077b69&v=66FBF11202C654CFD56134DE1352FFED6C902F4D",
    "source": "Adzuna",
    "posted": "2026-09-24T06:48:42Z",
    "closingDate": null,
@@ -1690,7 +1528,7 @@
    "salaryMax": null,
    "salaryText": null,
    "category": "environmental",
-   "url": "https://www.adzuna.ca/land/ad/5896598179?se=7h76AqK68RGCw6kuTDrJlg&utm_medium=api&utm_source=cc077b69&v=3DEFD73B0172DE10FF4EA110ED2345E7C9EB1E47",
+   "url": "https://www.adzuna.ca/land/ad/5896598179?se=FpABlaa68RGK0eCS1o5FKw&utm_medium=api&utm_source=cc077b69&v=3DEFD73B0172DE10FF4EA110ED2345E7C9EB1E47",
    "source": "Adzuna",
    "posted": "2026-09-24T05:25:12Z",
    "closingDate": null,
@@ -1861,24 +1699,6 @@
    "summary": "Job Description Overview As part of the national Geomatics team, you will contribute to environmental analyses and the quality assurance of geospatial data for the ALTO project. Working with GIS, environmental, engineering, and design teams, you will define analysis and quality control methods, investigate significant data issues, interpret results, and communicate your findings to project teams. Your role Define and document spatial analysis, validation, and quality control methods applicable …"
   },
   {
-   "id": "adzuna-5896534003",
-   "title": "Manager, Environmental Approvals",
-   "org": "Lee Group Search",
-   "location": "Toronto, Ontario",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5896534003?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-24T04:45:42Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Manager, Environmental Approvals About the Company Our client is an established renewable energy developer with a growing portfolio of utility-scale solar and battery energy storage projects across Canada. The organization develops, finances, constructs, and operates renewable energy infrastructure and is expanding its team to support a significant pipeline of projects at various stages of development and construction. They are seeking experienced professionals who want to play a meaningful rol…"
-  },
-  {
    "id": "adzuna-5896532180",
    "title": "Archaeology Field Technician I",
    "org": "WSP",
@@ -2005,42 +1825,6 @@
    "summary": "The City of Mississauga · GTA, Ontario"
   },
   {
-   "id": "goodwork-76745",
-   "title": "Environmental Manager / Chef de Service",
-   "org": "Votorantim Cimentos North America, Quebec",
-   "location": "",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.goodwork.ca/jobs/environmental-management-emissions-compliance-wastewater-energy-and-ghg-reduction-76745",
-   "source": "GoodWork.ca",
-   "posted": "2026-09-24T00:00:00.000Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "full-time · Votorantim Cimentos North America, Quebec"
-  },
-  {
-   "id": "adzuna-5895853333",
-   "title": "Head of Carbon",
-   "org": "veritree",
-   "location": "Greater Vancouver, British Columbia",
-   "remote": "unknown",
-   "salaryMin": 120000,
-   "salaryMax": 150000,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5895853333?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-23T20:50:51Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "veritree & Job Overview veritree is an award-winning climate tech start-up based in Vancouver. Launched in 2021, our technology measures and verifies the impact of global restoration efforts from the ground up. We are on a mission to plant 1 billion verified trees by 2030, collaborating with businesses, planting organizations, and consumers who believe in the transformative power of verified restoration projects to create real and meaningful impact for the planet, nature, and people. veritree i…"
-  },
-  {
    "id": "adzuna-5895778158",
    "title": "Archaeology Field Technician I",
    "org": "WSP Canada",
@@ -2070,7 +1854,7 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/720779775-graduate-environmental-scientist-geoscientist-hiring-day-on",
    "source": "ECOWorks",
-   "posted": "2026-09-23T18:33:34.704Z",
+   "posted": "2026-09-23T19:06:15.669Z",
    "closingDate": null,
    "vehicleRequired": false,
    "tenure": "temporary",
@@ -2093,42 +1877,6 @@
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "Job Description Job Description Field Technician – Grande Prairie, AB Benchmark Data Solutions is an Alberta-owned and operated company with over 20 years of experience providing remote communication services, primarily to the oil & gas industry. Our team-oriented, people-first approach focuses on leveraging cutting-edge technology to meet our customers’ needs while maintaining a safe and supportive work environment for our staff. We are seeking a skilled and experienced Field Technician with a…"
-  },
-  {
-   "id": "adzuna-5895053280",
-   "title": "Supply Chain Operations Manager",
-   "org": "CarbonRun",
-   "location": "Dartmouth, Halifax region",
-   "remote": "hybrid",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5895053280?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-23T06:38:46Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Manager, Supply Chain Operations This role is based in Dartmouth, NS (hybrid) or Quebec (remote). Toronto, ON (hybrid) will also be considered. About CarbonRun CarbonRun is a fast-growing, venture-backed climate technology company developing river alkalinity enhancement (RAE) projects that improve watershed health while generating high-integrity, durable carbon dioxide removal. We partner with communities, utilities, conservation groups, and governments to restore ecosystems and deliver measura…"
-  },
-  {
-   "id": "adzuna-5894967495",
-   "title": "Senior Project Team Leader and Coordinator",
-   "org": "Taking Root",
-   "location": "Greater Vancouver, British Columbia",
-   "remote": "unknown",
-   "salaryMin": 87200,
-   "salaryMax": 122000,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5894967495?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-23T04:56:38Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "temporary",
-   "summary": "Why this role exists Taking Root is delivering a watershed management project in Nicaragua focused on climate change adaptation, protecting water recharge zones and scaling agroforestry systems across the Upper Rio Coco River Basin. As Senior Project Team Leader and Coordinator, you'll serve as the principal expert responsible for the overall coordination, technical direction, and delivery of this work. You'll work closely with the funding delegation, Taking Root departments, and a multidiscipl…"
   },
   {
    "id": "adzuna-5894961861",
@@ -2183,24 +1931,6 @@
    "vehicleRequired": false,
    "tenure": "unknown",
    "summary": "Laboratory Technician PSC Group is hiring entry-level Chemical Plant Laboratory Technicians! Support plant operations by performing precise lab tests and build a stable career in a booming industry. Join PSC for great benefits, a matching 401(k), and opportunities to grow. Apply now to become part of the PSC family! Job Duties & Responsibilities:• Performs testing as per standard methods and procedures• Sets up testing, operates and maintains equipment• Demonstrates integrity while performing t…"
-  },
-  {
-   "id": "adzuna-5894959232",
-   "title": "Director, Employee Relations and Job Evaluation",
-   "org": "Phelps Group",
-   "location": "Iqaluit, Baffin",
-   "remote": "unknown",
-   "salaryMin": 142582,
-   "salaryMax": 203688,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5894959232?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-23T04:44:18Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Director, Employee Relations, Job Evaluation and Return to Work About Nunavut Founded in 1999 and rooted in millennia of Inuit history and culture, the Government of Nunavut (GN) is shaping a strong future through investments in education, healthcare, culture, environmental stewardship, and sustainable economic growth. Named one of Canada’s Best Diversity Employers and a Top Employer for Young People and Recent Graduates, Nunavut is home to one of the youngest and fastest-growing populations in…"
   },
   {
    "id": "adzuna-5894956965",
@@ -2293,24 +2023,6 @@
    "summary": "High School Diploma; Technical Diploma in Environmental Studies is an asset; Work experience in the Environmental field is an asset; Ability and experience driving a vehicle; Strong work ethic, positive attitude and interpersonal skills; Willingness to learn; Position reserved for Nunavut Inuit Beneficiary candidates. ᐊᖓᔪᒃᖡᑦ ᐃᓕᓐᓂᐊᕐᕕᖕᒥ ᐃᓕᑕᕆᔭᐅᔾᔪᑎᑖᖅᓯᒪᓗᓂ ; ᐱᓕᕆᔾᔪᑎᓄᑦ ᐃᓕᑕᕆᔭᐅᔾᔪᑎᑖᖅᓯᒪᓗᓂ ᐊᕙᑎᓕᕆᓂᕐᒥᒃ ᐃᑲᔫᑎᖃᑦᑎᐊᕋᔭᖅᑐᖅ ; ᐱᓕᕆᖃᑦᑕᖅᓯᒪᓂᑰᓗᓂ ᐊᕙᑎᓕᕆᓂᕐᒥᒃ ᐃᑲᔪᕐᓂᖃᕋᔭᖅᐳᖅ ; ᐊᔪᙱᓐᓂᖃᕐᓗᓂ ᐱᓕᕆᖃᑦᑕᖅᓯᒪᓂᑰᓗᓂᓗ ᐊᖁᓐᓂᕐᒥᒃ ᐃᖏᕐᕋᔾᔪᑎᒥᒃ ; ᐃᖅᑲᓇᐃᔭᕈᓐᓇᑦ…"
   },
   {
-   "id": "adzuna-5894951399",
-   "title": "Senior Silviculture Forester",
-   "org": "Weyerhaeuser",
-   "location": "Grande Prairie region, Alberta",
-   "remote": "unknown",
-   "salaryMin": 89859,
-   "salaryMax": 130386,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5894951399?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-23T04:27:06Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Leading silviculture programs, with demonstrated accountability across planning, execution, budget, regulatory compliance, and performance outcomes. Registered Professional Forester (RPF) or Registered Professional Forest Technologist, or eligibility for registration in Alberta. Proven experience leading contractors and/or employees, setting expectations, managing performance, and delivering results through others in a contractor‑heavy operating environment. Strong understanding of silviculture…"
-  },
-  {
    "id": "adzuna-5894904790",
    "title": "Utility Groundperson [Arborist Assistant]",
    "org": "The Davey Tree Expert Company",
@@ -2347,24 +2059,6 @@
    "summary": "Company: Davey Tree Expert Co. of Canada, Limited Locations: Saskatoon, Saskatchewan Additional Locations: Travel is Required. Work Site: On Site Req ID: 229395 Position Overview As a Foreperson you will lead a team to various job sites throughout the week, ensuring the job is done right, on time and safely. You will be a subject matter expert providing guidance to the team and acting as a mentor for newer team members, assisting them in developing a better understanding of the Arboriculture pr…"
   },
   {
-   "id": "adzuna-5894405467",
-   "title": "Manager, Environmental Programs Compliance",
-   "org": "Harbour West Consulting",
-   "location": "Prince George, Fraser-Fort George",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5894405467?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-09-22T19:40:55Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Organizational Profile The Regional District of Fraser-Fort George (RDFFG) is located in north-central British Columbia and encompasses a mix of urban centers, rural communities, river valleys and mountain landscapes, including the municipalities of the City of Prince George, District of Mackenzie, Village of McBride, and Village of Valemount, along with seven electoral areas that serve rural and unincorporated communities across the region. The RDFFG provides a range of regional and community …"
-  },
-  {
    "id": "adzuna-5894309780",
    "title": "Laboratory Assistant",
    "org": "Auxilium Health",
@@ -2381,24 +2075,6 @@
    "vehicleRequired": false,
    "tenure": "permanent",
    "summary": "LD-NI JOB DESCRIPTION POSITION Laboratory Assistant COMPANY AND LOCATION Stratum Analytical, Oshawa, ON EMPLOYMENT TYPE Permanent, Full Time HOURS WORKED 37.5 hours/week DIRECT REPORTS No ________________________________________________________________________________ POSITION SUMMARY: The Laboratory Assistant supports daily laboratory operations by assisting with laboratory maintenance, sample preparation, routine testing, environmental monitoring, equipment maintenance, and record keeping. Wo…"
-  },
-  {
-   "id": "WorkCabin-https://www.workcabin.ca/?post_type=job_listing&#038;p=48334",
-   "title": "Vice President, Philanthropy",
-   "org": "Nature Conservancy of Canada",
-   "location": "Central Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.workcabin.ca/job/nature-conservancy-of-canada-toronto-ontario-other-major-centres-could-be-considered-full-time-vice-president-philanthropy/",
-   "source": "WorkCabin",
-   "posted": "2026-09-22T16:22:01.000Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "permanent",
-   "summary": "POSITION: Vice President, Philanthropy LOCATION: Toronto, Ontario (other major centres could be considered) POSITION DETAILS: Full Time, Permanent REPORTS TO: President &#38; CEO DIRECT REPORTS: Senior Director of Campaign &#38; Development Operations, Director of Planned Giving, Director of Corporate Development, Director of Conservation Philanthropy, Director of Business Intelligence &#38; Operations, and an Executive Assistant WEBSITE:"
   },
   {
    "id": "adzuna-5893820746",
@@ -2471,24 +2147,6 @@
    "vehicleRequired": false,
    "tenure": "temporary",
    "summary": "ERM is hiring an Environmental Field Technician to support pre-construction surveys and environmental monitoring mainly near Smithers, British Columbia, and in northern Canada. In this role, you will lead pre-construction surveys and monitor construction and operational activities at a variety of project sites. This is a full-time (12 hours per day, 84 hours per week, 2 weeks on, 2 weeks off), limited-term role with a duration of 4 months, extendable . Training will be provided for client-speci…"
-  },
-  {
-   "id": "WorkCabin-https://www.workcabin.ca/?post_type=job_listing&#038;p=48329",
-   "title": "Director, Affiliate Partnerships",
-   "org": "Canadian Wildlife Federation",
-   "location": "Other",
-   "remote": "hybrid",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": "112,368 to 140,460",
-   "category": "environmental",
-   "url": "https://www.workcabin.ca/job/canadian-wildlife-federation-based-out-of-cwfs-head-office-in-ottawa-on-kanata-with-hybrid-flexibility-to-work-from-home-two-consecutive-days-per-week-or-remote-anywhere-in-canada-full-t/",
-   "source": "WorkCabin",
-   "posted": "2026-09-21T14:02:20.000Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "permanent",
-   "summary": "Title: Director, Affiliate Partnerships Reports to: Vice President, Conservation Duration: Indeterminate Location: Ottawa, ON (hybrid) or other location in Canada Hiring Range: $112,368-$140,460 &#8211; Compensation above this range may be considered for candidates with significant experience or specialized expertise. Who We Are The Canadian Wildlife Federation (CWF) is a national not-for-profit charitable organization dedicated to"
   },
   {
    "id": "adzuna-5892742010",
@@ -2610,29 +2268,11 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/686814551-co-op-student-environmental-technician",
    "source": "ECOWorks",
-   "posted": "2026-09-20T18:33:34.704Z",
+   "posted": "2026-09-20T19:06:15.669Z",
    "closingDate": null,
    "vehicleRequired": false,
    "tenure": "temporary",
    "summary": "Internship · Terrace, British Columbia, Canada"
-  },
-  {
-   "id": "ecoworks-693773810",
-   "title": "Environmental Technician (Jr. Project Manager)",
-   "org": "AET Group Inc",
-   "location": "Kitchener, Ontario, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": "C$ 72.15k / year",
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/693773810-environmental-technician-jr-project-manager",
-   "source": "ECOWorks",
-   "posted": "2026-09-20T18:33:34.704Z",
-   "closingDate": null,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Full-time · Kitchener, Ontario, Canada"
   }
  ]
 }
