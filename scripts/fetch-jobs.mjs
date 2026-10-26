@@ -166,6 +166,7 @@ function normalize(raw) {
     vehicleRequired: raw.vehicleRequired ?? needsOwnVehicle(blob),
     tenure: raw.tenure || tenure(blob, raw.employmentType),
     summary: stripTags(raw.summary || "").slice(0, 600) || null,
+    _text: stripTags(full),   // full posting text for the qualification check; not written out
   };
 }
 
@@ -717,6 +718,126 @@ jobs = jobs.filter(j => {
 });
 
 jobs.sort((a, b) => new Date(b.posted) - new Date(a.posted));
+
+/* ------------------- qualification check ------------------- */
+// Interest-matching (keywords) says "this is the kind of job I want"; this says "can I
+// actually get it?". For each kept job, read the full posting (fetching the job page when
+// the source only gave a title) and look for hard requirements the owner doesn't meet —
+// see cfg.profile. fit = "yes" | "check" | "no" | "unknown", with plain-English fitWhy.
+
+const ASSET_RE = /\b(asset|assets|preferred|preference|ideal(ly)?|nice to have|an advantage|a plus|bonus|desirable|would be beneficial)\b/i;
+const NEED_RE = /\b(requir\w*|must|essential|mandatory|minimum|need(ed|s)?|qualifications?|hold|possess|valid|registered|registration|in good standing|eligib\w+)\b/i;
+const sentences = t => t.split(/(?<=[.;!?•])\s+|\s[-–•*]\s|\s{2,}/).filter(s => s.length > 3);
+
+// Credentials the owner does NOT hold (sources.json "profile" lists what he does have).
+// [case-insensitive phrases, case-sensitive acronyms (so "Oct 15" isn't OCT), what to say]
+const CREDS = [
+  [/\bp\.\s?eng\b|professional engineer|engineer[- ]in[- ]training/i, /\bP\.?Eng\b|\bEIT\b/, "a P.Eng / EIT engineering licence"],
+  [/\bp\.\s?geo\b|professional geoscientist/i, /\bP\.?Geo\b/, "a P.Geo licence"],
+  [/registered professional forester/i, /\bRPF\b/, "RPF (registered forester) status"],
+  [/\bp\.\s?ag\b|professional agrologist/i, /\bP\.?Ag\b/, "P.Ag (agrologist) registration"],
+  [/college of medical laboratory technologists|registered medical laboratory technologist/i, /\bCMLTO\b|\bCSMLS\b/, "CMLTO / CSMLS medical-lab registration"],
+  [/ontario college of teachers|ontario certified teacher|certified teacher|teaching (licen[cs]e|certificate)/i, /\bOCT\b/, "Ontario College of Teachers certification (you're still working on it)"],
+  [/certified arborist|isa certification/i, null, "ISA Certified Arborist status"],
+  [/registered early childhood educator/i, /\bRECE\b/, "RECE (early childhood) registration"],
+  [/certificate in public health inspection/i, /\bCPHI\(C\)/, "the CPHI(C) public-health inspector certificate"],
+  [/registered nurse|chartered professional accountant|certified engineering technologist/i, /\bCPA\b|\bC\.E\.T\./, "a professional designation you don't hold"],
+];
+const NUMW = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
+
+function yearsRequired(t) {
+  let max = 0;
+  const take = (n, at, len) => {
+    const ctx = t.slice(Math.max(0, at - 90), at + len + 70);
+    if (ASSET_RE.test(ctx)) return;                      // "3 years … is an asset"
+    if (/\d\s*(-|–|to)\s*$/.test(t.slice(Math.max(0, at - 5), at))) return;   // a range like "0-5 years"
+    if (n > max && n < 20) max = n;
+  };
+  for (const m of t.matchAll(/\b(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten)\s*(?:\(\d+\)\s*)?(?:\+|or more|plus)?\s*(?:years?|yrs?)\b[^.;]{0,50}?\bexperience/gi))
+    take(NUMW[m[1].toLowerCase()] ?? +m[1], m.index, m[0].length);
+  // Job Bank's structured field: "Experience 2 years to less than 3 years" / "5 years or more"
+  for (const m of t.matchAll(/experience:?\s*(\d{1,2}) years? (?:to less than|or more)/gi))
+    take(+m[1], m.index, m[0].length);
+  return max;
+}
+
+function assessFit(j) {
+  const t = j._text || "";
+  const title = j.title;
+  const no = [], check = [], plus = [];
+  const P = cfg.profile || {};
+
+  // --- from the title alone ---
+  if (/post-?doc/i.test(title)) no.push("needs a completed PhD");
+  if (/\b(supply|occasional|lto)\b.{0,20}\bteacher|\bteacher\b.{0,20}\b(supply|occasional)\b/i.test(title))
+    no.push("Ontario school-board teaching needs OCT certification (you're still working on it)");
+  if (/medical laboratory technologist/i.test(title) && !/assistant|technician/i.test(title))
+    no.push("medical lab technologist roles need CMLTO registration");
+  if (/\bstudent\b/i.test(title) && /GC Jobs|University of Toronto/.test(j.source))
+    no.push("only open to current students");
+  if (/\b(co-?op|summer student|internship)\b/i.test(title) && !t) check.push("often only open to current students");
+  if (/educational assistant|education assistant/i.test(title))
+    check.push("school boards usually ask for an EA / ECE college certificate");
+
+  // --- from the posting text ---
+  if (t) {
+    const recruitingStudents = /ph\.?d\.? (position|studentship|opportunit|project|candidate)|graduate (student )?position|m\.?sc\.? (position|opportunit)|funded/i.test(title);
+    if (!recruitingStudents && /full[- ]time student status|must be (a )?(currently )?(registered|enrolled)|currently enrolled|be enrolled (as a )?(full|in a|in an)|returning to (full[- ]time )?(studies|school)|must be a (full[- ]time )?student/i.test(t))
+      no.push("only open to current students");
+    if (/(completed|hold|holds|possess|possession of) (a |an )?(ph\.?\s?d|doctora)|(ph\.?\s?d\.?|doctoral degree|doctorate)\b[^.]{0,40}\b(is )?(required|essential)/i.test(t))
+      no.push("needs a PhD");
+    for (const s of sentences(t)) {
+      if (ASSET_RE.test(s) || !NEED_RE.test(s)) continue;
+      for (const [ci, cs, what] of CREDS) if (ci.test(s) || (cs && cs.test(s))) no.push("asks for " + what);
+      if (/canadian citizen(ship)?\b/i.test(s) && !/permanent resident/i.test(s)) no.push("requires Canadian citizenship (you're a permanent resident)");
+    }
+    // (GC Jobs boilerplate "Selection MAY be limited to members of … equity groups" is not a restriction)
+    if (/(?<!may be )(open|restricted|limited) (only )?to (indigenous|first nations|members of (the following )?(designated )?employment equity)|self-identify as (an )?indigenous[^.]{0,40}(required|must)/i.test(t))
+      no.push("restricted to an employment-equity group");
+    const res = t.match(/persons? (?:residing|living)(?: or employed)? (?:in|within) ([^.;]{3,140})/i)
+      || t.match(/must (?:reside|live) within ([^.;]{3,100})/i);
+    if (res && !/\b(canada|ontario|toronto|gta|greater toronto)\b/i.test(res[1]))
+      no.push("only open to people already living in " + res[1].replace(/\s*(who|and|,).*$/i, "").slice(0, 60));
+    const yrs = yearsRequired(t);
+    const have = P.years_experience || 4;
+    if (yrs > have + 1) no.push(`asks for ${yrs}+ years of experience`);
+    else if (yrs >= Math.max(3, have - 1)) check.push(`asks for ${yrs} years of experience — count your lab, GIS and field years`);
+    if (/\b(bilingual|french)\b/i.test(t)) plus.push("French / bilingual — a plus for you");
+  }
+
+  const uniq = a => [...new Set(a)];
+  if (no.length) return { fit: "no", fitWhy: uniq(no) };
+  if (check.length) return { fit: "check", fitWhy: uniq(check) };
+  if (!t || t.length < 300) return { fit: "unknown", fitWhy: ["couldn't read the requirements — open the posting"] };
+  return { fit: "yes", fitWhy: uniq(plus) };
+}
+
+// Fetch the job page for postings whose source only gave a title / short blurb.
+async function detailText(j) {
+  const u = j.id.startsWith("adzuna-") ? "https://www.adzuna.ca/details/" + j.id.slice(7) : j.url;
+  const r = await fetch(u, { headers: BROWSER_HEADERS, redirect: "follow", signal: AbortSignal.timeout(20000) });
+  if (!r.ok) throw new Error(r.status);
+  const h = await r.text();
+  // Skip GC Jobs' "You will leave the GC Jobs Web site" stub pages.
+  if (/You will leave the GC Jobs Web site/.test(h)) return "";
+  return stripTags(h.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<nav[\s\S]*?<\/nav>|<header[\s\S]*?<\/header>|<footer[\s\S]*?<\/footer>/gi, " ")).slice(0, 30000);
+}
+{
+  const need = jobs.filter(j => (j._text || "").length < 600).slice(0, cfg.fit_max_fetch || 250);
+  let i = 0, ok = 0;
+  await Promise.all(Array.from({ length: 6 }, async () => {
+    while (i < need.length) {
+      const j = need[i++];
+      try { const t = await detailText(j); if (t.length > (j._text || "").length) { j._text = t; ok++; } }
+      catch (e) { /* keep what we have */ }
+    }
+  }));
+  console.log(`Qualification check: read ${ok}/${need.length} job pages`);
+  for (const j of jobs) Object.assign(j, assessFit(j));
+  const byFit = jobs.reduce((m, j) => (m[j.fit] = (m[j.fit] || 0) + 1, m), {});
+  console.log("  by fit:", byFit);
+}
+for (const j of jobs) delete j._text;
 
 console.log(`Kept ${jobs.length} after filter + dedupe`);
 const byCat = jobs.reduce((m, j) => (m[j.category] = (m[j.category] || 0) + 1, m), {});
