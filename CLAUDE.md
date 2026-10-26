@@ -63,16 +63,29 @@ transit-accessible (no personal vehicle). Adjust via `sources.json` and the
 - `.github/workflows/update-jobs.yml` — cron every 6h + manual dispatch; commits
   `data/jobs.json`; that push redeploys the host.
 
+## Qualification check (2026-10-26)
+
+- After filtering, `fetch-jobs.mjs` reads each kept job's full text (fetching the job page
+  when the source only gave a title — Adzuna via `adzuna.ca/details/<id>`) and runs
+  `assessFit()`: `fit` = yes / check / no / unknown + plain-English `fitWhy`.
+- "no" = a hard requirement the owner lacks (sources.json `profile`): completed PhD, years of
+  experience > `years_experience`+1, a licence (P.Eng/EIT, P.Geo, RPF, P.Ag, CMLTO/CSMLS, OCT,
+  ISA, RECE, CPHI), current-student status, Canadian citizenship, equity-group-only, or
+  "persons residing in <town>". Sentences containing "asset/preferred" are ignored.
+  GC Jobs' "selection MAY be limited to equity groups" boilerplate is NOT a restriction.
+- Frontend hides "no" by default ("Do I qualify?" checkbox; `?fit=all` shows them).
+
 ## Fields & the frontend
+
+- Three tabs (2026-10-26): **Research** (category research, any location, GTA first) ·
+  **In my area** (GTA + remote) · **Anywhere in Canada** (everything else). `?tab=`.
 
 - Fields: `environmental` / `research` / `education` (+ `other`, off by default).
 - Extra per-job signals surfaced as tags & filters: `closingDate` ("closes in N days"),
   `vehicleRequired` ("car needed", hidden by default), `tenure` (permanent / seasonal),
   transit commute estimate from Toronto (`COMMUTE` table: ttc / go / hard / remote).
-- Local ("In your area") jobs render first; the secondary section "Worth moving for —
-  elsewhere in Canada" (shown when viewing the GTA, permanent first, up to 20) renders
-  below it. Since 2026-10-26 the owner is open to relocating, so out-of-GTA seasonal /
-  contract roles are shown too, and "Hard without a car / would move" is on by default.
+- Since 2026-10-26 the owner is open to relocating: out-of-GTA seasonal / contract roles are
+  shown (Anywhere in Canada tab), and "Hard without a car / would move" is on by default.
 - Theme: auto / light / dark toggle in the header (button, `data-action="theme"`),
   persisted in `localStorage.js_theme`. "auto" follows `prefers-color-scheme`. Palette
   is all CSS custom properties; an inline `<head>` script applies the saved theme

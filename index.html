@@ -149,6 +149,16 @@
   .tag.comm-go{color:var(--comm-go-fg); border-color:var(--comm-go-line)}
   .tag.comm-hard{color:var(--comm-hard-fg); border-color:var(--comm-hard-line)}
   .tag.comm-remote{color:var(--comm-remote-fg)}
+  .tag.fit-yes{color:var(--comm-ttc-fg); border-color:var(--comm-ttc-line)}
+  .tag.fit-check{color:var(--warn); border-color:var(--warn)}
+  .tag.fit-no{color:var(--car-fg); border-color:var(--car-line)}
+  .tabs{display:flex; gap:6px; margin-bottom:14px; border-bottom:1px solid var(--line); flex-wrap:wrap}
+  .tabs button{
+    background:none; border:0; border-bottom:3px solid transparent; color:var(--muted);
+    padding:8px 12px; font:inherit; font-size:15px; cursor:pointer; margin-bottom:-1px;
+  }
+  .tabs button.active{color:var(--text); border-bottom-color:var(--accent); font-weight:600}
+  .tabs .n{font-size:12px; color:var(--muted); font-weight:400}
   .empty{color:var(--muted); padding:40px 10px; text-align:center}
   .sources-panel{margin-top:26px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); padding:12px 16px}
   .sources-panel summary{cursor:pointer; font-size:13px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted)}
@@ -181,20 +191,17 @@
     </div>
 
     <div class="fgroup">
-      <h2>Where</h2>
-      <div class="seg" id="regionSeg">
-        <button data-action="region" data-v="gta" class="active">GTA</button>
-        <button data-action="region" data-v="canada">All Canada</button>
-        <button data-action="region" data-v="remote">Remote</button>
-      </div>
+      <h2>Do I qualify?</h2>
+      <label class="row"><input type="checkbox" id="hideNoFit" data-action="filter" checked> Hide jobs I probably don't qualify for</label>
+      <div class="hint">Each posting is read for hard requirements you don't meet &mdash; a PhD, too many years of experience, a licence (P.Eng, OCT, CMLTO&hellip;), current-student status, citizenship, or living in a specific town. It's a keyword check, so skim the posting anyway.</div>
     </div>
 
     <div class="fgroup">
       <h2>Field</h2>
       <label class="row"><input type="checkbox" data-action="filter" class="cat" value="environmental" checked> Environmental / restoration / GIS</label>
-      <label class="row"><input type="checkbox" data-action="filter" class="cat" value="research" checked> Research / field / lab</label>
       <label class="row"><input type="checkbox" data-action="filter" class="cat" value="education" checked> Teaching / education</label>
       <label class="row"><input type="checkbox" data-action="filter" class="cat" value="other"> Other</label>
+      <div class="hint">Research / field / lab jobs have their own tab.</div>
     </div>
 
     <div class="fgroup">
@@ -256,18 +263,23 @@
   </aside>
 
   <main>
+    <div class="tabs" id="tabs">
+      <button data-action="tab" data-v="research">Research <span class="n" id="n-research"></span></button>
+      <button data-action="tab" data-v="gta" class="active">In my area <span class="n" id="n-gta"></span></button>
+      <button data-action="tab" data-v="canada">Anywhere in Canada <span class="n" id="n-canada"></span></button>
+    </div>
     <div class="results-head">
       <span class="count" id="count"></span>
       <label class="row" style="margin:0">Sort
         <select id="sort" data-action="filter" style="width:auto; margin-left:6px">
           <option value="new">Newest</option>
+          <option value="fit">Best fit first</option>
           <option value="salary">Highest salary</option>
         </select>
       </label>
     </div>
 
     <div id="list"></div>
-    <div id="overqualified"></div>
 
     <details class="sources-panel" id="sourcesPanel">
       <summary>Source status <span id="srcSummary"></span></summary>
@@ -315,7 +327,7 @@ const GTA = ["toronto","mississauga","brampton","markham","vaughan","richmond hi
 const state = {
   jobs: [],
   meta: null,
-  region: "gta",
+  tab: "gta",
   hidden: load("js_hidden", []),
   saved: load("js_saved", []),
 };
@@ -392,7 +404,8 @@ function commuteInfo(j){
 function readURL(){
   const p = new URLSearchParams(location.search);
   if(p.get("q")) el("q").value = p.get("q");
-  if(p.get("region")) state.region = p.get("region");
+  if(p.get("tab") && ["research","gta","canada"].includes(p.get("tab"))) state.tab = p.get("tab");
+  if(p.get("fit") === "all") el("hideNoFit").checked = false;
   if(p.get("salary")) el("salMin").value = p.get("salary");
   if(p.get("age")) el("age").value = p.get("age");
   if(p.get("sort")) el("sort").value = p.get("sort");
@@ -400,18 +413,19 @@ function readURL(){
     const want = p.get("fields").split(",");
     document.querySelectorAll(".cat").forEach(c => c.checked = want.includes(c.value));
   }
-  document.querySelectorAll("#regionSeg button").forEach(b =>
-    b.classList.toggle("active", b.dataset.v === state.region));
+  document.querySelectorAll("#tabs button").forEach(b =>
+    b.classList.toggle("active", b.dataset.v === state.tab));
 }
 function writeURL(){
   const p = new URLSearchParams();
   if(el("q").value.trim()) p.set("q", el("q").value.trim());
-  p.set("region", state.region);
+  p.set("tab", state.tab);
+  if(!el("hideNoFit").checked) p.set("fit", "all");
   if(+el("salMin").value) p.set("salary", el("salMin").value);
   p.set("age", el("age").value);
   if(el("sort").value !== "new") p.set("sort", el("sort").value);
   const cats = [...document.querySelectorAll(".cat:checked")].map(c=>c.value);
-  if(cats.length !== 3 || cats.includes("other")) p.set("fields", cats.join(","));
+  if(cats.length !== 2 || cats.includes("other")) p.set("fields", cats.join(","));
   try{ history.replaceState(null, "", location.pathname + (p.toString() ? "?"+p : "")); }catch{}
 }
 
@@ -424,8 +438,11 @@ function matches(j){
     const hay = (j.title+" "+j.org+" "+(j.summary||"")).toLowerCase();
     if(!q.split(/\s+/).every(t => hay.includes(t))) return false;
   }
+  // Research jobs live in their own tab, so the Field checkboxes only apply to the others.
   const cats = [...document.querySelectorAll(".cat:checked")].map(c=>c.value);
-  if(!cats.includes(j.category)) return false;
+  if(j.category !== "research" && !cats.includes(j.category)) return false;
+
+  if(el("hideNoFit").checked && j.fit === "no") return false;
 
   const modes = [...document.querySelectorAll(".mode:checked")].map(c=>c.value);
   if(!modes.includes(j.remote || "unknown")) return false;
@@ -456,57 +473,46 @@ function matches(j){
 
   const isHidden = state.hidden.includes(j.id);
   if(isHidden && !el("showHidden").checked) return false;
-
-  // region
-  if(state.region === "remote") return (j.remote === "remote");
-  if(state.region === "gta") return inGTA(j.location) || j.remote === "remote";
-  return true; // all canada
+  return true;
 }
+
+/* Three tabs: Research (any location) · In my area (GTA + remote) · Anywhere in Canada
+   (everything else — the owner is open to relocating as of 2026-10). */
+function tabOf(j){
+  if(j.category === "research") return "research";
+  return (inGTA(j.location) || j.remote === "remote") ? "gta" : "canada";
+}
+const FIT_ORDER = {yes:0, check:1, unknown:2, no:3};
 
 function render(){
   writeURL();
-  let rows = state.jobs.filter(matches);
+  const all = state.jobs.filter(matches);
+  for(const t of ["research","gta","canada"])
+    el("n-"+t).textContent = "(" + all.filter(j => tabOf(j) === t).length + ")";
+  let rows = all.filter(j => tabOf(j) === state.tab);
   const sort = el("sort").value;
   rows.sort((a,b) => sort === "salary"
     ? (b.salaryMax||b.salaryMin||0) - (a.salaryMax||a.salaryMin||0)
-    : new Date(b.posted) - new Date(a.posted));
+    : sort === "fit"
+    ? (FIT_ORDER[a.fit] ?? 2) - (FIT_ORDER[b.fit] ?? 2) || new Date(b.posted) - new Date(a.posted)
+    // Research tab: GTA jobs first, then newest.
+    : (state.tab === "research" ? (tabOf({...b, category:""}) === "gta") - (tabOf({...a, category:""}) === "gta") : 0)
+      || new Date(b.posted) - new Date(a.posted));
 
   el("count").textContent = rows.length + " job" + (rows.length===1?"":"s");
 
-  // Secondary section: roles elsewhere in Canada worth moving for (owner is open to
-  // relocating as of 2026-10). Only when viewing the GTA; permanent roles listed first.
-  let over = [];
-  if(state.region === "gta"){
-    const q = el("q").value.trim().toLowerCase();
-    const cats = [...document.querySelectorAll(".cat:checked")].map(c=>c.value);
-    const tens = [...document.querySelectorAll(".ten:checked")].map(c=>c.value);
-    over = state.jobs.filter(j => {
-      if(!tens.includes(j.tenure || "unknown")) return false;
-      if(!cats.includes(j.category)) return false;
-      if(inGTA(j.location) || j.remote === "remote") return false;
-      if(el("hideCar").checked && j.vehicleRequired) return false;
-      if(state.hidden.includes(j.id)) return false;
-      if(j.category === "education") return false; // not worth relocating for an EA / tutor job
-      if(!ageOK(j)) return false;
-      if(closesInfo(j)?.expired) return false;
-      if(q){
-        const hay = (j.title+" "+j.org+" "+(j.summary||"")).toLowerCase();
-        if(!q.split(/\s+/).every(t => hay.includes(t))) return false;
-      }
-      return true;
-    }).sort((a,b) => (b.tenure === "permanent") - (a.tenure === "permanent")
-      || new Date(b.posted) - new Date(a.posted)).slice(0,20);
-  }
-
-  el("overqualified").innerHTML = over.length ? `
-    <div class="section-title">
-      <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>
-      Worth moving for &mdash; elsewhere in Canada
-    </div>` + over.map(cardHTML).join("") : "";
-
   el("list").innerHTML = rows.length
-    ? (over.length ? `<div class="section-title" style="color:var(--muted)">In your area</div>` : "") + rows.map(cardHTML).join("")
+    ? rows.map(cardHTML).join("")
     : `<div class="empty">No jobs match these filters.<br>Try widening the date range or lowering the salary floor.</div>`;
+}
+
+function fitTag(j){
+  const why = (j.fitWhy || []).join(" · ");
+  if(j.fit === "yes") return `<span class="tag fit-yes" title="${esc(why || "No requirement you're missing was found")}">✓ you likely qualify${why ? " · " + esc(why) : ""}</span>`;
+  if(j.fit === "check") return `<span class="tag fit-check">⚠ check: ${esc(why)}</span>`;
+  if(j.fit === "no") return `<span class="tag fit-no">✗ probably not: ${esc(why)}</span>`;
+  if(j.fit === "unknown") return `<span class="tag">requirements not read — open the posting</span>`;
+  return "";
 }
 
 function cardHTML(j){
@@ -519,6 +525,7 @@ function cardHTML(j){
     <h3><a href="${j.url}" target="_blank" rel="noopener">${esc(j.title)}</a></h3>
     <div class="org">${esc(j.org)} · ${esc(j.location||"—")} · ${agoLabel(j.posted)}</div>
     <div class="tags">
+      ${fitTag(j)}
       ${sal ? `<span class="tag sal">${esc(sal)}</span>` : `<span class="tag">salary n/a</span>`}
       <span class="tag cat-${j.category}">${j.category}</span>
       ${j.remote && j.remote!=="unknown" ? `<span class="tag">${j.remote}</span>` : ""}
@@ -557,9 +564,9 @@ document.addEventListener("click", e => {
   const a = e.target.closest("[data-action]");
   if(!a) return;
   const act = a.dataset.action;
-  if(act === "region"){
-    state.region = a.dataset.v;
-    document.querySelectorAll("#regionSeg button").forEach(b => b.classList.toggle("active", b===a));
+  if(act === "tab"){
+    state.tab = a.dataset.v;
+    document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("active", b===a));
     render();
   }
   if(act === "reset"){
@@ -639,11 +646,11 @@ function renderSourcePanel(rows){
       <span class="nm">${esc(r.name)}</span>
       <span class="ms">${esc(words[r.state]||r.state)}${typeof r.kept === "number" && r.state==="ok" ? ` · ${r.kept} live` : ""} — ${esc(r.message||"")}</span>
     </div>`).join("")
-    + (offRows.length ? `<div class="src-row src-off">
+    + offRows.map(r => `<div class="src-row src-off">
       <span class="dot off"></span>
-      <span class="nm">Not set up</span>
-      <span class="ms">${offRows.map(r => esc(r.name)).join(", ")} — optional; add config in <code>sources.json</code> to enable.</span>
-    </div>` : "");
+      <span class="nm">${esc(r.name)}</span>
+      <span class="ms">off — ${esc(r.message||"")}</span>
+    </div>`).join("");
 }
 boot();
 </script>
