@@ -32,7 +32,7 @@
 
   "locations": ["Toronto ON", "Mississauga ON", "Vaughan ON", "Ontario", "Canada"],
 
-  "_profile_rule": "Used by the qualification check in fetch-jobs.mjs: each kept job is tagged fit = yes / check / no / unknown. 'no' = the posting asks for something below that the owner doesn't have (a PhD, more years of experience than years_experience + 1, a licence such as P.Eng / OCT / CMLTO / ISA arborist, current student status, Canadian citizenship, membership of an employment-equity group, or living in a specific town). The site hides 'no' jobs by default.",
+  "_profile_rule": "Used by the qualification check in fetch-jobs.mjs: each kept job is tagged fit = yes / check / no / unknown. 'no' = the posting asks for something below that the owner doesn't have (a PhD, more years of experience than years_experience + 1, a licence such as P.Eng / OCT / CMLTO / ISA arborist, current student status, membership of an employment-equity group, or living in a specific town). The site hides 'no' jobs by default.",
   "profile": {
     "years_experience": 4,
     "highest_degree": "masters",
@@ -41,7 +41,7 @@
   },
   "fit_max_fetch": 250,
 
-  "_vehicle_rule": "The site owner drives (Ontario G2) but has no vehicle of their own. The fetcher flags a job only if its text requires the applicant's OWN vehicle ('own/personal/reliable vehicle', 'access to a vehicle', 'provide your own transportation') OR a FULL Class G licence (not G2). The site hides flagged jobs by default. A plain 'valid driver's licence', 'G2 acceptable', crew transport, or a provided company/fleet vehicle is NOT flagged.",
+  "_vehicle_rule": "The site owner drives (getting a full Class G) but has no vehicle of their own. The fetcher flags a job only if its text requires the applicant's OWN vehicle ('own/personal/reliable vehicle', 'access to a vehicle', 'provide your own transportation'). The site hides flagged jobs by default. Any driver's licence requirement (G2 or full G), crew transport, or a provided company/fleet vehicle is NOT flagged. Citizenship wording is only a soft 'check' (owner is a permanent resident).",
 
   "_relocation_rule": "Updated 2026-10-26: the owner is now open to leaving Toronto. GTA jobs are listed first; jobs anywhere else in Canada (permanent AND seasonal/contract) appear in a 'Worth moving for' section, permanent first. Education jobs outside the GTA are still left out of that section.",
 

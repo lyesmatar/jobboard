@@ -70,7 +70,7 @@ transit-accessible (no personal vehicle). Adjust via `sources.json` and the
   `assessFit()`: `fit` = yes / check / no / unknown + plain-English `fitWhy`.
 - "no" = a hard requirement the owner lacks (sources.json `profile`): completed PhD, years of
   experience > `years_experience`+1, a licence (P.Eng/EIT, P.Geo, RPF, P.Ag, CMLTO/CSMLS, OCT,
-  ISA, RECE, CPHI), current-student status, Canadian citizenship, equity-group-only, or
+  ISA, RECE, CPHI), current-student status, equity-group-only, or
   "persons residing in <town>". Sentences containing "asset/preferred" are ignored.
   GC Jobs' "selection MAY be limited to equity groups" boilerplate is NOT a restriction.
 - Frontend hides "no" by default ("Do I qualify?" checkbox; `?fit=all` shows them).
