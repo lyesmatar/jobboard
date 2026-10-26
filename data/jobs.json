@@ -1,14 +1,14 @@
 {
- "generated": "2026-10-26T13:15:46.139Z",
- "count": 133,
+ "generated": "2026-10-26T14:34:39.061Z",
+ "count": 134,
  "sources": [
   {
    "id": "jobbank-ca",
    "name": "Job Bank Canada",
-   "raw": 208,
+   "raw": 254,
    "state": "ok",
-   "message": "Fetched 208 raw postings this run.",
-   "kept": 4
+   "message": "Fetched 254 raw postings this run.",
+   "kept": 5
   },
   {
    "id": "adzuna-ca",
@@ -29,25 +29,25 @@
   {
    "id": "city-of-toronto",
    "name": "City of Toronto",
-   "raw": 127,
+   "raw": 128,
    "state": "ok",
-   "message": "Fetched 127 raw postings this run.",
+   "message": "Fetched 128 raw postings this run.",
    "kept": 1
   },
   {
    "id": "uoft",
    "name": "University of Toronto",
-   "raw": 280,
+   "raw": 282,
    "state": "ok",
-   "message": "Fetched 280 raw postings this run.",
+   "message": "Fetched 282 raw postings this run.",
    "kept": 13
   },
   {
    "id": "gcjobs",
    "name": "GC Jobs (federal)",
-   "raw": 405,
+   "raw": 410,
    "state": "ok",
-   "message": "Fetched 405 raw postings this run.",
+   "message": "Fetched 410 raw postings this run.",
    "kept": 20
   },
   {
@@ -117,7 +117,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Natural Resources Canada · Various language requirements and/or profiles · $58,563"
+   "summary": "Natural Resources Canada · Various language requirements and/or profiles · $58,563",
+   "fit": "no",
+   "fitWhy": [
+    "needs a completed PhD"
+   ]
   },
   {
    "id": "gcjobs-2452088",
@@ -136,7 +140,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Statistics Canada · Various language requirements and/or profiles · $71,741 to $90,184"
+   "summary": "Statistics Canada · Various language requirements and/or profiles · $71,741 to $90,184",
+   "fit": "yes",
+   "fitWhy": [
+    "French / bilingual — a plus for you"
+   ]
   },
   {
    "id": "gcjobs-2263508",
@@ -155,7 +163,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Indigenous Services Canada - First Nations and Inuit Health Branch · Various language requirements and/or profiles · $86,801 to $109,119"
+   "summary": "Indigenous Services Canada - First Nations and Inuit Health Branch · Various language requirements and/or profiles · $86,801 to $109,119",
+   "fit": "no",
+   "fitWhy": [
+    "asks for the CPHI(C) public-health inspector certificate"
+   ]
   },
   {
    "id": "gcjobs-2454062",
@@ -174,7 +186,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English or French essential · $25.17 to $38.38 per hour (Master: $25.17 to $31.69; Doctorate: $29.64 to $38.38 - Varies as per level of education and experience.)"
+   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English or French essential · $25.17 to $38.38 per hour (Master: $25.17 to $31.69; Doctorate: $29.64 to $38.38 - Varies as per level of education and experience.)",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2461365",
@@ -193,7 +209,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Natural Resources Canada - Canadian Forest Service - Atlantic Forestry Centre · English essential · Scholarship of approximately $25,500/year divided into 3 equal installments each year."
+   "summary": "Natural Resources Canada - Canadian Forest Service - Atlantic Forestry Centre · English essential · Scholarship of approximately $25,500/year divided into 3 equal installments each year.",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2470595",
@@ -212,7 +232,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Royal Canadian Mounted Police - Research and Strategic Parternships · English essential · $86,527 to $104,870 (per annum, Collective agreement under negotiation)"
+   "summary": "Royal Canadian Mounted Police - Research and Strategic Parternships · English essential · $86,527 to $104,870 (per annum, Collective agreement under negotiation)",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "gcjobs-2470970",
@@ -231,7 +253,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Parks Canada - Lake Louise, Yoho & Kootenay Field Unit - Resource Conservation · English essential · $65,216 to $81,985 (per year (under review))"
+   "summary": "Parks Canada - Lake Louise, Yoho & Kootenay Field Unit - Resource Conservation · English essential · $65,216 to $81,985 (per year (under review))",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "gcjobs-2463120",
@@ -250,7 +274,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "National Research Council Canada · English essential · $83,985 to $139,608"
+   "summary": "National Research Council Canada · English essential · $83,985 to $139,608",
+   "fit": "unknown",
+   "fitWhy": [
+    "couldn't read the requirements — open the posting"
+   ]
   },
   {
    "id": "gcjobs-2463127",
@@ -269,7 +297,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "National Research Council Canada · English essential · $83,985 to $139,608"
+   "summary": "National Research Council Canada · English essential · $83,985 to $139,608",
+   "fit": "unknown",
+   "fitWhy": [
+    "couldn't read the requirements — open the posting"
+   ]
   },
   {
    "id": "gcjobs-2472548",
@@ -288,7 +320,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Defence Construction Canada · English essential · $80,886 to $105,152"
+   "summary": "Defence Construction Canada · English essential · $80,886 to $105,152",
+   "fit": "unknown",
+   "fitWhy": [
+    "couldn't read the requirements — open the posting"
+   ]
   },
   {
    "id": "gcjobs-2471945",
@@ -307,7 +343,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $25.17 to $31.69 per hour (Varies as per the level of education and experience.)"
+   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $25.17 to $31.69 per hour (Varies as per the level of education and experience.)",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2468206",
@@ -326,7 +366,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $18.84 to $38.38 per hour (Bachelor: $18.84 to $28.30; Master: $25.17 to $31.69; Doctorate: $29.64 to $38.38 – Varies as per the level of education and experience.)"
+   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $18.84 to $38.38 per hour (Bachelor: $18.84 to $28.30; Master: $25.17 to $31.69; Doctorate: $29.64 to $38.38 – Varies as per the level of education and experience.)",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2470060",
@@ -345,7 +389,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "National Research Council Canada · English essential · $83,985 to $116,641"
+   "summary": "National Research Council Canada · English essential · $83,985 to $116,641",
+   "fit": "unknown",
+   "fitWhy": [
+    "couldn't read the requirements — open the posting"
+   ]
   },
   {
    "id": "gcjobs-2468629",
@@ -364,7 +412,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Natural Resources Canada - GSC Central (Geological Survey of Canada) - Geoscience and Earth Monitoring Sector · English essential · Scholarship of approximately $30,000 (year 1), $32,700 (year 2) and $35,700 (year 3) divided into 3 equal installments each year."
+   "summary": "Natural Resources Canada - GSC Central (Geological Survey of Canada) - Geoscience and Earth Monitoring Sector · English essential · Scholarship of approximately $30,000 (year 1), $32,700 (year 2) and $35,700 (year 3) divided into 3 equal installments each year.",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2469635",
@@ -383,7 +435,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Canadian Space Agency · English or French essential · $25.17 to $38.38 per hour"
+   "summary": "Canadian Space Agency · English or French essential · $25.17 to $38.38 per hour",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2461512",
@@ -402,7 +458,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Health Canada - Environmental and Radiation Health Sciences Directorate · English essential · $25.17 to $38.38 per hour"
+   "summary": "Health Canada - Environmental and Radiation Health Sciences Directorate · English essential · $25.17 to $38.38 per hour",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2469655",
@@ -421,7 +481,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $78,909 to $99,200 (Salary under review)"
+   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $78,909 to $99,200 (Salary under review)",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "gcjobs-2464033",
@@ -440,7 +502,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Natural Resources Canada - Energy Efficiency and Technology Sector - CanmetENERGY-Ottawa · English essential · $18.84 to $38.38 per hour"
+   "summary": "Natural Resources Canada - Energy Efficiency and Technology Sector - CanmetENERGY-Ottawa · English essential · $18.84 to $38.38 per hour",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
   },
   {
    "id": "gcjobs-2467109",
@@ -459,7 +525,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $74,292 to $101,162"
+   "summary": "Agriculture and Agri-Food Canada - Science and Technology Branch · English essential · $74,292 to $101,162",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "gcjobs-2473667",
@@ -478,7 +546,53 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Environment and Climate Change Canada - Science and Technology Branch, Environmental Research and Modelling Directorate · English essential · $25.17 to $38.38 per hour (varies per education and experience)"
+   "summary": "Environment and Climate Change Canada - Science and Technology Branch, Environmental Research and Modelling Directorate · English essential · $25.17 to $38.38 per hour (varies per education and experience)",
+   "fit": "no",
+   "fitWhy": [
+    "only open to current students"
+   ]
+  },
+  {
+   "id": "Job Bank Canada-id=553739",
+   "title": "technical assistant - medical laboratory",
+   "org": "LES TOURBIERES BERGER LTEE",
+   "location": "Saint-Modeste (QC)",
+   "remote": "unknown",
+   "salaryMin": 43680,
+   "salaryMax": 43680,
+   "salaryText": "$21.00 hourly",
+   "category": "research",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50585114",
+   "source": "Job Bank Canada",
+   "posted": "2026-10-26T06:00:00Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": null,
+   "fit": "yes",
+   "fitWhy": []
+  },
+  {
+   "id": "Job Bank Canada-id=1483655",
+   "title": "medical laboratory assistant",
+   "org": "Saskatchewan Health Authority",
+   "location": "Lloydminster (SK)",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": "Pay Band 11 $23.37 to $25.04 (3 step range)",
+   "category": "research",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50585338",
+   "source": "Job Bank Canada",
+   "posted": "2026-10-26T06:00:00Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": null,
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5942100157",
@@ -497,7 +611,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Summary To provide exceptional customer service and assist in Photo Lab operations in order to ensure a positive shopping experience and drive customer loyalty. What you'll do 1. Greets all customers in a polite and friendly manner. 2. Assists customers by promoting products/services, offering direction for use of self-serve equipment, locating merchandise and making purchase decisions and resolves customer issues and refers concerns to management where appropriate. 3. Executes workflo…"
+   "summary": "Position Summary To provide exceptional customer service and assist in Photo Lab operations in order to ensure a positive shopping experience and drive customer loyalty. What you'll do 1. Greets all customers in a polite and friendly manner. 2. Assists customers by promoting products/services, offering direction for use of self-serve equipment, locating merchandise and making purchase decisions and resolves customer issues and refers concerns to management where appropriate. 3. Executes workflo…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "Job Bank Canada-id=2233948",
@@ -516,7 +632,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": null
+   "summary": null,
+   "fit": "no",
+   "fitWhy": [
+    "asks for CMLTO / CSMLS medical-lab registration"
+   ]
   },
   {
    "id": "ecoworks-781534692",
@@ -530,12 +650,14 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/781534692-cba-environmental-technician-iii",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-25T13:14:11.536Z",
+   "posted": "2026-10-25T14:32:45.697Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Full-time · Yukon, YT, CA"
+   "summary": "Full-time · Yukon, YT, CA",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941425412",
@@ -554,7 +676,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description High School Math & Science Teacher/Tutor Wanted Motivated by mathematics? Sharp with science? Excited by equations in both fields? Eager to help students succeed in math and science? Gain valuable teaching experience! Oxford Learning Rosedale is currently seeking part-time teacher-tutors for a role in our learning centre. This position is perfect for anyone who loves working with students, enjoys numbers and equations, and is passionate about helping others build…"
+   "summary": "Job Description Job Description High School Math & Science Teacher/Tutor Wanted Motivated by mathematics? Sharp with science? Excited by equations in both fields? Eager to help students succeed in math and science? Gain valuable teaching experience! Oxford Learning Rosedale is currently seeking part-time teacher-tutors for a role in our learning centre. This position is perfect for anyone who loves working with students, enjoys numbers and equations, and is passionate about helping others build…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941421115",
@@ -573,7 +697,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description About Rentokil-Terminix : Rentokil-Terminix Canada is one of the largest pest control providers to the property management sector. Rentokil-Terminix has been an industry leader in pest control. Our certified specialists use innovative technologies to protect millions of homes and businesses throughout Canada. Duties: · Inspecting the inside and periphery of properties on a recurring schedule to identify infestation source, extent of damage, and access to infested…"
+   "summary": "Job Description Job Description About Rentokil-Terminix : Rentokil-Terminix Canada is one of the largest pest control providers to the property management sector. Rentokil-Terminix has been an industry leader in pest control. Our certified specialists use innovative technologies to protect millions of homes and businesses throughout Canada. Duties: · Inspecting the inside and periphery of properties on a recurring schedule to identify infestation source, extent of damage, and access to infested…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941410111",
@@ -585,14 +711,16 @@
    "salaryMax": 72800,
    "salaryText": null,
    "category": "environmental",
-   "url": "https://www.adzuna.ca/land/ad/5941410111?se=ZHfYMz_R8RGbf52rWtMMLA&utm_medium=api&utm_source=cc077b69&v=40999A3A9BCB2D736BA037E6CEB2FE374E6CE76F",
+   "url": "https://www.adzuna.ca/land/ad/5941410111?se=aHB4MUrR8RG2Ydx_FwUDbQ&utm_medium=api&utm_source=cc077b69&v=40999A3A9BCB2D736BA037E6CEB2FE374E6CE76F",
    "source": "Adzuna",
    "posted": "2026-10-25T07:32:52Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description BinSentry is seeking a qualified Part-time Field Technician who can install and service our hardware devices across Ontario. Key Responsibilities Drive to rural areas to install & service our devices on farm locations, ranging from 1-50 in a given day. At the site, you will be required to disinfect tires and boots, climb feed bins that range between 10 and 40 ft tall and install our sensor and small solar panel inside the site’s bin. The installation typically ta…"
+   "summary": "Job Description Job Description BinSentry is seeking a qualified Part-time Field Technician who can install and service our hardware devices across Ontario. Key Responsibilities Drive to rural areas to install & service our devices on farm locations, ranging from 1-50 in a given day. At the site, you will be required to disinfect tires and boots, climb feed bins that range between 10 and 40 ft tall and install our sensor and small solar panel inside the site’s bin. The installation typically ta…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941265360",
@@ -611,7 +739,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "GIS & RECORDS TECHNICIAN Full-time Permanent Canadian Niagara Power Inc. (CNPI), located in beautiful Fort Erie, is seeking a motivated and detail-oriented GIS and Records Technician to join our team. The successful candidate will create and maintain accurate drawings, maps, diagrams, tracings, and complex construction details using established GIS technology and Company standards. This role also involves maintaining reliable operational records, conducting fieldwork as required, collaborating …"
+   "summary": "GIS & RECORDS TECHNICIAN Full-time Permanent Canadian Niagara Power Inc. (CNPI), located in beautiful Fort Erie, is seeking a motivated and detail-oriented GIS and Records Technician to join our team. The successful candidate will create and maintain accurate drawings, maps, diagrams, tracings, and complex construction details using established GIS technology and Company standards. This role also involves maintaining reliable operational records, conducting fieldwork as required, collaborating …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941263678",
@@ -630,7 +760,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Description The Team: The Environmental Protection Division is a passionate and highly collaborative team committed to protecting British Columbia's air, land, and water. Whether addressing complex environmental challenges, supporting responsible development, or responding to emerging risks, the team's work has a direct impact on communities and ecosystems across the province. Through strong partnerships, technical expertise, and a shared commitment to environmental stewardship, they help ensur…"
+   "summary": "Description The Team: The Environmental Protection Division is a passionate and highly collaborative team committed to protecting British Columbia's air, land, and water. Whether addressing complex environmental challenges, supporting responsible development, or responding to emerging risks, the team's work has a direct impact on communities and ecosystems across the province. Through strong partnerships, technical expertise, and a shared commitment to environmental stewardship, they help ensur…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941260904",
@@ -649,7 +781,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "One of Canada's Top 10 Research Hospitals, Sunnybrook Research Institute is developing innovations in care for the more than 1.3 million patients the hospital cares for annually. Sunnybrook Research Institute is the research enterprise of Sunnybrook Health Sciences Centre, a teaching hospital fully affiliated with the University of Toronto. Research spans three Toronto-based campuses, eight programs and three scientific platforms. Our main aims are to understand and prevent disease, and to deve…"
+   "summary": "One of Canada's Top 10 Research Hospitals, Sunnybrook Research Institute is developing innovations in care for the more than 1.3 million patients the hospital cares for annually. Sunnybrook Research Institute is the research enterprise of Sunnybrook Health Sciences Centre, a teaching hospital fully affiliated with the University of Toronto. Research spans three Toronto-based campuses, eight programs and three scientific platforms. Our main aims are to understand and prevent disease, and to deve…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941260505",
@@ -668,7 +802,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Term: Part-time, term contract. Location: Seabird Island Band Office, Agassiz, BC Status: In Office Schedule: Part time as required. Salary: $27.89 an hour. About Us: Seabird Island is committed to creating culturally safe, inclusive workplaces grounded in Indigenous knowledge, values, and ways of being. We support a diverse range of teams across Seabird and are dedicated to fostering healthy workplaces, strong leadership, and meaningful employee experiences. About the Role: Are you passionate …"
+   "summary": "Term: Part-time, term contract. Location: Seabird Island Band Office, Agassiz, BC Status: In Office Schedule: Part time as required. Salary: $27.89 an hour. About Us: Seabird Island is committed to creating culturally safe, inclusive workplaces grounded in Indigenous knowledge, values, and ways of being. We support a diverse range of teams across Seabird and are dedicated to fostering healthy workplaces, strong leadership, and meaningful employee experiences. About the Role: Are you passionate …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941258095",
@@ -687,7 +823,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Our Foxtrap facility is currently looking for an Environmental Technician to join our team. This position is responsible for supporting day to day field operations for the packaging of waste, recovery, transportation and documentation. Duties would include but not limited to materials movement, processing, sampling and assisting in other areas of the operation. Job Duties Collect environmental monitoring samples and submit for analysis. Record, validate, and interpret results of tests and analy…"
+   "summary": "Our Foxtrap facility is currently looking for an Environmental Technician to join our team. This position is responsible for supporting day to day field operations for the packaging of waste, recovery, transportation and documentation. Duties would include but not limited to materials movement, processing, sampling and assisting in other areas of the operation. Job Duties Collect environmental monitoring samples and submit for analysis. Record, validate, and interpret results of tests and analy…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941255489",
@@ -706,7 +844,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Hiring Unit: Department of Mathematics and Statistics Position Summary: Develop methods for uncertainty quantifica…"
+   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Hiring Unit: Department of Mathematics and Statistics Position Summary: Develop methods for uncertainty quantifica…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941255150",
@@ -725,7 +865,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: Contract NU (Full Time) (Fixed Term) Closing Date: October 30, 2026 Salary/Wage Range: $70,312.00 - $87,891.00 Working for the City of Burlington A great career is closer than you think. Come work for the City of Burlington, where you'll be joining an innovative and progressive workplace focused on building a 21st century city that respects the diversity of our residents, visitors and employees; and prioritizes continuous opportunities for you to learn and grow. We don't just spe…"
+   "summary": "Position Type: Contract NU (Full Time) (Fixed Term) Closing Date: October 30, 2026 Salary/Wage Range: $70,312.00 - $87,891.00 Working for the City of Burlington A great career is closer than you think. Come work for the City of Burlington, where you'll be joining an innovative and progressive workplace focused on building a 21st century city that respects the diversity of our residents, visitors and employees; and prioritizes continuous opportunities for you to learn and grow. We don't just spe…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5941253987",
@@ -744,7 +886,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/23/2026 Location: St. Mark School Date Available: ASAP Closing Date: 10/30/2026 CUPE 2268 JOB ID 4415 TWO VACANCIES JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Mark School DATE SUBMITTED TO SCHOOLS : October 23, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school le…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/23/2026 Location: St. Mark School Date Available: ASAP Closing Date: 10/30/2026 CUPE 2268 JOB ID 4415 TWO VACANCIES JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Mark School DATE SUBMITTED TO SCHOOLS : October 23, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school le…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5941253189",
@@ -763,7 +909,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Description Clean Harbors Environmental Services, located in Ste. Catherine, QC, is looking for an Environmental Technician/General Laborer to join our safety-conscious team! Why work for Clean Harbors? Health and safety are our 1 priority, and we live by it 3-6-5! Competitive compensation and benefits Competitive salary starting at $27.32/hr Work Schedule: Mon to Sunday: Start time: 5:00am Overtime opportunities including weekends/ Weekday and weekend work: Must be available Monday through Sun…"
+   "summary": "Description Clean Harbors Environmental Services, located in Ste. Catherine, QC, is looking for an Environmental Technician/General Laborer to join our safety-conscious team! Why work for Clean Harbors? Health and safety are our 1 priority, and we live by it 3-6-5! Competitive compensation and benefits Competitive salary starting at $27.32/hr Work Schedule: Mon to Sunday: Start time: 5:00am Overtime opportunities including weekends/ Weekday and weekend work: Must be available Monday through Sun…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940930785",
@@ -782,7 +930,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "What if you could redefine what's possible? With us, you can. With us, you can. You want Purpose. Growth. Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers. We are WSP The Opportunity Shape the World Around You Bring scientific insight and practical …"
+   "summary": "What if you could redefine what's possible? With us, you can. With us, you can. You want Purpose. Growth. Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers. We are WSP The Opportunity Shape the World Around You Bring scientific insight and practical …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "Job Bank Canada-id=3985318",
@@ -801,7 +951,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": null
+   "summary": null,
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "Job Bank Canada-id=10305717057",
@@ -820,7 +974,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": null
+   "summary": null,
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "ecoworks-780858498",
@@ -834,12 +990,14 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/780858498-project-geologist-hydrogeologist-environmental-scientist",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-24T13:14:11.536Z",
+   "posted": "2026-10-24T14:32:45.697Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Full-time · Remote (Canada)"
+   "summary": "Full-time · Remote (Canada)",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "ecoworks-781534710",
@@ -853,12 +1011,14 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/781534710-sustainability-specialist-contract",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-24T13:14:11.536Z",
+   "posted": "2026-10-24T14:32:45.697Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Full-time · Markham, Ontario, Canada"
+   "summary": "Full-time · Markham, Ontario, Canada",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940719561",
@@ -877,7 +1037,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "About the role Muon Space is building a family of infrared imaging missions designed for global wildfire detection and monitoring, weather and cloud characterization, and space-based environmental monitoring. Muon’s IR Data Products team builds the analytics system that processes the data from our spacecraft’s custom multispectral imaging instruments into data products and analytics for diverse end-user stakeholders from these missions. We are seeking a Geospatial Data Scientist to join this te…"
+   "summary": "About the role Muon Space is building a family of infrared imaging missions designed for global wildfire detection and monitoring, weather and cloud characterization, and space-based environmental monitoring. Muon’s IR Data Products team builds the analytics system that processes the data from our spacecraft’s custom multispectral imaging instruments into data products and analytics for diverse end-user stakeholders from these missions. We are seeking a Geospatial Data Scientist to join this te…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940383040",
@@ -896,7 +1058,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description If you're ready to roll up your sleeves and make a real difference, this could be the role for you. As a Restoration Technician (internally known as Restoration Technician I), you'll be part of the front-line team that helps people recover after unexpected damage. You'll learn the essentials of water and fire restoration, gain hands-on experience with industry tools, and work alongside experienced teammates who will help you build your skills every day. This is a…"
+   "summary": "Job Description Job Description If you're ready to roll up your sleeves and make a real difference, this could be the role for you. As a Restoration Technician (internally known as Restoration Technician I), you'll be part of the front-line team that helps people recover after unexpected damage. You'll learn the essentials of water and fire restoration, gain hands-on experience with industry tools, and work alongside experienced teammates who will help you build your skills every day. This is a…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940381132",
@@ -915,26 +1079,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Work Term: Seasonal Work Language: French Hours: 47 hours per week Education: Secondary (high) school graduation certificate Experience: 1 year to less than 2 years or equivalent experience Work site environment Outdoors Wet/damp Noisy Hot Work setting Staff accommodation available Staff accommodation provided Room and board provided Rural area Remote location Various locations Relocation costs covered by employer Willing to relocate Tasks Operate power tools to thin and space trees Graft trees…"
-  },
-  {
-   "id": "Job Bank Canada-id=2232951",
-   "title": "environmental geologist",
-   "org": "Englobe Corp.",
-   "location": "Dartmouth (NS)",
-   "remote": "unknown",
-   "salaryMin": 64002,
-   "salaryMax": 208000,
-   "salaryText": "$30.77 to $100.00 hourly",
-   "category": "environmental",
-   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50572143",
-   "source": "Job Bank Canada",
-   "posted": "2026-10-24T06:00:00Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": null
+   "summary": "Work Term: Seasonal Work Language: French Hours: 47 hours per week Education: Secondary (high) school graduation certificate Experience: 1 year to less than 2 years or equivalent experience Work site environment Outdoors Wet/damp Noisy Hot Work setting Staff accommodation available Staff accommodation provided Room and board provided Rural area Remote location Various locations Relocation costs covered by employer Willing to relocate Tasks Operate power tools to thin and space trees Graft trees…",
+   "fit": "yes",
+   "fitWhy": [
+    "French / bilingual — a plus for you"
+   ]
   },
   {
    "id": "adzuna-5940276685",
@@ -953,7 +1102,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "About Us At Onterris, we build careers grounded in purpose, responsibility and real-world impact. “For Planet and Progress” is our north star that guides everything we do. We believe environmental responsibility and human progress are interconnected, interwoven and international. Our scientists, engineers, field teams, consultants and professionals collaborate across disciplines and geographies, guiding industries and governments, ensuring that communities and environments thrive. When you join…"
+   "summary": "About Us At Onterris, we build careers grounded in purpose, responsibility and real-world impact. “For Planet and Progress” is our north star that guides everything we do. We believe environmental responsibility and human progress are interconnected, interwoven and international. Our scientists, engineers, field teams, consultants and professionals collaborate across disciplines and geographies, guiding industries and governments, ensuring that communities and environments thrive. When you join…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940270033",
@@ -972,7 +1123,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Department Operations & Environmental Services Job Type Temporary Number of Positions 1 Affiliation Non-Union Compensation Range $33.14 - $35.89 Job Summary Reporting to the Supervisor of Sportsfields and Park Maintenance, the Environmental Services Worker, is responsible to deliver a wide range of services relating to the maintenance of Town facilities, parks, and open space. Includes service delivery of cutting of grass, collection of litter, emptying waste receptacles, assisting with mainten…"
+   "summary": "Department Operations & Environmental Services Job Type Temporary Number of Positions 1 Affiliation Non-Union Compensation Range $33.14 - $35.89 Job Summary Reporting to the Supervisor of Sportsfields and Park Maintenance, the Environmental Services Worker, is responsible to deliver a wide range of services relating to the maintenance of Town facilities, parks, and open space. Includes service delivery of cutting of grass, collection of litter, emptying waste receptacles, assisting with mainten…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940260878",
@@ -991,7 +1144,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Rooted in Belonging. Growing Together TEMPORARY EDUCATIONAL ASSISTANT CUPE POSITION REPRESENTED BY CUPE LOCAL 4681 October 23, 2026 COMPETITION 26-201B Temporary Full-Time 10-month position 30 hours per week Aileen Wright English Catholic School, Cochrane Effective immediately and extending until further notice Salary: S27.43/hour (unqualified rate) REQUIRED QUALIFICATIONS • Two (2) year Community College Diploma as Educational Assistant or related field; and • Proven ability to work patiently…"
+   "summary": "Rooted in Belonging. Growing Together TEMPORARY EDUCATIONAL ASSISTANT CUPE POSITION REPRESENTED BY CUPE LOCAL 4681 October 23, 2026 COMPETITION 26-201B Temporary Full-Time 10-month position 30 hours per week Aileen Wright English Catholic School, Cochrane Effective immediately and extending until further notice Salary: S27.43/hour (unqualified rate) REQUIRED QUALIFICATIONS • Two (2) year Community College Diploma as Educational Assistant or related field; and • Proven ability to work patiently…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5940253933",
@@ -1010,7 +1167,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "About Evergreen Catholic Separate School Division In Evergreen Catholic Schools, we educate in an atmosphere of faith, hope, and love to prepare our students to live as compassionate, confident, and contributing citizens. Located in Treaty 6 Territory, Evergreen Catholic Schools is a school division in the Province of Alberta that consists of eleven schools in five communities with over 4,100 students and 430 employees. Transformational education has become the driving force behind educational …"
+   "summary": "About Evergreen Catholic Separate School Division In Evergreen Catholic Schools, we educate in an atmosphere of faith, hope, and love to prepare our students to live as compassionate, confident, and contributing citizens. Located in Treaty 6 Territory, Evergreen Catholic Schools is a school division in the Province of Alberta that consists of eleven schools in five communities with over 4,100 students and 430 employees. Transformational education has become the driving force behind educational …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5940250279",
@@ -1029,7 +1190,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Wright Tree Service of Canada The Position: Apprentice Utility Arborist Type: Full-time Reports To: Project Manager About Us: Wright Tree Service, a business unit of Wright Canada Holdings, provides vegetation management, storm restoration, and work planning services to utility companies and their communities across North America. Why Wright Canada Holdings: A Company Culture of Safety, Family, Integrity, Excellence and Stewardship Pay rate of $30 to $36 per hour We provide ALL equipment needed…"
+   "summary": "Wright Tree Service of Canada The Position: Apprentice Utility Arborist Type: Full-time Reports To: Project Manager About Us: Wright Tree Service, a business unit of Wright Canada Holdings, provides vegetation management, storm restoration, and work planning services to utility companies and their communities across North America. Why Wright Canada Holdings: A Company Culture of Safety, Family, Integrity, Excellence and Stewardship Pay rate of $30 to $36 per hour We provide ALL equipment needed…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940250168",
@@ -1048,7 +1211,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "About Delta Intelligent Building Technologies (Canada) Inc.(formerly known as Delta Controls). Delta Intelligent Building Technologies (Canada) Inc. (a subsidiary of Delta Electronics) is a leading building controls manufacturer with over 300 partners in more than 80 countries. For over three decades, we have provided innovative building automation solutions for commercial, healthcare, education, and leisure facilities. We delivered the world’s first fully integrated BACnet building solution fo…"
+   "summary": "About Delta Intelligent Building Technologies (Canada) Inc.(formerly known as Delta Controls). Delta Intelligent Building Technologies (Canada) Inc. (a subsidiary of Delta Electronics) is a leading building controls manufacturer with over 300 partners in more than 80 countries. For over three decades, we have provided innovative building automation solutions for commercial, healthcare, education, and leisure facilities. We delivered the world’s first fully integrated BACnet building solution fo…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940248116",
@@ -1067,7 +1232,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "À titre de technicien ou technicienne de laboratoire chez IDEXX, vous réalisez des analyses de laboratoire qui aident les vétérinaires à diagnostiquer et à traiter les animaux de compagnie. Vous serez un acteur clé de l'une des plus grandes entreprises de diagnostic vétérinaire au monde, dans un environnement de travail dynamique qui valorise le travail d'équipe et la qualité, et qui offre des occasions de développement personnel. Nous offrons une formation complète pour ce poste. Que vous ayez…"
+   "summary": "À titre de technicien ou technicienne de laboratoire chez IDEXX, vous réalisez des analyses de laboratoire qui aident les vétérinaires à diagnostiquer et à traiter les animaux de compagnie. Vous serez un acteur clé de l'une des plus grandes entreprises de diagnostic vétérinaire au monde, dans un environnement de travail dynamique qui valorise le travail d'équipe et la qualité, et qui offre des occasions de développement personnel. Nous offrons une formation complète pour ce poste. Que vous ayez…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5940233616",
@@ -1086,7 +1253,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Summer Student Field Technician Southern Alberta | Remote & Field-Based Are you a student looking to turn what you have learned in school into practical environmental consulting experience? At GCL Environmental Ltd. , summer students contribute to active projects and real deliverables while building practical skills in field assessment, technology, reporting and project management . We help clients assess, reclaim and responsibly manage disturbed land across Western Canada. If you enjoy fieldw…"
+   "summary": "Summer Student Field Technician Southern Alberta | Remote & Field-Based Are you a student looking to turn what you have learned in school into practical environmental consulting experience? At GCL Environmental Ltd. , summer students contribute to active projects and real deliverables while building practical skills in field assessment, technology, reporting and project management . We help clients assess, reclaim and responsibly manage disturbed land across Western Canada. If you enjoy fieldw…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939808955",
@@ -1105,7 +1274,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Overview As one of the fastest growing cities in Canada, City of Surrey is a globally recognized leader in building vibrant, sustainable communities through technology and innovation. City of Surrey employees are talented innovators, inspired by meaningful work and the opportunity to drive our city and their careers forward. Build a City. Build a Future at the City of Surrey. Employment Status Union - CUPE Local 402 - Project (1 Year) Scope The Planning and Development Department is seeking a h…"
+   "summary": "Overview As one of the fastest growing cities in Canada, City of Surrey is a globally recognized leader in building vibrant, sustainable communities through technology and innovation. City of Surrey employees are talented innovators, inspired by meaningful work and the opportunity to drive our city and their careers forward. Build a City. Build a Future at the City of Surrey. Employment Status Union - CUPE Local 402 - Project (1 Year) Scope The Planning and Development Department is seeking a h…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939807243",
@@ -1124,7 +1295,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "What if you could redefine what's possible? With us, you can. You want Purpose . Growth . Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers . We are WSP . The Opportunity Shape Something Different - Southwestern Ontario - 2026 Field Season with WSP J…"
+   "summary": "What if you could redefine what's possible? With us, you can. You want Purpose . Growth . Opportunity. People who get it. We are the home of ambitious, passionate, and innovative world shapers. With an unmatched breadth and depth of engineering, advisory and science-based expertise, our global minds unite to power local solutions. We are pathfinders and impact makers. We are Visioneers . We are WSP . The Opportunity Shape Something Different - Southwestern Ontario - 2026 Field Season with WSP J…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "ecoworks-779722178",
@@ -1138,12 +1311,14 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/779722178-environmental-technologist",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-23T13:14:11.536Z",
+   "posted": "2026-10-23T14:32:45.697Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Contract · Surrey, British Columbia, Canada"
+   "summary": "Contract · Surrey, British Columbia, Canada",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "ecoworks-780858501",
@@ -1157,12 +1332,14 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/780858501-environmental-technician",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-23T13:14:11.536Z",
+   "posted": "2026-10-23T14:32:45.697Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Full-time · St. John's, Newfoundland and Labrador, Canada"
+   "summary": "Full-time · St. John's, Newfoundland and Labrador, Canada",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939225805",
@@ -1174,14 +1351,16 @@
    "salaryMax": 90000,
    "salaryText": null,
    "category": "environmental",
-   "url": "https://www.adzuna.ca/land/ad/5939225805?se=ZHfYMz_R8RGbf52rWtMMLA&utm_medium=api&utm_source=cc077b69&v=FD913F445492D3F5DC97817C674F9D7AD55F4E60",
+   "url": "https://www.adzuna.ca/land/ad/5939225805?se=aHB4MUrR8RG2Ydx_FwUDbQ&utm_medium=api&utm_source=cc077b69&v=FD913F445492D3F5DC97817C674F9D7AD55F4E60",
    "source": "Adzuna",
    "posted": "2026-10-23T07:39:02Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description Field Technician – Grande Prairie, AB Benchmark Data Solutions is an Alberta-owned and operated company with over 20 years of experience providing remote communication services, primarily to the oil & gas industry. Our team-oriented, people-first approach focuses on leveraging cutting-edge technology to meet our customers’ needs while maintaining a safe and supportive work environment for our staff. We are seeking a skilled and experienced Field Technician with a…"
+   "summary": "Job Description Job Description Field Technician – Grande Prairie, AB Benchmark Data Solutions is an Alberta-owned and operated company with over 20 years of experience providing remote communication services, primarily to the oil & gas industry. Our team-oriented, people-first approach focuses on leveraging cutting-edge technology to meet our customers’ needs while maintaining a safe and supportive work environment for our staff. We are seeking a skilled and experienced Field Technician with a…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939219954",
@@ -1200,7 +1379,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Job Description Job Description Your future is bright at AGAT! At AGAT Laboratories, we are the next step in your career! By joining AGAT, you become part of a dynamic, purpose-driven team that fosters innovation, collaboration, and personal growth. Our dedicated professionals come together every day with passion and determination, leveraging cutting-edge science to deliver solutions that drive progress and create a more sustainable, healthier world. AGAT Laboratories is currently looking for t…"
+   "summary": "Job Description Job Description Your future is bright at AGAT! At AGAT Laboratories, we are the next step in your career! By joining AGAT, you become part of a dynamic, purpose-driven team that fosters innovation, collaboration, and personal growth. Our dedicated professionals come together every day with passion and determination, leveraging cutting-edge science to deliver solutions that drive progress and create a more sustainable, healthier world. AGAT Laboratories is currently looking for t…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939161233",
@@ -1219,7 +1400,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Education: College, CEGEP or other non-university certificate or diploma from a program of 1 year to 2 years Experience: 1 year to less than 2 years Tasks Help students individually or in small groups with assignments and reinforce learning and retention concepts under the supervision of classroom teacher Perform other duties assigned by school principal Supervise students during school and extracurricular activities Monitor students during recess and lunch hour Assist students with integration…"
+   "summary": "Education: College, CEGEP or other non-university certificate or diploma from a program of 1 year to 2 years Experience: 1 year to less than 2 years Tasks Help students individually or in small groups with assignments and reinforce learning and retention concepts under the supervision of classroom teacher Perform other duties assigned by school principal Supervise students during school and extracurricular activities Monitor students during recess and lunch hour Assist students with integration…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939049782",
@@ -1238,7 +1423,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "ATIKAMEKSHENG ANISHNAWBEK Atikameksheng Anishnawbek will thrive together as a strong and proud Nation by honouring our gifts of Anishinabemowin and the Life of the Land. Competition Number: 2026-070 Position: Geographic Information Systems (GIS) Technician Department: Legal Claims & Negotiations Employment Status: Full-Time Salary: $31- $42/HR – 35 Hours per Week Location: Naughton, ON Closing Date: November 4, 2026, at 4:00pm AT THIS TIME, WE WILL ONLY BE ACCEPTING APPLICATIONS FROM CURRENT IN…"
+   "summary": "ATIKAMEKSHENG ANISHNAWBEK Atikameksheng Anishnawbek will thrive together as a strong and proud Nation by honouring our gifts of Anishinabemowin and the Life of the Land. Competition Number: 2026-070 Position: Geographic Information Systems (GIS) Technician Department: Legal Claims & Negotiations Employment Status: Full-Time Salary: $31- $42/HR – 35 Hours per Week Location: Naughton, ON Closing Date: November 4, 2026, at 4:00pm AT THIS TIME, WE WILL ONLY BE ACCEPTING APPLICATIONS FROM CURRENT IN…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939049220",
@@ -1257,7 +1444,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "At the University of Waterloo, we create and promote a culture where everyone can reach their full potential. As an employee, you get support & opportunities that empower you to advance your career. Explore how we can bring big ideas to life, together. The University is a welcoming workplace for those of all abilities, interests, and expertise. As part of our workforce, you can do what you do best, every day. Appointment Type: Graduate Teaching Assistant (GTA) Hiring Unit: Political Science Aca…"
+   "summary": "At the University of Waterloo, we create and promote a culture where everyone can reach their full potential. As an employee, you get support & opportunities that empower you to advance your career. Explore how we can bring big ideas to life, together. The University is a welcoming workplace for those of all abilities, interests, and expertise. As part of our workforce, you can do what you do best, every day. Appointment Type: Graduate Teaching Assistant (GTA) Hiring Unit: Political Science Aca…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939048854",
@@ -1276,7 +1465,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/21/2026 Location: Ecole St. Mother Teresa School Date Available: 11/02/2026 Closing Date: 10/28/2026 CUPE 2268 JOB ID 4413 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole St. Mother Teresa School DATE SUBMITTED TO SCHOOLS : October 21, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at th…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/21/2026 Location: Ecole St. Mother Teresa School Date Available: 11/02/2026 Closing Date: 10/28/2026 CUPE 2268 JOB ID 4413 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole St. Mother Teresa School DATE SUBMITTED TO SCHOOLS : October 21, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at th…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939047174",
@@ -1295,7 +1488,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/21/2026 Location: St. Kateri Date Available: 11/02/2026 Closing Date: 10/28/2026 CUPE 2268 JOB ID 4414 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Kateri Tekakwitha Catholic School DATE SUBMITTED TO SCHOOLS : October 21, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary …"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/21/2026 Location: St. Kateri Date Available: 11/02/2026 Closing Date: 10/28/2026 CUPE 2268 JOB ID 4414 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Kateri Tekakwitha Catholic School DATE SUBMITTED TO SCHOOLS : October 21, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939046970",
@@ -1314,7 +1511,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: School Based Support/ Educational Assistant Date Posted: 10/20/2026 Location: Pinehouse - Minahik Waskahigan Elementary School FTE : Full time Term of Employment: Continuing Salary and Benefits: $20.32 - $23.78 (Uncertified) or $22.56 - $26.39 (Certified) per hour - According to education and experience. Qualifications: Grade 12 preferred but not mandatory Experience or specialized training working with Special Needs Students is preferred Must be caring, loving, compassionate, an…"
+   "summary": "Position Type: School Based Support/ Educational Assistant Date Posted: 10/20/2026 Location: Pinehouse - Minahik Waskahigan Elementary School FTE : Full time Term of Employment: Continuing Salary and Benefits: $20.32 - $23.78 (Uncertified) or $22.56 - $26.39 (Certified) per hour - According to education and experience. Qualifications: Grade 12 preferred but not mandatory Experience or specialized training working with Special Needs Students is preferred Must be caring, loving, compassionate, an…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939046334",
@@ -1333,7 +1534,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Barkerville Gold Mines Ltd. (\"BGM\"), a wholly owned subsidiary of Osisko Gold Group Inc (“OGG”), is seeking a highly motivated Environmental Coordinator to join the Cariboo Gold Project in Wells, British Columbia. This is an exciting opportunity to join a growing organization committed to developing and operating a modern, safe, and environmentally responsible mining operation that delivers long-term value for employees, local communities, Indigenous Nations, and other stakeholders. One of our …"
+   "summary": "Barkerville Gold Mines Ltd. (\"BGM\"), a wholly owned subsidiary of Osisko Gold Group Inc (“OGG”), is seeking a highly motivated Environmental Coordinator to join the Cariboo Gold Project in Wells, British Columbia. This is an exciting opportunity to join a growing organization committed to developing and operating a modern, safe, and environmentally responsible mining operation that delivers long-term value for employees, local communities, Indigenous Nations, and other stakeholders. One of our …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939045728",
@@ -1352,7 +1555,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Hardware Lab Technician Social networking, machine learning, and big data analytics demand ever-increasing network connectivity. RANOVUS, with operations in Ottawa, Canada, Nuremberg, Germany, and San Jose, USA, is a solution provider for the next generation data center infrastructures. We aim to deliver advanced technology that minimizes environmental impact through lower power dissipation. Working with world class fabrication partners, RANOVUS is the leader in the application of unique new te…"
+   "summary": "Hardware Lab Technician Social networking, machine learning, and big data analytics demand ever-increasing network connectivity. RANOVUS, with operations in Ottawa, Canada, Nuremberg, Germany, and San Jose, USA, is a solution provider for the next generation data center infrastructures. We aim to deliver advanced technology that minimizes environmental impact through lower power dissipation. Working with world class fabrication partners, RANOVUS is the leader in the application of unique new te…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939035654",
@@ -1371,7 +1576,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Join Our Team as a Metallurgical Laboratory Technician at Johnson Electric! Location: Stratford, ON (onsite) Salary Range: $50,000- $60,000 annually Vacancy Type: Existing Position As our next Metallurgical Laboratory Technician , you’ll be responsible for conducting metallurgical, sediment, and dimensional analyses throughout all stages of manufacturing. Your expertise in laboratory testing, powder metallurgy, heat-treatment processes, material properties, and dimensional analysis will be esse…"
+   "summary": "Join Our Team as a Metallurgical Laboratory Technician at Johnson Electric! Location: Stratford, ON (onsite) Salary Range: $50,000- $60,000 annually Vacancy Type: Existing Position As our next Metallurgical Laboratory Technician , you’ll be responsible for conducting metallurgical, sediment, and dimensional analyses throughout all stages of manufacturing. Your expertise in laboratory testing, powder metallurgy, heat-treatment processes, material properties, and dimensional analysis will be esse…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939031575",
@@ -1390,7 +1597,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Join The Upper Canada District School Board Creating Futures, Leading and Learning for All We are currently accepting applications for Educational Assistant . Under the direction and the supervision of the Principal and in consultation with the Learning Resource Teacher (LRT) and classroom teacher, the Educational Assistant is responsible for the provision of support to students with exceptional needs within the school. The position involves dealing with confidential information and requires on…"
+   "summary": "Join The Upper Canada District School Board Creating Futures, Leading and Learning for All We are currently accepting applications for Educational Assistant . Under the direction and the supervision of the Principal and in consultation with the Learning Resource Teacher (LRT) and classroom teacher, the Educational Assistant is responsible for the provision of support to students with exceptional needs within the school. The position involves dealing with confidential information and requires on…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939030816",
@@ -1409,7 +1620,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position title: ESL/LINC Instructor (Supply/On call) Reporting to: Language Program Manager Vacancy: Existing Vacancy number : IRCC-0005 Number of openings : 2 Hourly Rate : $41.29 Hours : On call Classification: Permanent - Casual Starting date : To be determined Location: Queen Street/Fairview Mall Location Application Deadline : October 27, 2026, 11:59 PM EST Position Summary: As a member of the NEW language team, the ESL/LINC Instructor works in collaboration with team members and participa…"
+   "summary": "Position title: ESL/LINC Instructor (Supply/On call) Reporting to: Language Program Manager Vacancy: Existing Vacancy number : IRCC-0005 Number of openings : 2 Hourly Rate : $41.29 Hours : On call Classification: Permanent - Casual Starting date : To be determined Location: Queen Street/Fairview Mall Location Application Deadline : October 27, 2026, 11:59 PM EST Position Summary: As a member of the NEW language team, the ESL/LINC Instructor works in collaboration with team members and participa…",
+   "fit": "no",
+   "fitWhy": [
+    "Ontario school-board teaching needs OCT certification (you're still working on it)"
+   ]
   },
   {
    "id": "adzuna-5939029825",
@@ -1428,7 +1643,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Employment Status: Regular Time Type: Full time BUILDING A WORLD CLASS TEAM STARTS WITH YOU At the heart of CSA Group is a vision: making the world a better, safer, more sustainable place. It's been part of our mission for nearly one hundred years: from the first engineering standard for railway bridges developed in 1919, to more than 3,500 standards, codes & related products today. Headquartered in Canada, with a global footprint of more than 30 labs and offices across Europe, Asia and North A…"
+   "summary": "Employment Status: Regular Time Type: Full time BUILDING A WORLD CLASS TEAM STARTS WITH YOU At the heart of CSA Group is a vision: making the world a better, safer, more sustainable place. It's been part of our mission for nearly one hundred years: from the first engineering standard for railway bridges developed in 1919, to more than 3,500 standards, codes & related products today. Headquartered in Canada, with a global footprint of more than 30 labs and offices across Europe, Asia and North A…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5939028328",
@@ -1447,7 +1664,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: Educational Assistant/Behaviour Intervention/ Educational Assistant Date Posted: 10/21/2026 Location: Kenaston School, Kenaston, SK (K-12) Date Available: As soon as possible Closing Date: Open until filled Description: Sun West School Division invites applications for an Educational Assistant in Kenaston School, Kenaston, SK. This is a temporary position, 6.5 hours per day, every other student day, starting as soon as possible and ending June 25, 2027. The successful candidate w…"
+   "summary": "Position Type: Educational Assistant/Behaviour Intervention/ Educational Assistant Date Posted: 10/21/2026 Location: Kenaston School, Kenaston, SK (K-12) Date Available: As soon as possible Closing Date: Open until filled Description: Sun West School Division invites applications for an Educational Assistant in Kenaston School, Kenaston, SK. This is a temporary position, 6.5 hours per day, every other student day, starting as soon as possible and ending June 25, 2027. The successful candidate w…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939017409",
@@ -1466,7 +1687,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: School Based Support/ Educational Assistant Date Posted: 10/21/2026 Location: La Loche - Nitelazetue Elementary School FTE : Full time Term of Employment: Temporary (June 11, 2027) Salary and Benefits: $20.32 - $23.78 (Uncertified) or $22.56 - $26.39 (Certified) per hour - According to education and experience. Qualifications: Grade 12 preferred but not mandatory Experience or specialized training working with Special Needs Students is preferred Must be caring, loving, compassion…"
+   "summary": "Position Type: School Based Support/ Educational Assistant Date Posted: 10/21/2026 Location: La Loche - Nitelazetue Elementary School FTE : Full time Term of Employment: Temporary (June 11, 2027) Salary and Benefits: $20.32 - $23.78 (Uncertified) or $22.56 - $26.39 (Certified) per hour - According to education and experience. Qualifications: Grade 12 preferred but not mandatory Experience or specialized training working with Special Needs Students is preferred Must be caring, loving, compassion…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5939013091",
@@ -1485,7 +1710,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Wild Rose School Division requires A FULL TIME TEMPORARY GRADE 7 MATH AND SCIENCE TEACHER for Pioneer Middle School in Rocky Mountain House, Alberta Applications are invited for a Temporary Full Time Grade 7 Math and Science Teacher Pioneer Middle School is seeking a Temporary Full Time Grade 7 Math and Science Teacher to teach two sections each of Math 7, Science 7 & Foods 7, as well as one section of the Wellness component of PEW7 & CEFL 7. To commence on January 5, 2027 for the remainder of …"
+   "summary": "Wild Rose School Division requires A FULL TIME TEMPORARY GRADE 7 MATH AND SCIENCE TEACHER for Pioneer Middle School in Rocky Mountain House, Alberta Applications are invited for a Temporary Full Time Grade 7 Math and Science Teacher Pioneer Middle School is seeking a Temporary Full Time Grade 7 Math and Science Teacher to teach two sections each of Math 7, Science 7 & Foods 7, as well as one section of the Wellness component of PEW7 & CEFL 7. To commence on January 5, 2027 for the remainder of …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5938853952",
@@ -1504,7 +1731,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description This is an entry-level position, which would not be eligible for relocation support for candidates that need to relocate to the Peterborough / Lakefield area. Public transit is limited for those without vehicles. This role also requires availability to work shifts on a rotating schedule (Days, evenings and some weekends). Duties may include sample reception, sample identification, sample preparation, sample dilutions, setting up analytical batches and analysis, batch Quality Con…"
+   "summary": "Job Description This is an entry-level position, which would not be eligible for relocation support for candidates that need to relocate to the Peterborough / Lakefield area. Public transit is limited for those without vehicles. This role also requires availability to work shifts on a rotating schedule (Days, evenings and some weekends). Duties may include sample reception, sample identification, sample preparation, sample dilutions, setting up analytical batches and analysis, batch Quality Con…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607312917",
@@ -1523,7 +1752,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "responsibilities as deemed appropriate by the instructor. Estimated TA Support (Hours): N/A Link to timetable for class schedule: https://ttb.utoronto.ca/ Sessional dates of appointment: November 1 - December 31, 2026. Note: all positions involve completion of any course grading not finished by December 31 , 2026 for Fall courses. In accordance with the current CUPE 3902 collective agreement, the rate of pay applicable for Sessional Instructional Assistants is $55.25 per hour plus 4% vacation pay. Please note that should rates stipulated in the collective agreement vary from rates stated in th"
+   "summary": "responsibilities as deemed appropriate by the instructor. Estimated TA Support (Hours): N/A Link to timetable for class schedule: https://ttb.utoronto.ca/ Sessional dates of appointment: November 1 - December 31, 2026. Note: all positions involve completion of any course grading not finished by December 31 , 2026 for Fall courses. In accordance with the current CUPE 3902 collective agreement, the rate of pay applicable for Sessional Instructional Assistants is $55.25 per hour plus 4% vacation pay. Please note that should rates stipulated in the collective agreement vary from rates stated in th",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937878493",
@@ -1542,7 +1773,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description Company: Davey Tree Expert Co. of Canada, Limited Locations: Saskatoon, Saskatchewan, Regina, Saskatchewan Additional Locations: Travel is Required. Work Site: On Site Req ID: 229393 Position Overview As a Groundperson you will be working to support the operations above; you will play an important part in both site set up and assistance to both climbers and trimmers. You will play a vital role in the safe execution of work for our crews and members of the public …"
+   "summary": "Job Description Job Description Company: Davey Tree Expert Co. of Canada, Limited Locations: Saskatoon, Saskatchewan, Regina, Saskatchewan Additional Locations: Travel is Required. Work Site: On Site Req ID: 229393 Position Overview As a Groundperson you will be working to support the operations above; you will play an important part in both site set up and assistance to both climbers and trimmers. You will play a vital role in the safe execution of work for our crews and members of the public …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937838071",
@@ -1561,7 +1794,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description High School Math/Science Teacher/Tutor Wanted Motivated by mathematics? Sharp with science? Excited by equations in both fields? Eager to help students succeed in math and science? Our hours count! Gain valuable teaching experience! Oxford Learning North York Willowdale is currently seeking part-time teacher-tutors for a role in our learning centre. This position is perfect for anyone who loves working with students, enjoys numbers and equations, and is passionat…"
+   "summary": "Job Description Job Description High School Math/Science Teacher/Tutor Wanted Motivated by mathematics? Sharp with science? Excited by equations in both fields? Eager to help students succeed in math and science? Our hours count! Gain valuable teaching experience! Oxford Learning North York Willowdale is currently seeking part-time teacher-tutors for a role in our learning centre. This position is perfect for anyone who loves working with students, enjoys numbers and equations, and is passionat…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937657132",
@@ -1580,7 +1815,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Augustine School - Humboldt Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4406 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Augustine School - Humboldt, SK DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs st…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Augustine School - Humboldt Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4406 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Augustine School - Humboldt, SK DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs st…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937654951",
@@ -1599,7 +1838,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. John School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4412 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Johns School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school lev…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. John School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4412 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Johns School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school lev…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937654225",
@@ -1618,7 +1861,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: Father Vachon School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4405 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Father Vachon School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary s…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: Father Vachon School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4405 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Father Vachon School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary s…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937653211",
@@ -1637,7 +1884,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "EDUCATIONAL ASSISTANT COMPLEX BEHAVIOR AND INCLUSION VETERAN SCHOOL Competition PLSD-2292 This position is currently posted internally to CUPE e mployees fo r 5 working days until 4:30 p.m. October 27, 2026 as per the CUPE Local 5829 Collective Agreement. Veteran School, Veteran, Alberta 30 hours per week | Start Date: As Soon As Possible Prairie Land Public School Division is seeking a compassionate, skilled, and student-centered Specialized Educational Assistant to join the team at Veteran Sc…"
+   "summary": "EDUCATIONAL ASSISTANT COMPLEX BEHAVIOR AND INCLUSION VETERAN SCHOOL Competition PLSD-2292 This position is currently posted internally to CUPE e mployees fo r 5 working days until 4:30 p.m. October 27, 2026 as per the CUPE Local 5829 Collective Agreement. Veteran School, Veteran, Alberta 30 hours per week | Start Date: As Soon As Possible Prairie Land Public School Division is seeking a compassionate, skilled, and student-centered Specialized Educational Assistant to join the team at Veteran Sc…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937652967",
@@ -1656,7 +1907,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Nicholas Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4407 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Nicholas Catholic School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school level …"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Nicholas Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4407 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Nicholas Catholic School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school level …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937650771",
@@ -1675,7 +1930,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Therese Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4408 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Therese of Lisieux Catholic School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary scho…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Therese Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4408 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Therese of Lisieux Catholic School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary scho…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937647111",
@@ -1694,7 +1953,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Agency: Omnicom Media Job Function: Strategy and Planning Job Subfunction: Research and Insights Job Description: Job Title: Research Analyst, Consumer Insights Location: Toronto Reports To: Director, Consumer Insights Department: Consumer Insights Job Overview: We have an opportunity for a curious, detail-oriented Research Analyst to join our Consumer Insights team at Omnicom Media Group. This role is about asking questions, turning complex data into clear, compelling insights that create valu…"
+   "summary": "Agency: Omnicom Media Job Function: Strategy and Planning Job Subfunction: Research and Insights Job Description: Job Title: Research Analyst, Consumer Insights Location: Toronto Reports To: Director, Consumer Insights Department: Consumer Insights Job Overview: We have an opportunity for a curious, detail-oriented Research Analyst to join our Consumer Insights team at Omnicom Media Group. This role is about asking questions, turning complex data into clear, compelling insights that create valu…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937646653",
@@ -1713,7 +1974,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Peace Wapiti Public School Division (PWPSD) provides service to approximately 6,100 students in Junior Kindergarten through Grade 12 in 34 schools and is one of the largest employers in the Grande Prairie/Spirit River region. To learn more about northwestern Alberta and Working, Living and Playing in our region, please visit the Work NW Alberta website here . BEZANSON SCHOOL is seeking candidates who enjoy working in a student-focused and collaborative environment. We invite applications for a …"
+   "summary": "Peace Wapiti Public School Division (PWPSD) provides service to approximately 6,100 students in Junior Kindergarten through Grade 12 in 34 schools and is one of the largest employers in the Grande Prairie/Spirit River region. To learn more about northwestern Alberta and Working, Living and Playing in our region, please visit the Work NW Alberta website here . BEZANSON SCHOOL is seeking candidates who enjoy working in a student-focused and collaborative environment. We invite applications for a …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937646577",
@@ -1732,7 +1997,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Educational Assistant Auxiliary , On-Call Internal/External Posting Posting Date: October 15, 2026 Closing Date: November 1, 2026 Posting 2026087 Hours Shifts vary based on need. Salary Wage per hour $31.03 per hour. This is a bargaining unit position, in the Professional Employees Association. All candidates must be legally able to work in Canada. Summary St. Margaret’s School (SMS) is Western Canada’s only girl-centered, independent day and boarding school located in Victoria, British Columb…"
+   "summary": "Educational Assistant Auxiliary , On-Call Internal/External Posting Posting Date: October 15, 2026 Closing Date: November 1, 2026 Posting 2026087 Hours Shifts vary based on need. Salary Wage per hour $31.03 per hour. This is a bargaining unit position, in the Professional Employees Association. All candidates must be legally able to work in Canada. Summary St. Margaret’s School (SMS) is Western Canada’s only girl-centered, independent day and boarding school located in Victoria, British Columb…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937644260",
@@ -1751,7 +2020,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Peter School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4410 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole St. Peter School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary sch…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Peter School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4410 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole St. Peter School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary sch…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937635726",
@@ -1770,7 +2043,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "WHO ARE WE? At Ambipar Response Canada Inc, we invest in our employees and take pride in fostering growth as you work towards a career in the environmental industry. We offer an energetic, dynamic, and supportive team environment, shaping you to be a leader in your role. Our dedication includes many perks, such as: Health & Dental Benefits Health Spending Account RRSP Matching Program Growth Opportunities & Mentorship Tuition/Professional Development Reimbursement Flex Days Employee Assistance …"
+   "summary": "WHO ARE WE? At Ambipar Response Canada Inc, we invest in our employees and take pride in fostering growth as you work towards a career in the environmental industry. We offer an energetic, dynamic, and supportive team environment, shaping you to be a leader in your role. Our dedication includes many perks, such as: Health & Dental Benefits Health Spending Account RRSP Matching Program Growth Opportunities & Mentorship Tuition/Professional Development Reimbursement Flex Days Employee Assistance …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937633976",
@@ -1789,7 +2064,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Peter School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4411 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole St. Peter School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school level Co…"
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/20/2026 Location: St. Peter School Date Available: ASAP Closing Date: 10/27/2026 CUPE 2268 JOB ID 4411 JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole St. Peter School DATE SUBMITTED TO SCHOOLS : October 20, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school level Co…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5937446851",
@@ -1808,7 +2087,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Job Description Responsibilities Supplying materials required for laboratory exercises Procuring, preparing, pretesting and labeling specimens, reagents and slides Assisting the continuing education department with lab set-up and requirements Participating in biological and chemical safety by providing spill response & following Material Safety Data Sheet (MSDS) procedures and regulations Perform phlebotomy as required Work independently and as part of a team Additional duties as required"
+   "summary": "Job Description Responsibilities Supplying materials required for laboratory exercises Procuring, preparing, pretesting and labeling specimens, reagents and slides Assisting the continuing education department with lab set-up and requirements Participating in biological and chemical safety by providing spill response & following Material Safety Data Sheet (MSDS) procedures and regulations Perform phlebotomy as required Work independently and as part of a team Additional duties as required",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607268717",
@@ -1827,7 +2108,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Research Administration & Teaching · Your opportunity: The Department of Psychological Clinical Science is home to a world-class MA/PhD program in Clinical Psychology that integrates rigorous scientific research with clinical training. The Clinical Neurosciences Laboratory, led by Dr. Anthony C. Ruocco, brings together clinical psychology and neuroscience to advance understanding of mental health, inform suicide prevention, and improve assessment and intervention. The research combines psychological assessment, cognitive testing, and magnetic resonance imaging of the brain to investigate quest"
+   "summary": "Research Administration & Teaching · Your opportunity: The Department of Psychological Clinical Science is home to a world-class MA/PhD program in Clinical Psychology that integrates rigorous scientific research with clinical training. The Clinical Neurosciences Laboratory, led by Dr. Anthony C. Ruocco, brings together clinical psychology and neuroscience to advance understanding of mental health, inform suicide prevention, and improve assessment and intervention. The research combines psychological assessment, cognitive testing, and magnetic resonance imaging of the brain to investigate quest",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937262364",
@@ -1846,7 +2129,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Clean Harbors in Guelph, ON is seeking a Field Service Technician to join their safety conscious team in Field Services! This role is associated with hazardous waste clean-up, site remediation, equipment decontamination, working in confined spaces and the handling of hazardous materials. * This role is based out of our Guelph, ON head office - however, it requires flexibility to travel throughout Ontario. * Why work for Clean Harbors ? Health and Safety is our 1 priority, and we live it 3-6-5! …"
+   "summary": "Clean Harbors in Guelph, ON is seeking a Field Service Technician to join their safety conscious team in Field Services! This role is associated with hazardous waste clean-up, site remediation, equipment decontamination, working in confined spaces and the handling of hazardous materials. * This role is based out of our Guelph, ON head office - however, it requires flexibility to travel throughout Ontario. * Why work for Clean Harbors ? Health and Safety is our 1 priority, and we live it 3-6-5! …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5937220311",
@@ -1865,7 +2150,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Shape the Future of Sustainable Resource Development Across Western Canada Are you a seasoned terrestrial ecology professional looking to influence some of Canada's most complex mining, energy, and infrastructure projects? As a Principal Technical Consultant, Terrestrial Ecology based in Western Canada , you'll play a strategic role in delivering scientifically sound environmental solutions that help balance development with environmental stewardship. This is an opportunity to work alongside mu…"
+   "summary": "Shape the Future of Sustainable Resource Development Across Western Canada Are you a seasoned terrestrial ecology professional looking to influence some of Canada's most complex mining, energy, and infrastructure projects? As a Principal Technical Consultant, Terrestrial Ecology based in Western Canada , you'll play a strategic role in delivering scientifically sound environmental solutions that help balance development with environmental stewardship. This is an opportunity to work alongside mu…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936920406",
@@ -1884,7 +2171,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description This position will carry out various routine testing and analysis, following written work instructions under the direction of the Supervisor of a specific department. Duties may include sample identification, sample preparation, sample dilutions, Ensure samples are logged into LIMS accurately and in a quick manner. Working knowledge of LIMS Ensure samples are catalogued and stored in an efficient and easily retrievable manner. Assists laboratory personnel in locating and retriev…"
+   "summary": "Job Description This position will carry out various routine testing and analysis, following written work instructions under the direction of the Supervisor of a specific department. Duties may include sample identification, sample preparation, sample dilutions, Ensure samples are logged into LIMS accurately and in a quick manner. Working knowledge of LIMS Ensure samples are catalogued and stored in an efficient and easily retrievable manner. Assists laboratory personnel in locating and retriev…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936653470",
@@ -1903,7 +2192,11 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description Educational Assistant - Early Learners (Full-Time) Oxford Learning Stouffville is currently looking to hire a full-time educational assistant. If you are passionate about early learning, organized, enthusiastic, outgoing, and positive and want to work in an environment that is filled with a lot of energy, Oxford Learning Stouffville has a position for you. Position Requirements / Responsibilities: You will be working with children from 18 months to 6 years of age…"
+   "summary": "Job Description Job Description Educational Assistant - Early Learners (Full-Time) Oxford Learning Stouffville is currently looking to hire a full-time educational assistant. If you are passionate about early learning, organized, enthusiastic, outgoing, and positive and want to work in an environment that is filled with a lot of energy, Oxford Learning Stouffville has a position for you. Position Requirements / Responsibilities: You will be working with children from 18 months to 6 years of age…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5936644165",
@@ -1922,7 +2215,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Job Description Company: Davey Tree Expert Co. of Canada, Limited Locations: Severn, Ontario Additional Locations: NA Work Site: On Site Req ID: 229339 Position Overview As a Groundsperson you will be working to support the operations above; you will play an important part in both site set up and assistance to both climbers and trimmers. This role will provide newcomers to the tree industry with a better understanding of what we do at Davey and provide the right individuals with…"
+   "summary": "Job Description Job Description Company: Davey Tree Expert Co. of Canada, Limited Locations: Severn, Ontario Additional Locations: NA Work Site: On Site Req ID: 229339 Position Overview As a Groundsperson you will be working to support the operations above; you will play an important part in both site set up and assistance to both climbers and trimmers. This role will provide newcomers to the tree industry with a better understanding of what we do at Davey and provide the right individuals with…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936636451",
@@ -1941,7 +2236,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Job Description Job Description Lab Technician Employment Type: Full Time Permanent Division: P&H Milling Location: Springbrook, AB Who We Are Parrish & Heimbecker, Limited (P&H) is a Canadian, family-owned company with over 115 years in agriculture. We operate across four divisions: Grain & Crop Inputs, Flour Milling, P&H Foods, and New-Life Mills, delivering trusted solutions from crop inputs and grain handling to flour milling, livestock nutrition, and egg production. By connecting Canadian …"
+   "summary": "Job Description Job Description Lab Technician Employment Type: Full Time Permanent Division: P&H Milling Location: Springbrook, AB Who We Are Parrish & Heimbecker, Limited (P&H) is a Canadian, family-owned company with over 115 years in agriculture. We operate across four divisions: Grain & Crop Inputs, Flour Milling, P&H Foods, and New-Life Mills, delivering trusted solutions from crop inputs and grain handling to flour milling, livestock nutrition, and egg production. By connecting Canadian …",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936630784",
@@ -1960,7 +2257,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Restoration Technician (Rope Access Level 2) – High-Rise Exterior Restoration Employer: Urbaneye Restorations Ltd. (1681 Chestnut Street; Suite 400. Vancouver, BC - V6J 4M6) - Job Location: Vancouver, BC (various job sites) - Wage: $37.00 to $40.00/hour - Hours: 30-40 hours per week (overtime as required) - Employment Type: Full-time, Permanent - Vacancies: 3 About the Company Urbaneye Restorations Ltd. is a Vancouver-based company specializing in high-rise exterior building restoration using r…"
+   "summary": "Restoration Technician (Rope Access Level 2) – High-Rise Exterior Restoration Employer: Urbaneye Restorations Ltd. (1681 Chestnut Street; Suite 400. Vancouver, BC - V6J 4M6) - Job Location: Vancouver, BC (various job sites) - Wage: $37.00 to $40.00/hour - Hours: 30-40 hours per week (overtime as required) - Employment Type: Full-time, Permanent - Vacancies: 3 About the Company Urbaneye Restorations Ltd. is a Vancouver-based company specializing in high-rise exterior building restoration using r…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936622056",
@@ -1979,7 +2278,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Platinum Pro-Claim Restoration located at 13880 Mayfield Pl, Richmond, BC V6V 2E4 is looking for 5 Restoration Technicians to coordinate and lead flood restoration projects. The salary range is $25.00 to $30.00 per hour, depending on experience, working an average of 40 hours per week. These are full-time, year-round positions. An extensive benefits plan including extended health, dental, GRSP, LTD, a heath care spending account are available after 3 months of employment. We also offer a health…"
+   "summary": "Platinum Pro-Claim Restoration located at 13880 Mayfield Pl, Richmond, BC V6V 2E4 is looking for 5 Restoration Technicians to coordinate and lead flood restoration projects. The salary range is $25.00 to $30.00 per hour, depending on experience, working an average of 40 hours per week. These are full-time, year-round positions. An extensive benefits plan including extended health, dental, GRSP, LTD, a heath care spending account are available after 3 months of employment. We also offer a health…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936618730",
@@ -1998,7 +2299,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Company name: Foy Tree Care Business address: 5328 Calgary Trail NW, Edmonton, AB T6H 4J8 Location of work: Locations in and around the Edmonton, AB area Title of position: Arborist Positions available: 2 Job duties: - Examine trees, shrubs, and plants to check for infestation and disease - Clean and prune trees and shrubs, looking for ways to help the plants with optimal growth and strength - Apply various solutions, including chemical fertilizers, fungicides, herbicides, and pesticides, to re…"
+   "summary": "Company name: Foy Tree Care Business address: 5328 Calgary Trail NW, Edmonton, AB T6H 4J8 Location of work: Locations in and around the Edmonton, AB area Title of position: Arborist Positions available: 2 Job duties: - Examine trees, shrubs, and plants to check for infestation and disease - Clean and prune trees and shrubs, looking for ways to help the plants with optimal growth and strength - Apply various solutions, including chemical fertilizers, fungicides, herbicides, and pesticides, to re…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936555541",
@@ -2017,7 +2320,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Coffee Gold Project, Yukon Talamore Mining is a Vancouver-based exploration and development company focused on advancing high-potential base and precious metals projects across the Americas. Our flagship asset is the 100%-owned Coffee Project in the Yukon, Canada — a high-quality gold project advancing through the final stages of permitting, engineering, and resource expansion drilling in preparation for a construction decision. At Talamore mining, we are committed to building value through dis…"
+   "summary": "Coffee Gold Project, Yukon Talamore Mining is a Vancouver-based exploration and development company focused on advancing high-potential base and precious metals projects across the Americas. Our flagship asset is the 100%-owned Coffee Project in the Yukon, Canada — a high-quality gold project advancing through the final stages of permitting, engineering, and resource expansion drilling in preparation for a construction decision. At Talamore mining, we are committed to building value through dis…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936505771",
@@ -2036,7 +2341,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Job Type: Permanent Department: Hourly Wage: $40.37 Close Date (closes at 12:00 am on date noted below): November 17, 2026 Openings: 1 Position Summary About Milton Join one of Ontario’s fastest-growing and most dynamic municipalities. The Town of Milton is proud to deliver high-quality, sustainable municipal services that support a vibrant, inclusive, and forward-looking community where residents thrive, businesses succeed, and nature is respected and protected. Our vision is to foster a safe,…"
+   "summary": "Job Type: Permanent Department: Hourly Wage: $40.37 Close Date (closes at 12:00 am on date noted below): November 17, 2026 Openings: 1 Position Summary About Milton Join one of Ontario’s fastest-growing and most dynamic municipalities. The Town of Milton is proud to deliver high-quality, sustainable municipal services that support a vibrant, inclusive, and forward-looking community where residents thrive, businesses succeed, and nature is respected and protected. Our vision is to foster a safe,…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936501592",
@@ -2055,7 +2362,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Hiring Unit: Department of Integrated Studies in Education (DISE) Course Title: Elementary School Science 2 Course…"
+   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Hiring Unit: Department of Integrated Studies in Education (DISE) Course Title: Elementary School Science 2 Course…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936496465",
@@ -2074,7 +2383,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Shape the Future of Sustainable Resource Development Across Western Canada Are you a seasoned terrestrial ecology professional looking to influence some of Canada's most complex mining, energy, and infrastructure projects? As a Principal Technical Consultant, Terrestrial Ecology based in Western Canada , you'll play a strategic role in delivering scientifically sound environmental solutions that help balance development with environmental stewardship. This is an opportunity to work alongside mu…"
+   "summary": "Shape the Future of Sustainable Resource Development Across Western Canada Are you a seasoned terrestrial ecology professional looking to influence some of Canada's most complex mining, energy, and infrastructure projects? As a Principal Technical Consultant, Terrestrial Ecology based in Western Canada , you'll play a strategic role in delivering scientifically sound environmental solutions that help balance development with environmental stewardship. This is an opportunity to work alongside mu…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936495400",
@@ -2093,7 +2404,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Brock University is located on the traditional territory of the Haudenosaunee and Anishinaabe peoples, many of whom continue to live and work here today. This territory is covered by the Upper Canada Treaties and is within the land protected by the Dish with One Spoon Wampum Agreement. We are one of Canada’s outstanding comprehensive universities, where excellence and innovation thrive! Brock has been proudly recognized as a Hamilton-Niagara Top Employer for eight consecutive years. Brock conti…"
+   "summary": "Brock University is located on the traditional territory of the Haudenosaunee and Anishinaabe peoples, many of whom continue to live and work here today. This territory is covered by the Upper Canada Treaties and is within the land protected by the Dish with One Spoon Wampum Agreement. We are one of Canada’s outstanding comprehensive universities, where excellence and innovation thrive! Brock has been proudly recognized as a Hamilton-Niagara Top Employer for eight consecutive years. Brock conti…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936492451",
@@ -2112,7 +2425,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "SUMMARY Performs routine laboratory analysis of pressurized petroleum crude oil and natural gas in a PVT (Pressure, Volume, Temperature) laboratory environment. Conducts all aspects of PVT lab work under close supervision, including sample QC, pressurized transfers, saturation pressure measurements, flash separations, data reporting, and others, and assists coworkers in the same. DUTIES & RESPONSIBILITIES Transfer surface pressurized gas samples into high pressure storage cylinders. Transfer of…"
+   "summary": "SUMMARY Performs routine laboratory analysis of pressurized petroleum crude oil and natural gas in a PVT (Pressure, Volume, Temperature) laboratory environment. Conducts all aspects of PVT lab work under close supervision, including sample QC, pressurized transfers, saturation pressure measurements, flash separations, data reporting, and others, and assists coworkers in the same. DUTIES & RESPONSIBILITIES Transfer surface pressurized gas samples into high pressure storage cylinders. Transfer of…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936491348",
@@ -2131,7 +2446,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Hiring Unit: Department of Integrated Studies in Education (DISE) Course Title: Elementary School Science 2 Course…"
+   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Hiring Unit: Department of Integrated Studies in Education (DISE) Course Title: Elementary School Science 2 Course…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936365491",
@@ -2150,7 +2467,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "POSITION : Laboratory Technician BUSINESS UNIT : London Ice Cream Plant LOCATION : London, Ontario - 980 Wilton Grove Rd, London, ON N6N 1C7 REPORTS TO : Quality Assurance Supervisor HOURLY RATE: $25.99/hour Nestlé Canada Ice Cream has an immediate opening for a Laboratory Technician to join the Quality Assurance team at our state-of-the-art ice cream manufacturing plant, located in London, Ontario. The position may require rotation of shifts and weekend work. Benefits Comprehensive Health & D…"
+   "summary": "POSITION : Laboratory Technician BUSINESS UNIT : London Ice Cream Plant LOCATION : London, Ontario - 980 Wilton Grove Rd, London, ON N6N 1C7 REPORTS TO : Quality Assurance Supervisor HOURLY RATE: $25.99/hour Nestlé Canada Ice Cream has an immediate opening for a Laboratory Technician to join the Quality Assurance team at our state-of-the-art ice cream manufacturing plant, located in London, Ontario. The position may require rotation of shifts and weekend work. Benefits Comprehensive Health & D…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5936365417",
@@ -2169,7 +2488,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Job Description Insight Global is looking for an experienced Senior Field Technician to support high-voltage electrical projects throughout Ontario. This individual will work primarily in the field, supporting the commissioning, testing, maintenance, and troubleshooting of electrical equipment within substation and utility environments. The ideal candidate will bring strong hands-on high-voltage testing experience and be comfortable independently working with test equipment, performing electric…"
+   "summary": "Job Description Insight Global is looking for an experienced Senior Field Technician to support high-voltage electrical projects throughout Ontario. This individual will work primarily in the field, supporting the commissioning, testing, maintenance, and troubleshooting of electrical equipment within substation and utility environments. The ideal candidate will bring strong hands-on high-voltage testing experience and be comfortable independently working with test equipment, performing electric…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607219617",
@@ -2188,7 +2509,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Date Posted: 10/20/2026 Req ID: 50646 Faculty/Division: UofT Scarborough Department: UTSC:Dept-Physical & Environmental Sci Campus: University of Toronto Scarborough (UTSC) Existing Vacancy: Yes Description: CHMC31Y3 - Sessional Instructional Assistant A detailed discussion of the structure, bonding, spectroscopy and reactivity of transition metal compounds. After an overview of descriptive chemistry, the focus is on coordination and organometallic chemistry, with an introduction to catalysis and biocoordination chemistry. The laboratory focuses on intermediate and advanced inorganic syntheses"
+   "summary": "Date Posted: 10/20/2026 Req ID: 50646 Faculty/Division: UofT Scarborough Department: UTSC:Dept-Physical & Environmental Sci Campus: University of Toronto Scarborough (UTSC) Existing Vacancy: Yes Description: CHMC31Y3 - Sessional Instructional Assistant A detailed discussion of the structure, bonding, spectroscopy and reactivity of transition metal compounds. After an overview of descriptive chemistry, the focus is on coordination and organometallic chemistry, with an introduction to catalysis and biocoordination chemistry. The laboratory focuses on intermediate and advanced inorganic syntheses",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "workcabin-48743",
@@ -2207,7 +2530,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Newcomer Youth Green Economy Project (NYGEP) – Fall 2026 Cohort Applications Open Opportunity: Newcomer Youth Green Economy Project (NYGEP) Participant Organization: Toronto and Region Conservation Authority (TRCA) Location : Across Canada with in-person activities in the GTA – Hybrid and Remote Participation Available Program Duration : November 14, 2026 – April 2027 Commitment : Part-time, five months Cost: Free Apply : www.trca.ca/nygep Launch Your Career in Canada’s Environmental Sector. Are you a newcomer to Canada aged 18–35 looking to start or advance your career in the environmental se"
+   "summary": "Newcomer Youth Green Economy Project (NYGEP) – Fall 2026 Cohort Applications Open Opportunity: Newcomer Youth Green Economy Project (NYGEP) Participant Organization: Toronto and Region Conservation Authority (TRCA) Location : Across Canada with in-person activities in the GTA – Hybrid and Remote Participation Available Program Duration : November 14, 2026 – April 2027 Commitment : Part-time, five months Cost: Free Apply : www.trca.ca/nygep Launch Your Career in Canada’s Environmental Sector. Are you a newcomer to Canada aged 18–35 looking to start or advance your career in the environmental se",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5935270943",
@@ -2226,7 +2551,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Position: Lab Technician Location: Truro, NS Why You'll Love Working Here: Competitive wages with opportunities for growth Weekly pay Shift premiums available Extended health, dental, and pension plan On-site cafeteria for your convenience Work with a team that values safety, quality, and continuous improvement Role Overview: As a Lab Technician, you’ll help ensure our products meet quality standards at every stage of production. This is a hands-on role ideal for someone detail-oriented who enj…"
+   "summary": "Position: Lab Technician Location: Truro, NS Why You'll Love Working Here: Competitive wages with opportunities for growth Weekly pay Shift premiums available Extended health, dental, and pension plan On-site cafeteria for your convenience Work with a team that values safety, quality, and continuous improvement Role Overview: As a Lab Technician, you’ll help ensure our products meet quality standards at every stage of production. This is a hands-on role ideal for someone detail-oriented who enj…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5935270107",
@@ -2245,7 +2572,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Teaching Assistant positions Department of Animal Science Macdonald Campus; McGill University Winter term 2027 The…"
+   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). Teaching Assistant positions Department of Animal Science Macdonald Campus; McGill University Winter term 2027 The…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5935262905",
@@ -2264,7 +2593,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). These postings are directed to graduate students who are registered at McGill University in the Winter 2027 semest…"
+   "summary": "Please refer to the How to Apply for a Job (for External Candidates) job aid for instructions on how to apply. If you are an active McGill employee (ie: currently in an active contract or position at McGill University), do not apply through this Career Site. Login to your McGill Workday account and apply to this posting using the Find Jobs report (type Find Jobs in the search bar). These postings are directed to graduate students who are registered at McGill University in the Winter 2027 semest…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-606241617",
@@ -2283,7 +2614,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Your opportunity: At the Waakebiness Institute for Indigenous Health, researchers and educators fromacross the University of Toronto work with community partners and Indigenous peoples to address the complex factors that underlie disparities in health between Indigenous and non-Indigenous people. The Institute is engaged in research, educationand service initiatives to overcome health challenges and evaluate interventions to prevent disease and improve health. Its scholars study health policy and administration to improve the delivery and quality of Indigenous health care, and educate Indigeno"
+   "summary": "Your opportunity: At the Waakebiness Institute for Indigenous Health, researchers and educators fromacross the University of Toronto work with community partners and Indigenous peoples to address the complex factors that underlie disparities in health between Indigenous and non-Indigenous people. The Institute is engaged in research, educationand service initiatives to overcome health challenges and evaluate interventions to prevent disease and improve health. Its scholars study health policy and administration to improve the delivery and quality of Indigenous health care, and educate Indigeno",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607198017",
@@ -2302,7 +2635,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 10/20/2026 Req ID: 50596 Faculty/Division: Faculty of Arts & Science Department: Department of Earth Sciences Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Course description: Introduction to the hydrologic cycle with emphasis on the physical processes, including precipitation, interception, evaporation, runoff, ground water and soil water. Basic hydrological models will be practiced. Estimated course enrollment : 30 Estimated TA support : 60 hours Schedule: Lecture Monday 1-3 pm; Lab Monday 3-5 pm Dates of appointment : January 6 to April 30, 2027 Pleas"
+   "summary": "Date Posted: 10/20/2026 Req ID: 50596 Faculty/Division: Faculty of Arts & Science Department: Department of Earth Sciences Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Course description: Introduction to the hydrologic cycle with emphasis on the physical processes, including precipitation, interception, evaporation, runoff, ground water and soil water. Basic hydrological models will be practiced. Estimated course enrollment : 30 Estimated TA support : 60 hours Schedule: Lecture Monday 1-3 pm; Lab Monday 3-5 pm Dates of appointment : January 6 to April 30, 2027 Pleas",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "workcabin-48736",
@@ -2321,7 +2656,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "About Musqueam We are traditional hən̓q̓əmin̓əm̓ speaking people. Today, we are a strong, growing community of over 1,300 members. We live on a small portion of our traditional territory, known as the Musqueam Indian Reserve, located south of Marine Drive near the mouth of the Fraser River. The name Musqueam relates back to the River Plant, the name of the plant is məθkʷəy̓. There is a story that has been passed on from generation to generation that explains how we became known as the xʷməθkʷəy̓əm (Musqueam) – People of the River Plant. We have always moved throughout our territory using the r"
+   "summary": "About Musqueam We are traditional hən̓q̓əmin̓əm̓ speaking people. Today, we are a strong, growing community of over 1,300 members. We live on a small portion of our traditional territory, known as the Musqueam Indian Reserve, located south of Marine Drive near the mouth of the Fraser River. The name Musqueam relates back to the River Plant, the name of the plant is məθkʷəy̓. There is a story that has been passed on from generation to generation that explains how we became known as the xʷməθkʷəy̓əm (Musqueam) – People of the River Plant. We have always moved throughout our territory using the r",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5934858602",
@@ -2333,14 +2670,16 @@
    "salaryMax": null,
    "salaryText": null,
    "category": "research",
-   "url": "https://www.adzuna.ca/land/ad/5934858602?se=HOLKQT_R8RGEVsIPQ6tjKA&utm_medium=api&utm_source=cc077b69&v=7A3B0320CC8DEF8995B148E8214BEC1D41D42E30",
+   "url": "https://www.adzuna.ca/land/ad/5934858602?se=xCmIPkrR8RGaLvZ41xPXIA&utm_medium=api&utm_source=cc077b69&v=7A3B0320CC8DEF8995B148E8214BEC1D41D42E30",
    "source": "Adzuna",
    "posted": "2026-10-19T21:53:37Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "JOB TITLE: Mechanical Laboratory Technician REPORTING TO: Quality and Laboratories Manager Founded in 1947, PLP, with locations in more than 20 countries, has operated as a unified global company, delivering high-quality products and unmatched service to customers around the world. In Canada, since 1985, our two ISO 9001-certified facilities have been protecting the world's most critical connections by helping build stronger, more reliable networks. Our critical infrastructure solutions serve a…"
+   "summary": "JOB TITLE: Mechanical Laboratory Technician REPORTING TO: Quality and Laboratories Manager Founded in 1947, PLP, with locations in more than 20 countries, has operated as a unified global company, delivering high-quality products and unmatched service to customers around the world. In Canada, since 1985, our two ISO 9001-certified facilities have been protecting the world's most critical connections by helping build stronger, more reliable networks. Our critical infrastructure solutions serve a…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "workcabin-48727",
@@ -2359,7 +2698,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "permanent",
-   "summary": "Salmon Coast Society is a charitable organization and hub for coastal research, enabling high-quality and innovative science to sustain wild salmon and their ecosystems. We do this through the operation of a field station located in Kwikwasut’inuxw Haxwa’mis territory, in the Broughton Archipelago, near Echo Bay, BC. For more information, please visit salmoncoast.org. We are looking for one person to join our small team in the role of Facilities and Maintenance Coordinator. This position primarily oversees and manages the upkeep and improvements of our off-grid field station infrastructure. Th"
+   "summary": "Salmon Coast Society is a charitable organization and hub for coastal research, enabling high-quality and innovative science to sustain wild salmon and their ecosystems. We do this through the operation of a field station located in Kwikwasut’inuxw Haxwa’mis territory, in the Broughton Archipelago, near Echo Bay, BC. For more information, please visit salmoncoast.org. We are looking for one person to join our small team in the role of Facilities and Maintenance Coordinator. This position primarily oversees and manages the upkeep and improvements of our off-grid field station infrastructure. Th",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5934614226",
@@ -2378,7 +2719,9 @@
    "stillOpen": false,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "52215 - To Be Determined - Regular Hiring salary range: $4,102.00 - 5,508.40 / Bi-weekly Hydro One is proud to be the largest electricity transmission and distribution provider in Ontario, serving nearly 1.5 million customers. We have a long history in the industry with our roots dating back over 110 years to 1906. Since then, we have worked to grow and evolve to meet the changing needs of our customers and communities across Ontario. Today, we’re focused on providing exceptional customer servi…"
+   "summary": "52215 - To Be Determined - Regular Hiring salary range: $4,102.00 - 5,508.40 / Bi-weekly Hydro One is proud to be the largest electricity transmission and distribution provider in Ontario, serving nearly 1.5 million customers. We have a long history in the industry with our roots dating back over 110 years to 1906. Since then, we have worked to grow and evolve to meet the changing needs of our customers and communities across Ontario. Today, we’re focused on providing exceptional customer servi…",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-606235617",
@@ -2397,7 +2740,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 09/18/2026 Req ID: 50250 Faculty/Division: Faculty of Arts & Science Department: Acceleration Consortium Campus: St. George (Downtown Toronto) Position Number: 00055590 Existing Vacancy: Yes Description: The Acceleration Consortium at the University of Toronto invites applications for a Research Associate (Limited Term) for a 2-year appointment. The anticipated start date is December 1st 2026. The Acceleration Consortium (AC) at the University of Toronto (U of T) is leading a transformative shift in scientific discovery that will accelerate technology development and commercializa"
+   "summary": "Date Posted: 09/18/2026 Req ID: 50250 Faculty/Division: Faculty of Arts & Science Department: Acceleration Consortium Campus: St. George (Downtown Toronto) Position Number: 00055590 Existing Vacancy: Yes Description: The Acceleration Consortium at the University of Toronto invites applications for a Research Associate (Limited Term) for a 2-year appointment. The anticipated start date is December 1st 2026. The Acceleration Consortium (AC) at the University of Toronto (U of T) is leading a transformative shift in scientific discovery that will accelerate technology development and commercializa",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607078617",
@@ -2416,7 +2761,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 10/15/2026 Req ID: 50558 Faculty/Division: Faculty of Arts & Science Department: Women and Gender Studies Institute Campus: St. George (Downtown Toronto) Description: Course Number and Title: WGS273H1S - Gender and Environmental (In)Justice Course Description: Using a transnational, feminist framework, this course examines material and conceptual interrelations between gendered human and non-human nature, ecological crises, political economies and environmental movements in a variety of geographical, historical and cultural contexts. Does environmental justice include social justi"
+   "summary": "Date Posted: 10/15/2026 Req ID: 50558 Faculty/Division: Faculty of Arts & Science Department: Women and Gender Studies Institute Campus: St. George (Downtown Toronto) Description: Course Number and Title: WGS273H1S - Gender and Environmental (In)Justice Course Description: Using a transnational, feminist framework, this course examines material and conceptual interrelations between gendered human and non-human nature, ecological crises, political economies and environmental movements in a variety of geographical, historical and cultural contexts. Does environmental justice include social justi",
+   "fit": "no",
+   "fitWhy": [
+    "needs a PhD"
+   ]
   },
   {
    "id": "uoft-607107317",
@@ -2435,7 +2784,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 10/16/2026 Req ID: 50561 Faculty/Division: Faculty of Arts & Science Department: Ecology and Evolutionary Biology Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Course Number and Title: EEB198H1S – Genes and Behaviour Course Description: This course examines the new paradigm in behaviour genetic research. Lectures explore why the concept of a nature-nurture dichotomy is passé and has been replaced by a new understanding gained from animal and human research in the areas of gene by environment interaction and epigenetics; how our genome listens to our envi"
+   "summary": "Date Posted: 10/16/2026 Req ID: 50561 Faculty/Division: Faculty of Arts & Science Department: Ecology and Evolutionary Biology Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Course Number and Title: EEB198H1S – Genes and Behaviour Course Description: This course examines the new paradigm in behaviour genetic research. Lectures explore why the concept of a nature-nurture dichotomy is passé and has been replaced by a new understanding gained from animal and human research in the areas of gene by environment interaction and epigenetics; how our genome listens to our envi",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607060717",
@@ -2454,7 +2805,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Your opportunity: Under close supervision of the Principal Investigators, the Lab Coordinator is responsible for coordinating all aspects of research for various cognitive studies with both children and adults. Duties include but are not limited to proofing and posting adverts to recruit participants; following rules and procedural instructions when administering research study test materials, testing participants and collating data; and scheduling and keeping track of participants’ appointments and participant fees. The Lab Coordinator applies established standards when cleaning and maintaini"
+   "summary": "Your opportunity: Under close supervision of the Principal Investigators, the Lab Coordinator is responsible for coordinating all aspects of research for various cognitive studies with both children and adults. Duties include but are not limited to proofing and posting adverts to recruit participants; following rules and procedural instructions when administering research study test materials, testing participants and collating data; and scheduling and keeping track of participants’ appointments and participant fees. The Lab Coordinator applies established standards when cleaning and maintaini",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607069917",
@@ -2473,7 +2826,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 10/15/2026 Req ID: 50563 Faculty/Division: Faculty of Arts & Science Department: Department of Geography and Planning Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Course Description: Focuses on the importance of adequate housing and quality neighbourhoods. It roots theoretical explanations and policy debates in realities using Canada and Toronto as examples. Topics covered include the evolution of public policies relating to social housing, rental housing, homeownership, neighborhoods, and homelessness. Estimated Course Enrollment : 60 Estimated TA Supp"
+   "summary": "Date Posted: 10/15/2026 Req ID: 50563 Faculty/Division: Faculty of Arts & Science Department: Department of Geography and Planning Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Course Description: Focuses on the importance of adequate housing and quality neighbourhoods. It roots theoretical explanations and policy debates in realities using Canada and Toronto as examples. Topics covered include the evolution of public policies relating to social housing, rental housing, homeownership, neighborhoods, and homelessness. Estimated Course Enrollment : 60 Estimated TA Supp",
+   "fit": "check",
+   "fitWhy": [
+    "asks for 5 years of experience — count your lab, GIS and field years"
+   ]
   },
   {
    "id": "uoft-607048217",
@@ -2492,7 +2849,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "unknown",
-   "summary": "Date Posted: 10/19/2026 Req ID: 50535 Faculty/Division: Faculty of Arts & Science Department: Human Biology Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Sessional Instructional Assistant Course number and title: HMB406H1S – Health Care Ethics Course description: Since research involving human subjects lays the foundation for innovation in modern health care, this course examines health care ethics along a continuum from bench to bedside. Ethical issues are discussed in the context of specific cases involving human research, as well as contemporary clinical practice."
+   "summary": "Date Posted: 10/19/2026 Req ID: 50535 Faculty/Division: Faculty of Arts & Science Department: Human Biology Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Description: Sessional Instructional Assistant Course number and title: HMB406H1S – Health Care Ethics Course description: Since research involving human subjects lays the foundation for innovation in modern health care, this course examines health care ethics along a continuum from bench to bedside. Ethical issues are discussed in the context of specific cases involving human research, as well as contemporary clinical practice.",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607023517",
@@ -2511,7 +2870,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 10/14/2026 Req ID: 50553 Faculty/Division: Dalla Lana School of Public Health Department: Dalla Lana School of Public Health Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Course Description: This course introduces the principles of environmental toxicology and risk assessment. Study of the basic principles of toxicology, including routes of exposure, dose response, and target organ effects from exposure to environmental toxicants will be covered. The course presents the quantitative methods used to assess the human health risks associated with exposure to toxicants, "
+   "summary": "Date Posted: 10/14/2026 Req ID: 50553 Faculty/Division: Dalla Lana School of Public Health Department: Dalla Lana School of Public Health Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Course Description: This course introduces the principles of environmental toxicology and risk assessment. Study of the basic principles of toxicology, including routes of exposure, dose response, and target organ effects from exposure to environmental toxicants will be covered. The course presents the quantitative methods used to assess the human health risks associated with exposure to toxicants, ",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "uoft-607017017",
@@ -2530,7 +2891,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Date Posted: 10/14/2026 Req ID: 50540 Faculty/Division: Dalla Lana School of Public Health Department: Dalla Lana School of Public Health Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Course Description: This course introduces Relationship of the environment to human health and the principles in environmental management. Course Learning Objectives: Specific course objectives include: to understand how pollution of the air, water, and soil occurs; the impact on the environment and health; and the ways reduce the impact to know how to critically analyze any environmental risk situa"
+   "summary": "Date Posted: 10/14/2026 Req ID: 50540 Faculty/Division: Dalla Lana School of Public Health Department: Dalla Lana School of Public Health Campus: St. George (Downtown Toronto) Existing Vacancy: Yes Course Description: This course introduces Relationship of the environment to human health and the principles in environmental management. Course Learning Objectives: Specific course objectives include: to understand how pollution of the air, water, and soil occurs; the impact on the environment and health; and the ways reduce the impact to know how to critically analyze any environmental risk situa",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "city-of-toronto-606912017",
@@ -2549,7 +2912,9 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "Job Summary: Reporting to the Supervisor Procurement Coordination, the Research Analyst plays a key role in supporting procurement and contract management for operations, while also advancing data analysis and process improvement initiatives. The position is responsible for monitoring and responding to contract management requests and providing procurement support to the Parks and Recreation. The Research Analyst also contributes to procurement policy adherence by liaising with Purchasing and Materials Management Division (PMMD) to ensure compliance with corporate procurement policies, support"
+   "summary": "Job Summary: Reporting to the Supervisor Procurement Coordination, the Research Analyst plays a key role in supporting procurement and contract management for operations, while also advancing data analysis and process improvement initiatives. The position is responsible for monitoring and responding to contract management requests and providing procurement support to the Parks and Recreation. The Research Analyst also contributes to procurement policy adherence by liaising with Purchasing and Materials Management Division (PMMD) to ensure compliance with corporate procurement policies, support",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "workcabin-48660",
@@ -2568,7 +2933,11 @@
    "stillOpen": true,
    "vehicleRequired": false,
    "tenure": "temporary",
-   "summary": "GENERAL DESCRIPTION: The Planning Ecologist reports to the Chief Administrative Officer/Secretary-Treasurer and assists with delivery of the Planning and Regulations program by participating in the municipal plan input and review process, conducting ecological and other assessments, assisting with the administration of the Conservation Authorities Act and its regulations, and other relevant duties. KEY DUTIES: 1. Provide high-quality service to meet LTC, municipal, partner, and public expectations. 2. Provide clear, concise technical advice to meet prescribed delivery standards and to ensure c"
+   "summary": "GENERAL DESCRIPTION: The Planning Ecologist reports to the Chief Administrative Officer/Secretary-Treasurer and assists with delivery of the Planning and Regulations program by participating in the municipal plan input and review process, conducting ecological and other assessments, assisting with the administration of the Conservation Authorities Act and its regulations, and other relevant duties. KEY DUTIES: 1. Provide high-quality service to meet LTC, municipal, partner, and public expectations. 2. Provide clear, concise technical advice to meet prescribed delivery standards and to ensure c",
+   "fit": "check",
+   "fitWhy": [
+    "asks for 3 years of experience — count your lab, GIS and field years"
+   ]
   },
   {
    "id": "workcabin-48641",
@@ -2587,7 +2956,11 @@
    "stillOpen": true,
    "vehicleRequired": true,
    "tenure": "temporary",
-   "summary": "Application Deadline: Ongoing, until position filled Tentative Start Date: October 19 or November 2 Status: Full-time, Contract – 1 year (52 weeks total internship, 37.5 hours per week) Are you a strong writer with an interest in learning new digital platform skills? If so, please read on. The Invasive Species Centre (ISC) mobilizes action against invasive species that harm the environment, economy, and society. Incorporated as a not-for-profit in 2011 as a hub for collaboration and knowledge sharing, the ISC has grown into a respected collaborator and leader in invasive species knowledge and "
+   "summary": "Application Deadline: Ongoing, until position filled Tentative Start Date: October 19 or November 2 Status: Full-time, Contract – 1 year (52 weeks total internship, 37.5 hours per week) Are you a strong writer with an interest in learning new digital platform skills? If so, please read on. The Invasive Species Centre (ISC) mobilizes action against invasive species that harm the environment, economy, and society. Incorporated as a not-for-profit in 2011 as a hub for collaboration and knowledge sharing, the ISC has grown into a respected collaborator and leader in invasive species knowledge and ",
+   "fit": "yes",
+   "fitWhy": [
+    "French / bilingual — a plus for you"
+   ]
   },
   {
    "id": "workcabin-48631",
@@ -2606,7 +2979,9 @@
    "stillOpen": true,
    "vehicleRequired": true,
    "tenure": "temporary",
-   "summary": "ABOUT AQUAFOR Aquafor Beech Limited is a boutique stormwater and environmental engineering firm, incorporated in 1990, with offices in Mississauga, Kingston, Ottawa, and Guelph. The firm provides multidisciplinary engineering and environmental services to a variety of public and private sector clients. The firm’s principal focus is on watershed planning, environmental restoration, stormwater management, fluvial geomorphology, environmental assessment/permitting, water resources engineering, and municipal infrastructure design. Aquafor Beech Limited uses an industry-leading, multi-disciplinary "
+   "summary": "ABOUT AQUAFOR Aquafor Beech Limited is a boutique stormwater and environmental engineering firm, incorporated in 1990, with offices in Mississauga, Kingston, Ottawa, and Guelph. The firm provides multidisciplinary engineering and environmental services to a variety of public and private sector clients. The firm’s principal focus is on watershed planning, environmental restoration, stormwater management, fluvial geomorphology, environmental assessment/permitting, water resources engineering, and municipal infrastructure design. Aquafor Beech Limited uses an industry-leading, multi-disciplinary ",
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "workcabin-48317",
@@ -2625,7 +3000,9 @@
    "stillOpen": true,
    "vehicleRequired": true,
    "tenure": "temporary",
-   "summary": "Who You Are You are an educator with a particular enthusiasm for working with school-aged children. You understand that your success is only as good as the whole, and you foster meaningful relationships with rare’s community. You have high expectations for yourself and your work and a healthy appetite for experimentation, while being willing to learn from failure. You are comfortable working independently and making decisions in the field, while also recognizing the importance of being part of a team responsible for delivering our education program. You are curious, adaptable and eager to cont"
+   "summary": "Who You Are You are an educator with a particular enthusiasm for working with school-aged children. You understand that your success is only as good as the whole, and you foster meaningful relationships with rare’s community. You have high expectations for yourself and your work and a healthy appetite for experimentation, while being willing to learn from failure. You are comfortable working independently and making decisions in the field, while also recognizing the importance of being part of a team responsible for delivering our education program. You are curious, adaptable and eager to cont",
+   "fit": "yes",
+   "fitWhy": []
   }
  ]
 }
