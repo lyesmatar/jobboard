@@ -78,16 +78,13 @@ function categorize(text) {
   return "other";
 }
 
-// Would this posting be a problem for someone who drives (Ontario G2) but has no vehicle
-// of their own? Flags: requires your OWN vehicle, OR requires a FULL Class G (not G2).
-// NOT a blocker: a plain "valid driver's licence", "G2 acceptable", crew transport, or a
-// company/fleet vehicle that's provided.
+// Would this posting be a problem for someone who drives but has no vehicle of their own?
+// Flags only: requires your OWN vehicle. A full Class G requirement is NOT a blocker (owner
+// is getting his full G, 2026-10). Also fine: crew transport or a provided company vehicle.
 function needsOwnVehicle(text) {
   const t = (text || "").toLowerCase();
-  if (/(transportation|transport|vehicle) (is |will be )?provided|crew transport|company vehicle|fleet vehicle|pool vehicle|g2 licence acceptable|g2 license acceptable/.test(t)) return false;
-  const ownVehicle = /own (vehicle|car|transportation)|personal vehicle|reliable vehicle|access to a( reliable)? vehicle|use of a (personal |reliable )?vehicle|must (have|provide) .{0,20}vehicle|provide your own transportation/.test(t);
-  const fullGonly = /\bfull (class )?g (driver'?s )?licen[cs]e\b|\bclass g (driver'?s )?licen[cs]e\b(?!.{0,4}2)/.test(t) && !/\bg2\b/.test(t);
-  return ownVehicle || fullGonly;
+  if (/(transportation|transport|vehicle) (is |will be )?provided|crew transport|company vehicle|fleet vehicle|pool vehicle/.test(t)) return false;
+  return /own (vehicle|car|transportation)|personal vehicle|reliable vehicle|access to a( reliable)? vehicle|use of a (personal |reliable )?vehicle|must (have|provide) .{0,20}vehicle|provide your own transportation/.test(t);
 }
 
 // Rough permanent-vs-temporary read (matters for the relocation rule).
@@ -789,7 +786,8 @@ function assessFit(j) {
     for (const s of sentences(t)) {
       if (ASSET_RE.test(s) || !NEED_RE.test(s)) continue;
       for (const [ci, cs, what] of CREDS) if (ci.test(s) || (cs && cs.test(s))) no.push("asks for " + what);
-      if (/canadian citizen(ship)?\b/i.test(s) && !/permanent resident/i.test(s)) no.push("requires Canadian citizenship (you're a permanent resident)");
+      // Owner is a PR, and most "citizenship" wording also admits PRs — so only a soft check.
+      if (/canadian citizen(ship)?\b/i.test(s) && !/permanent resident/i.test(s)) check.push("mentions Canadian citizenship — PRs usually qualify, confirm in the posting");
     }
     // (GC Jobs boilerplate "Selection MAY be limited to members of … equity groups" is not a restriction)
     if (/(?<!may be )(open|restricted|limited) (only )?to (indigenous|first nations|members of (the following )?(designated )?employment equity)|self-identify as (an )?indigenous[^.]{0,40}(required|must)/i.test(t))
