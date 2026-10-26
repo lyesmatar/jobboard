@@ -1,15 +1,18 @@
 {
+  "_fit_rule": "Big general boards (Adzuna, Job Bank, City of Toronto, U of T) are matched on the JOB TITLE only - their descriptions are full of boilerplate that mis-tagged buyers, data architects and IT techs. Niche environmental boards (WorkCabin RSS) may also match on the description. Unfit titles are dropped by TITLE_BLOCK / TITLE_BLOCK_2 in scripts/fetch-jobs.mjs.",
   "_comment": "Edit this file to add/remove job sources. No code changes needed. After editing, the next scheduled GitHub Action run picks it up (or run it manually from the Actions tab).",
 
   "_hard_rule": "max_days_old is a hard cap - the fetcher DROPS anything older, on every source, because expired postings can't be detected reliably. Keep it at 7 unless you have a reason.",
   "max_days_old": 7,
+  "_open_rule": "Exception to the 7-day cap: a posting that is KNOWN to still be open (it states a future closing date, or comes from a board that removes expired listings, e.g. WorkCabin) is kept up to max_days_open days.",
+  "max_days_open": 60,
 
   "_configured_for": "Environmental technician / ecological restoration / GIS / field & lab roles, plus educational-assistant & science-teaching roles, in the Toronto / GTA area, transit-accessible (no personal vehicle).",
 
   "keywords": {
-    "environmental": ["environmental", "ecolog", "conservation", "conservation authority", "ecological restoration", "habitat restoration", "wetland restoration", "stream restoration", "ecosystem restoration", "shoreline restoration", "land restoration", "riparian", "naturalization", "restoration technician", "restoration crew", "restoration project", "restoration ecolog", "watershed", "wetland", "habitat", "stream monitoring", "water quality", "biomonitoring", "benthic", "invasive species", "invasive plant", "invasive phragmites", "vegetation management", "integrated pest management", "pesticide", "herbicide", "exterminator", "plant health care", "biodiversity", "naturalist", "stewardship", "urban forestry", "arborist", "forestry", "silviculture", "tree planting", "reforestation", "vegetation", "terrestrial monitoring", "hydrolog", "soil sampling", "erosion", "fisheries", "shoreline", "field technician", "field assistant", "field crew", "environmental technician", "environmental technologist", "environmental monitoring", "environmental educ", "sustainability", "climate change", "climate adaptation", "climate resilience", "climate action", "GIS", "geospatial", "remote sensing", "spatial analysis"],
-    "research": ["research assistant", "research analyst", "research associate", "research technician", "research coordinator", "laboratory technician", "lab technician", "field research", "data analyst", "monitoring technician", "biologist", "limnologist", "ecologist", "phd position", "phd student", "phd candidate", "phd studentship", "doctoral", "graduate researcher", "graduate research assistant", "postdoctoral", "post-doctoral", "postdoc"],
-    "education": ["educational assistant", "education assistant", "teaching assistant", "instructional assistant", "supply teacher", "occasional teacher", "science teacher", "environmental educator", "outdoor educator", "interpretive guide", "camp instructor", "nature interpreter", "lab demonstrator", "aide-enseignant", "enseignant"]
+    "environmental": ["environmental", "ecolog", "conservation", "conservation authority", "ecological restoration", "habitat restoration", "wetland restoration", "stream restoration", "ecosystem restoration", "shoreline restoration", "land restoration", "riparian", "naturalization", "restoration technician", "restoration crew", "restoration project", "restoration ecolog", "watershed", "wetland", "habitat", "stream monitoring", "water quality", "biomonitoring", "benthic", "invasive species", "invasive plant", "invasive phragmites", "vegetation management", "integrated pest management", "pesticide", "herbicide", "exterminator", "plant health care", "biodiversity", "naturalist", "stewardship", "urban forestry", "arborist", "forestry", "silviculture", "tree planting", "reforestation", "vegetation", "terrestrial monitoring", "hydrolog", "soil sampling", "erosion", "fisheries", "shoreline", "field technician", "field assistant", "field crew", "environmental technician", "environmental technologist", "environmental monitoring", "environmental educ", "sustainability", "climate change", "climate adaptation", "climate resilience", "climate action", "GIS", "geospatial", "remote sensing", "spatial analysis", "parks", "forest", "ecosystem", "natural heritage", "natural resource", "wildlife", "fish", "water resources", "stormwater", "soil", "horticultur", "gardener", "tree planter", "tree care", "pest control", "cartograph", "wastewater", "spatial"],
+    "research": ["research assistant", "research analyst", "research associate", "research technician", "research coordinator", "laboratory technician", "lab technician", "field research", "research officer", "research technologist", "lab technologist", "laboratory assistant", "lab assistant", "medical laboratory", "microbiolog", "lab coordinator", "labs coordinator", "laboratory coordinator", "monitoring technician", "biologist", "limnologist", "ecologist", "phd position", "phd student", "phd candidate", "phd studentship", "doctoral", "graduate researcher", "graduate research assistant", "postdoctoral", "post-doctoral", "postdoc"],
+    "education": ["educational assistant", "education assistant", "teaching assistant", "instructional assistant", "supply teacher", "occasional teacher", "science teacher", "environmental educator", "outdoor educator", "interpretive guide", "camp instructor", "nature interpreter", "lab demonstrator", "laboratory demonstrator", "eesa", "eesb", "eesc", "ggr", "eeb", "educator", "museum", "program facilitator", "camp counsel", "aide-enseignant", "enseignant"]
   },
 
   "search_terms": [
@@ -31,7 +34,7 @@
 
   "_vehicle_rule": "The site owner drives (Ontario G2) but has no vehicle of their own. The fetcher flags a job only if its text requires the applicant's OWN vehicle ('own/personal/reliable vehicle', 'access to a vehicle', 'provide your own transportation') OR a FULL Class G licence (not G2). The site hides flagged jobs by default. A plain 'valid driver's licence', 'G2 acceptable', crew transport, or a provided company/fleet vehicle is NOT flagged.",
 
-  "_relocation_rule": "Temp/seasonal/contract: GTA only (no relocating for a short contract). Permanent/full-time: GTA preferred but out-of-GTA permanent roles are surfaced in a separate section. Out-of-GTA seasonal roles are dropped entirely.",
+  "_relocation_rule": "Updated 2026-10-26: the owner is now open to leaving Toronto. GTA jobs are listed first; jobs anywhere else in Canada (permanent AND seasonal/contract) appear in a 'Worth moving for' section, permanent first. Education jobs outside the GTA are still left out of that section.",
 
   "sources": [
     {
@@ -53,13 +56,62 @@
     },
     {
       "id": "workcabin",
-      "type": "rss",
+      "type": "workcabin",
       "enabled": true,
+      "assume_canada": true,
       "source_name": "WorkCabin",
-      "url": "https://www.workcabin.ca/?feed=job_feed",
-      "note": "CONFIRMED WORKING (2026-09-03). Canada's conservation & wildlife jobs board (WP Job Manager feed). Carries structured job_listing:company / job_listing:location / job_listing:salary tags. Location is a coarse region ('Central Canada', 'North', 'Other') not a city - 'Central Canada' passes the Canadian filter, the rest are out-of-GTA and correctly dropped. Strong local coverage: conservation authorities (Credit Valley, Grand River, TRCA), Ontario Nature, EcoSpark, Earth Rangers. Feed returns the ~10-30 newest postings, no pagination."
+      "url": "https://www.workcabin.ca/wp-json/wp/v2/job-listings",
+      "feed_url": "https://www.workcabin.ca/?feed=job_feed",
+      "note": "SWITCHED TO THE API (2026-10-14). Canada's conservation & wildlife jobs board. The old RSS feed only gave a coarse region ('Central Canada') and the 10 newest postings, so almost everything got dropped (10 raw -> 1 kept). The WP Job Manager REST API gives the real city ('Trenton, ON', 'Woodbridge, ON') and every live listing. WorkCabin removes filled/expired listings itself, so its postings are kept up to max_days_open even when older than 7 days. Falls back to feed_url if the API breaks."
+    },
+    {
+      "id": "city-of-toronto",
+      "type": "successfactors",
+      "enabled": true,
+      "assume_canada": true,
+      "source_name": "City of Toronto",
+      "org": "City of Toronto",
+      "url": "https://jobs.toronto.ca",
+      "default_location": "Toronto, ON",
+      "terms": ["environment", "environmental", "forestry", "arborist", "tree", "parks", "natural", "ecolog", "conservation", "horticultur", "GIS", "water", "biolog", "laboratory", "research", "naturalist", "outdoor", "education", "pesticide", "invasive"],
+      "note": "ADDED 2026-10-14. City of Toronto careers (SAP SuccessFactors) keyword RSS. Carries 'Posting End Date' -> real closing dates. Parks, Forestry & Recreation, Toronto Water, Environment & Climate. Matched on job title only (descriptions all mention 'Parks, Forestry & Recreation')."
+    },
+    {
+      "id": "uoft",
+      "type": "successfactors",
+      "enabled": true,
+      "assume_canada": true,
+      "source_name": "University of Toronto",
+      "org": "University of Toronto",
+      "url": "https://jobs.utoronto.ca",
+      "default_location": "Toronto, ON",
+      "terms": ["ecology", "environment", "environmental", "research assistant", "research associate", "research technician", "research coordinator", "research officer", "laboratory", "lab technician", "GIS", "geography", "biology", "forestry", "conservation", "water", "climate", "field", "teaching"],
+      "note": "ADDED 2026-10-14. U of T careers (SAP SuccessFactors) keyword RSS. Carries 'Closing Date' -> real closing dates. St. George, Mississauga and Scarborough campuses. Faculty posts (professor) are filtered out."
     },
 
+    {
+      "id": "gcjobs",
+      "type": "gcjobs",
+      "enabled": true,
+      "assume_canada": true,
+      "source_name": "GC Jobs (federal)",
+      "max_pages": 40,
+      "note": "ADDED 2026-10-26. Every federal public-service job open to the public (Parks Canada, Fisheries and Oceans, Environment and Climate Change Canada, Natural Resources Canada, Agriculture Canada, …) - ~400 postings, 20 per page, all pages read each run. Real closing dates. No posted date on the list, so a job's date is the first run that saw it. Matched on job title only. Student jobs (FSWEP) are a separate system and not included."
+    },
+    {
+      "id": "ontario-public-service",
+      "type": "none",
+      "enabled": false,
+      "source_name": "Ontario Public Service (gojobs)",
+      "note": "Not possible: gojobs.gov.on.ca sends scripts to a Radware CAPTCHA (bot protection), checked 2026-10-26. Covers MNR / MECP jobs. Use its free email job alerts instead: gojobs.gov.on.ca/JobsAlert.aspx."
+    },
+    {
+      "id": "trca",
+      "type": "none",
+      "enabled": false,
+      "source_name": "TRCA (Dayforce)",
+      "note": "Not possible: TRCA's Dayforce careers API refuses requests without a logged-in browser session (checked 2026-09-03). TRCA jobs usually also appear on WorkCabin / GoodWork / Job Bank, which are scanned."
+    },
     {
       "id": "greenhouse-orgs",
       "type": "greenhouse",
@@ -104,6 +156,8 @@
     "Conservation Job Board (conservationjobboard.com) - has US+CA, check for RSS",
     "Ontario Nature, Ducks Unlimited Canada, Nature Conservancy of Canada - own career pages",
     "Conservation authorities: TRCA, Credit Valley, Conservation Halton, Lake Simcoe (careers pages / often ADP or BambooHR)",
+    "DONE 2026-10-14: City of Toronto + University of Toronto (SuccessFactors RSS, type successfactors). Other SuccessFactors career sites can be added the same way - just a new entry with url + terms.",
+    "Checked 2026-10-14 - Ontario Public Service (gojobs.gov.on.ca): no RSS, search page is script-driven. Not added.",
     "GC Jobs / jobs.canada.ca - federal science (no RSS; comes through Job Bank)",
     "Ontario Public Service (gojobs.gov.on.ca) - MECP, MNR jobs",
     "University career sites: U of T, TMU, York, McMaster, Guelph, Waterloo (mostly Workday - unofficial JSON endpoints exist)",

@@ -223,7 +223,7 @@
         <option value="3">3 days</option>
         <option value="7" selected>7 days</option>
       </select>
-      <div class="hint">Nothing older than 7 days is ever shown &mdash; stale postings can't be detected reliably.</div>
+      <div class="hint">Nothing older than 7 days is shown &mdash; except postings known to still be open (they list a future closing date, or come from a board that removes expired ads).</div>
     </div>
 
     <div class="fgroup">
@@ -239,7 +239,7 @@
       <label class="row"><input type="checkbox" data-action="filter" class="comm" value="ttc" checked> In Toronto (TTC)</label>
       <label class="row"><input type="checkbox" data-action="filter" class="comm" value="go" checked> GO Transit reachable</label>
       <label class="row"><input type="checkbox" data-action="filter" class="comm" value="remote" checked> Remote</label>
-      <label class="row"><input type="checkbox" data-action="filter" class="comm" value="hard"> Hard without a car</label>
+      <label class="row"><input type="checkbox" data-action="filter" class="comm" value="hard" checked> Hard without a car / would move</label>
       <label class="row"><input type="checkbox" data-action="filter" class="comm" value="none" checked> Elsewhere / unknown</label>
       <div class="hint">Rough estimate by municipality &mdash; check the actual route before applying.</div>
     </div>
@@ -310,7 +310,7 @@ const SAMPLE = {"generated":null,
 {"id":"sample-9","title":"Watershed Resources Technician","org":"Grand River Conservation Authority","location":"Cambridge, ON","remote":"onsite","tenure":"permanent","vehicleRequired":false,"salaryMin":58000,"salaryMax":67000,"salaryText":"$58,000–$67,000","category":"environmental","url":"https://example.com/job/sample-9","source":"Sample","posted":"2026-09-04T00:00:00Z","closingDate":"2026-09-28","summary":"Permanent role in stream monitoring and data management for the Grand River watershed. Example of a permanent position outside the GTA."}
 ]};
 
-const GTA = ["toronto","mississauga","brampton","markham","vaughan","richmond hill","oakville","burlington","pickering","ajax","whitby","oshawa","milton","newmarket","aurora","caledon","halton hills","georgina","uxbridge","stouffville","etobicoke","scarborough","north york","east york","york region","durham region","peel region","gta","greater toronto"];
+const GTA = ["toronto","mississauga","brampton","markham","vaughan","richmond hill","oakville","burlington","pickering","ajax","whitby","oshawa","milton","newmarket","aurora","caledon","halton hills","georgina","uxbridge","stouffville","etobicoke","scarborough","north york","east york","woodbridge","kleinburg","concord","maple","thornhill","unionville","king city","bolton","port credit","downsview","don mills","york region","durham region","peel region","gta","greater toronto"];
 
 const state = {
   jobs: [],
@@ -350,6 +350,12 @@ function closesInfo(j){
   if(days === 1) return {label:"closes tomorrow"};
   return {label:"closes in " + days + " days"};
 }
+/* Posted-within filter. On the default 7-day setting, a posting known to still be open
+   (stillOpen: future closing date, or a board that removes expired ads) is kept even if older. */
+function ageOK(j){
+  const age = +el("age").value;
+  return daysAgo(j.posted) <= age || (j.stillOpen && age >= 7);
+}
 function inGTA(loc){
   const s = (loc||"").toLowerCase();
   return GTA.some(x => s.includes(x));
@@ -358,7 +364,7 @@ function inGTA(loc){
 /* Transit-only commute estimate from central Toronto (no car). Rough, by municipality. */
 const COMMUTE = [
   [/\b(toronto|etobicoke|scarborough|north york|east york|york, on)\b/, "ttc", "TTC — direct"],
-  [/\bvaughan|vmc|concord|maple\b/, "go", "TTC Line 1 / GO Barrie · ~40–55 min"],
+  [/\bvaughan|vmc|concord|maple|woodbridge|kleinburg\b/, "go", "TTC Line 1 / GO Barrie · ~40–55 min"],
   [/\bmississauga|port credit|streetsville\b/, "go", "GO Lakeshore W / Milton + MiWay · ~45–70 min"],
   [/\bbrampton|bramalea\b/, "go", "GO Kitchener + Brampton Transit · ~55–80 min"],
   [/\bmarkham|unionville|thornhill\b/, "go", "GO Stouffville / YRT · ~45–65 min"],
@@ -431,8 +437,7 @@ function matches(j){
     if(!s) return false; // if a floor is set, drop unknown-salary jobs
   }
 
-  const age = +el("age").value;
-  if(daysAgo(j.posted) > age) return false;
+  if(!ageOK(j)) return false;
 
   const ci = closesInfo(j);
   if(ci && ci.expired) return false; // past its stated closing date
@@ -445,9 +450,6 @@ function matches(j){
   const comm = [...document.querySelectorAll(".comm:checked")].map(c=>c.value);
   const cm = commuteInfo(j);
   if(!comm.includes(cm ? cm.level : "none")) return false;
-
-  // Relocation rule: don't surface out-of-GTA seasonal/contract work.
-  if(state.region === "canada" && j.tenure === "temporary" && !inGTA(j.location) && j.remote !== "remote") return false;
 
   const src = [...document.querySelectorAll(".src:checked")].map(c=>c.value);
   if(src.length && !src.includes(j.source)) return false;
@@ -471,32 +473,35 @@ function render(){
 
   el("count").textContent = rows.length + " job" + (rows.length===1?"":"s");
 
-  // Secondary section: PERMANENT roles elsewhere in Canada (worth relocating for).
-  // Only when viewing the GTA; seasonal/contract out-of-town is never surfaced.
+  // Secondary section: roles elsewhere in Canada worth moving for (owner is open to
+  // relocating as of 2026-10). Only when viewing the GTA; permanent roles listed first.
   let over = [];
   if(state.region === "gta"){
     const q = el("q").value.trim().toLowerCase();
     const cats = [...document.querySelectorAll(".cat:checked")].map(c=>c.value);
+    const tens = [...document.querySelectorAll(".ten:checked")].map(c=>c.value);
     over = state.jobs.filter(j => {
-      if(j.tenure !== "permanent") return false;
+      if(!tens.includes(j.tenure || "unknown")) return false;
       if(!cats.includes(j.category)) return false;
       if(inGTA(j.location) || j.remote === "remote") return false;
       if(el("hideCar").checked && j.vehicleRequired) return false;
       if(state.hidden.includes(j.id)) return false;
-      if(daysAgo(j.posted) > +el("age").value) return false;
+      if(j.category === "education") return false; // not worth relocating for an EA / tutor job
+      if(!ageOK(j)) return false;
       if(closesInfo(j)?.expired) return false;
       if(q){
         const hay = (j.title+" "+j.org+" "+(j.summary||"")).toLowerCase();
         if(!q.split(/\s+/).every(t => hay.includes(t))) return false;
       }
       return true;
-    }).sort((a,b) => new Date(b.posted) - new Date(a.posted)).slice(0,10);
+    }).sort((a,b) => (b.tenure === "permanent") - (a.tenure === "permanent")
+      || new Date(b.posted) - new Date(a.posted)).slice(0,20);
   }
 
   el("overqualified").innerHTML = over.length ? `
     <div class="section-title">
       <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.8 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg>
-      Permanent roles elsewhere in Canada
+      Worth moving for &mdash; elsewhere in Canada
     </div>` + over.map(cardHTML).join("") : "";
 
   el("list").innerHTML = rows.length

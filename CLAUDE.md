@@ -31,6 +31,19 @@ transit-accessible (no personal vehicle). Adjust via `sources.json` and the
   on every source; the frontend age filter is capped to match.
 - Any posting past its `closingDate` (scraped, or parsed from posting text) is
   dropped by both the fetcher and the frontend.
+- Exception (2026-10-14): a job marked `stillOpen` (future closing date, or a board that
+  removes expired ads itself — WorkCabin) is kept up to `max_days_open` (60) days, and the
+  frontend's default 7-day view shows it.
+
+## Fit filtering (2026-10-14)
+
+- Big general boards (Adzuna, Job Bank, City of Toronto, U of T) are categorized on the
+  **job title only** — their descriptions mis-tagged buyers, data architects, IT techs.
+  Niche env boards (RSS / WorkCabin) may also match on the description.
+- `TITLE_BLOCK` + `TITLE_BLOCK_2` in `fetch-jobs.mjs` drop unfit titles (senior/manager/
+  lead, engineers, software/data, climbing/DZ/ISA arborist, building-envelope/concrete labs,
+  trades, fundraising, professors, early-childhood/RECE, …). Tune these when junk slips in.
+- The 'Permanent roles elsewhere' section excludes education jobs.
 
 ## Architecture
 
@@ -41,7 +54,7 @@ transit-accessible (no personal vehicle). Adjust via `sources.json` and the
 - `sources.json` — source list + `search_terms` + `keywords` (field tagging) +
   the vehicle / relocation rules as prose notes.
 - `scripts/fetch-jobs.mjs` — Node 20, zero deps. Adapters: `adzuna`, `atom`
-  (Job Bank Canada), `rss` (WorkCabin), `greenhouse`, `lever`, `goodwork`, `ecoworks`
+  (Job Bank Canada), `rss`, `workcabin`, `successfactors` (City of Toronto, U of T), `gcjobs`, `greenhouse`, `lever`, `goodwork`, `ecoworks`
   (the last two are dedicated HTML scrapers — no feed exists — parsing the server-rendered
   listing pages; `max_pages` per source, default 3). Normalizes, tags a field by
   keyword, parses salary (annualizes hourly), flags `vehicleRequired` and `tenure`,
@@ -56,9 +69,10 @@ transit-accessible (no personal vehicle). Adjust via `sources.json` and the
 - Extra per-job signals surfaced as tags & filters: `closingDate` ("closes in N days"),
   `vehicleRequired` ("car needed", hidden by default), `tenure` (permanent / seasonal),
   transit commute estimate from Toronto (`COMMUTE` table: ttc / go / hard / remote).
-- Local ("In your area") jobs render first; the secondary section "Permanent roles
-  elsewhere in Canada" (permanent-only, shown when viewing the GTA) renders below it.
-  Out-of-GTA seasonal roles are never surfaced.
+- Local ("In your area") jobs render first; the secondary section "Worth moving for —
+  elsewhere in Canada" (shown when viewing the GTA, permanent first, up to 20) renders
+  below it. Since 2026-10-26 the owner is open to relocating, so out-of-GTA seasonal /
+  contract roles are shown too, and "Hard without a car / would move" is on by default.
 - Theme: auto / light / dark toggle in the header (button, `data-action="theme"`),
   persisted in `localStorage.js_theme`. "auto" follows `prefers-color-scheme`. Palette
   is all CSS custom properties; an inline `<head>` script applies the saved theme
@@ -74,8 +88,19 @@ transit-accessible (no personal vehicle). Adjust via `sources.json` and the
 - **Job Bank Canada** — Atom feed per search term, confirmed working
   (`jobsearch/feed/jobSearchRSSfeed?searchstring={term}&sort=D`). Feed returns only
   the ~13 newest per term; no closing dates in it.
-- **WorkCabin** — RSS (`workcabin.ca/?feed=job_feed`), conservation & wildlife jobs,
-  confirmed working. Coarse region location ("Central Canada" passes the CA filter).
+- **WorkCabin** — `type: workcabin`, WP Job Manager REST API
+  (`/wp-json/wp/v2/job-listings`): real city + every live listing (the RSS only had a coarse
+  region and 10 items). Falls back to the RSS `feed_url`.
+- **City of Toronto** / **University of Toronto** — `type: successfactors`, keyword RSS
+  (`<base>/services/rss/job/?locale=en_US&keywords=(term)`, 20 newest per term, per-source
+  `terms`). Real closing dates ("Posting Period … to …" / "Closing Date:").
+- **GC Jobs (federal)** — `type: gcjobs` (added 2026-10-26). Every federal job open to the
+  public (Parks Canada, DFO, ECCC, NRCan, AAFC…), ~400, all pages each run. The search page
+  is a shell; the results come from a second GET with `isSecondPartOfPage=1` on the same
+  JSESSIONID. Real closing dates; no posted date (first-seen date carried over from the
+  previous `data/jobs.json`). Dedupe keeps the `?poster=` query (it's the job id).
+- **Not possible:** Ontario Public Service / gojobs (Radware CAPTCHA bot wall — don't try to
+  bypass it; owner uses OPS email alerts) and TRCA (Dayforce, needs a browser session).
 - **GoodWork.ca** — dedicated HTML scraper (`type: goodwork`), confirmed working
   2026-09-08. No feed exists. Reads `/jobs`, `/jobs/2`, `/jobs/3`; real "Date posted",
   no closing date. Fragile — shows as `failing` if GoodWork restyles the list page.
