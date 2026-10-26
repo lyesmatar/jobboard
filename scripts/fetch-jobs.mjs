@@ -52,7 +52,8 @@ function relativeAgeToISO(text) {
 
 const stripTags = s => String(s || "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ")
   .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;|&rsquo;|&apos;/g, "'")
-  .replace(/&quot;|&ldquo;|&rdquo;/g, '"').replace(/\s+/g, " ").trim();
+  .replace(/&quot;|&ldquo;|&rdquo;/g, '"').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
+  .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16))).replace(/\s+/g, " ").trim();
 
 function tag(xml, name) {
   const m = xml.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)</${name}>`, "i"));
@@ -124,16 +125,30 @@ function ageOK(iso) {
   return !isNaN(t) && (now - t) <= MAX_AGE_MS && t <= now + 86400000;
 }
 
+// SHOUTING TITLES (City of Toronto) -> Title Case, so cards stay readable.
+function fixCaps(t) {
+  if (!t || /[a-z]/.test(t)) return t;
+  return t.toLowerCase().replace(/\b([a-zà-ÿ])/g, c => c.toUpperCase())
+    .replace(/\b(Gis|Pf&r|Ecs|Tw|It|Hr|Ii|Iii|Iv)\b/g, w => w.toUpperCase());
+}
+
 function normalize(raw) {
-  const blob = `${raw.title} ${raw.org} ${raw.summary || ""} ${raw.location || ""}`;
-  // Categorize on the TITLE (+ description) only — NOT the employer name, which throws
-  // false positives like "helper, mason" @ "Concrete Restoration Canada".
-  const catBlob = `${raw.title} ${raw.summary || ""}`;
+  // fullText = the whole posting (used for vehicle / tenure / closing-date detection);
+  // summary = what the card shows. Most adapters only have one, so they're the same.
+  const full = raw.fullText || raw.summary || "";
+  const blob = `${raw.title} ${raw.org} ${full} ${raw.location || ""}`;
+  // Categorize on the TITLE only for big general boards (Adzuna, Job Bank, City, U of T):
+  // their long descriptions mention "environmental"/"sustainability"/"forestry" in
+  // boilerplate, which tagged Buyers, Data Architects and IT techs as environmental.
+  // Niche environmental boards (match_description) may also match on the description.
+  // Never on the employer name ("helper, mason" @ "Concrete Restoration Canada").
+  const catBlob = raw.matchDescription ? `${raw.title} ${full}` : raw.title;
   const sal = (raw.salaryMin || raw.salaryMax) ? raw
-    : { ...raw, ...parseSalary(raw.salaryText || raw.summary) };
+    : { ...raw, ...parseSalary(raw.salaryText || full) };
+  const closingDate = raw.closingDate || parseClosing(full) || null;
   return {
     id: raw.id,
-    title: stripTags(raw.title).slice(0, 200),
+    title: fixCaps(stripTags(raw.title)).slice(0, 200),
     org: stripTags(raw.org || "—").slice(0, 140),
     location: stripTags(raw.location || "").slice(0, 120),
     remote: raw.remote || workMode(blob),
@@ -144,7 +159,10 @@ function normalize(raw) {
     url: raw.url,
     source: raw.source,
     posted: raw.posted,
-    closingDate: raw.closingDate || parseClosing(raw.summary) || null,
+    closingDate,
+    // stillOpen = we know the posting is live past the 7-day window: either it states a
+    // future closing date, or the board itself removes expired listings (WorkCabin).
+    stillOpen: !!(raw.stillOpen || (closingDate && closingDate >= new Date().toISOString().slice(0, 10))),
     vehicleRequired: raw.vehicleRequired ?? needsOwnVehicle(blob),
     tenure: raw.tenure || tenure(blob, raw.employmentType),
     summary: stripTags(raw.summary || "").slice(0, 600) || null,
@@ -152,12 +170,22 @@ function normalize(raw) {
 }
 
 // Pull a "closing date" / "apply by" date out of free text, if present.
+// Works on stripped text so "<strong>Closing Date:</strong> 10/15/2026" (U of T) matches.
+// Labels are tried in order, so an explicit "Closing Date:" beats a stray "deadline" in the body.
+// City of Toronto uses "Posting Period: 08-Oct-2026 to 23-Oct-2026" — the second date is the close.
+const CLOSING_LABELS = ["closing date", "posting end date", "posting close date", "posting period:[^.]{0,30}? to",
+  "closes on", "apply by", "application deadline", "posting expires on", "expiry date", "deadline"];
+const DATE_RE = "([A-Za-z]+\\.? \\d{1,2},? \\d{4}|\\d{4}-\\d{2}-\\d{2}|\\d{1,2}\\/\\d{1,2}\\/\\d{4}|\\d{1,2}-[A-Za-z]{3}-\\d{4})";
 function parseClosing(text) {
   if (!text) return null;
-  const m = String(text).match(/(?:closing date|closes on|apply by|application deadline|deadline|posting expires on)[:\s]*([A-Za-z]+ \d{1,2},? \d{4}|\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{4})/i);
-  if (!m) return null;
-  const d = new Date(m[1]);
-  return isNaN(d) ? null : d.toISOString().slice(0, 10);
+  const t = stripTags(text);
+  for (const label of CLOSING_LABELS) {
+    const m = t.match(new RegExp("(?:" + label + ")[:\\s]*" + DATE_RE, "i"));
+    if (!m) continue;
+    const d = new Date(m[1].replace(".", "").replace(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/, "$2 $1, $3"));
+    if (!isNaN(d)) return d.toISOString().slice(0, 10);
+  }
+  return null;
 }
 
 /* ----------------------------- adapters ----------------------------- */
@@ -238,6 +266,7 @@ function parseRSS(xml, sourceName) {
       org: jmOrg || sourceName,
       location: jmLoc || tag(it, "location") || "",
       salaryText: jmSal || null,
+      matchDescription: true,   // RSS sources here are niche environmental boards
       url: tag(it, "link"),
       source: sourceName,
       posted: tag(it, "pubDate") ? new Date(tag(it, "pubDate")).toISOString() : new Date().toISOString(),
@@ -407,7 +436,7 @@ async function fromEcoworks(src) {
           location,
           salaryText,
           url: "https://ecoworks.eco.ca" + idM[0],
-          source: "ECOWorks",
+          source: src.source_name || "ECOWorks",
           posted,
           employmentType,
           summary: [employmentType, location].filter(Boolean).join(" · ") || null,
@@ -419,7 +448,159 @@ async function fromEcoworks(src) {
   return out;
 }
 
+// WorkCabin — WP Job Manager's REST API (/wp-json/wp/v2/job-listings). Better than the
+// RSS feed: real city ("Trenton, ON") instead of a region ("Central Canada"), and it
+// lists EVERY live posting, not just the 10 newest. WorkCabin removes filled/expired
+// listings itself, so these are marked stillOpen and skip the 7-day cap.
+// Falls back to the RSS feed (src.feed_url) if the API ever goes away.
+async function fromWorkcabin(src) {
+  const name = src.source_name || src.id;
+  const api = src.url || "https://www.workcabin.ca/wp-json/wp/v2/job-listings";
+  try {
+    const out = [];
+    for (let page = 1; page <= 5; page++) {
+      const r = await fetch(`${api}?per_page=100&page=${page}&_fields=id,date_gmt,link,title,content,meta`,
+        { headers: BROWSER_HEADERS });
+      if (r.status === 400 && page > 1) break;   // WP returns 400 past the last page
+      if (!r.ok) throw new Error(`${r.status} ${api}`);
+      const rows = await r.json();
+      for (const j of rows) {
+        const m = j.meta || {};
+        if (Number(m._filled) === 1) continue;
+        const flex = String(m._job_flexibility || "").toLowerCase();
+        out.push(normalize({
+          id: "workcabin-" + j.id,
+          title: stripTags(j.title?.rendered),
+          org: m._company_name || name,
+          location: m._job_location || "",
+          remote: /remote/.test(flex) ? "remote" : /hybrid/.test(flex) ? "hybrid" : /on-?site/.test(flex) ? "onsite" : undefined,
+          url: j.link,
+          source: name,
+          posted: new Date((j.date_gmt || "") + "Z").toISOString(),
+          summary: j.content?.rendered,
+          matchDescription: true,
+          stillOpen: true,
+        }));
+      }
+      if (rows.length < 100) break;
+      await sleep(400);
+    }
+    return out;
+  } catch (e) {
+    console.log(`  ${name} API: ${e.message} — falling back to RSS`);
+    if (!src.feed_url) throw e;
+    return parseRSS(await getText(src.feed_url), name);
+  }
+}
+
+// SAP SuccessFactors career sites (City of Toronto, University of Toronto, …) expose a
+// keyword RSS: <base>/services/rss/job/?locale=en_US&keywords=(term). Title carries the
+// location: "PLANT TECHNICIAN WASTEWATER (Toronto, ON, CA, M5A 4C6)". Descriptions carry
+// "Closing Date:" (U of T) or "Posting End Date:" (City) — parsed into closingDate.
+// Keyword search is full-text, so results are categorized on the TITLE only.
+async function fromSuccessFactors(src) {
+  const name = src.source_name || src.id;
+  const base = src.url.replace(/\/+$/, "");
+  const out = [];
+  let fails = 0;
+  const terms = src.terms || cfg.search_terms;
+  for (const term of terms) {
+    const u = `${base}/services/rss/job/?locale=en_US&keywords=(${encodeURIComponent(term)})`;
+    try {
+      const xml = await getText(u, { "User-Agent": BROWSER_UA, "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8" });
+      for (const it of blocks(xml, "item")) {
+        const rawTitle = stripTags(tag(it, "title"));
+        const lm = rawTitle.match(/^(.*)\(([^()]*,\s*[A-Z]{2},\s*CA[^()]*)\)\s*$/);
+        const title = lm ? lm[1].trim() : rawTitle;
+        if (/^no jobs currently available/i.test(title)) continue;   // City's empty-search placeholder
+        const location = lm ? lm[2].split(",").slice(0, 2).map(s => s.trim()).join(", ") : (src.default_location || "");
+        const link = stripTags(tag(it, "link")).split("?")[0];
+        const desc = tag(it, "description");
+        const text = stripTags(desc);
+        // Card summary: skip boilerplate preamble, start at the job content when we can find it.
+        const startM = text.match(/(Major Responsibilities|Responsibilities|POSITION DESCRIPTION|Job Summary|About the (?:role|opportunity)|Your opportunity)/i);
+        const typeM = text.match(/Job (?:Type|Category)\s*:\s*([^:]{3,60}?)\s+(?:Hourly Rate|Salary|Job Type|Number of|Faculty|Start Date|Req ID|Division|Hiring)/i);
+        const salM = text.match(/(?:Hourly Rate|Salary(?: Range)?|Wage)\s*:\s*(\$\s?[\d,.]+(?:\s*(?:-|–|to)\s*\$?\s?[\d,.]+)?)/i);
+        out.push(normalize({
+          id: src.id + "-" + (link.match(/\/(\d{6,})\/?$/) || [, link])[1],
+          title,
+          org: src.org || name,
+          location,
+          salaryText: salM ? salM[1] + (/Hourly Rate/i.test(salM[0]) ? " / hour" : "") : null,
+          employmentType: typeM ? typeM[1] : null,
+          url: link,
+          source: name,
+          posted: tag(it, "pubDate") ? new Date(tag(it, "pubDate")).toISOString() : new Date().toISOString(),
+          summary: (typeM ? typeM[1] + " · " : "") + (startM ? text.slice(startM.index) : text),
+          fullText: text,
+        }));
+      }
+    } catch (e) { fails++; console.log(`  ${name} "${term}": ${e.message}`); }
+    await sleep(400);
+  }
+  if (fails === terms.length) throw new Error(`all ${fails} requests failed (site changed?)`);
+  return out;
+}
+
+// GC Jobs (federal public service: Parks Canada, DFO, ECCC, NRCan, …). No feed. The search
+// page is a shell ("The page is being updated…") that fills itself with a second GET of the
+// same URL + isSecondPartOfPage=1, on the same JSESSIONID. That returns every job open to the
+// public, 20 per page (?requestedPage=N, also needs isSecondPartOfPage=1). Each <li class="searchResult">:
+//   <a href="/psrs-srfp/applicant/page1800?poster=ID">TITLE</a>
+//   Closing date: YYYY-MM-DD <br/> DEPARTMENT <br/> City (Province), City (Province) | language <br/> salary
+// No posted date in the list — first-seen date is carried over from the previous jobs.json.
+async function fromGCJobs(src) {
+  const name = src.source_name || src.id;
+  const B = "https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page2440";
+  const jar = {};
+  const get = async u => {
+    const r = await fetch(u, { headers: { ...BROWSER_HEADERS, Cookie: Object.entries(jar).map(([k, v]) => k + "=" + v).join("; ") } });
+    for (const c of r.headers.getSetCookie?.() || []) { const kv = c.split(";")[0]; const i = kv.indexOf("="); jar[kv.slice(0, i)] = kv.slice(i + 1); }
+    if (!r.ok) throw new Error(`${r.status} ${u}`);
+    return r.text();
+  };
+  await get(B + "?fromMenu=true&toggleLanguage=en");
+  let html = await get(B + "?fromMenu=true&toggleLanguage=en&isSecondPartOfPage=1&isInitialNetworkCheck=1");
+  const total = +(html.match(/Jobs open to the public \((\d+)\)/) || [])[1] || 0;
+  if (!total) throw new Error("no 'Jobs open to the public' count (site changed?)");
+  const out = [];
+  for (let p = 1; p <= Math.min(Math.ceil(total / 20), src.max_pages || 40); p++) {
+    if (p > 1) { await sleep(400); html = await get(B + `?requestedPage=${p}&fromPage=1&tab=1&log=false&isSecondPartOfPage=1`); }
+    for (const li0 of html.split(/<li class="searchResult">/).slice(1)) {
+      const li = li0.slice(0, li0.indexOf("</li>"));
+      const aM = li.match(/page1800\?poster=(\d+)[^"]*"[^>]*>([\s\S]*?)<\/a>/);
+      if (!aM) continue;
+      const cells = [...li.matchAll(/<div class="tableCell">([\s\S]*?)<\/div>/g)]
+        .map(m => m[1].split(/<br\s*\/?>/).map(stripTags).filter(Boolean));
+      const [left = [], right = []] = cells;
+      const closingDate = ((left[0] || "").match(/\d{4}-\d{2}-\d{2}/) || [])[0] || null;
+      const id = "gcjobs-" + aM[1];
+      out.push(normalize({
+        id,
+        title: stripTags(aM[2]),
+        org: left[1] || "Government of Canada",
+        location: left.slice(2).join(", "),
+        salaryText: right.find(s => /\$/.test(s)) || null,
+        url: `https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page1800?poster=${aM[1]}&toggleLanguage=en`,
+        source: name,
+        posted: PREV_POSTED.get(id) || new Date().toISOString(),
+        closingDate,
+        summary: [left[1], right.join(" · ")].filter(Boolean).join(" · "),
+      }));
+    }
+  }
+  console.log(`  gcjobs: ${out.length} of ${total} public postings`);
+  return out;
+}
+
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// First-seen dates from the previous run, for boards that don't publish a posted date (GC Jobs).
+const PREV_POSTED = new Map();
+try {
+  const prev = JSON.parse(await readFile(join(ROOT, "data", "jobs.json"), "utf8"));
+  for (const j of prev.jobs || []) PREV_POSTED.set(j.id, j.posted);
+} catch { /* first run */ }
 
 /* ----------------------------- run ----------------------------- */
 
@@ -445,6 +626,9 @@ for (const src of cfg.sources) {
     else if (src.type === "lever") all.push(...await fromLever(src));
     else if (src.type === "goodwork") all.push(...await fromGoodwork(src));
     else if (src.type === "ecoworks") all.push(...await fromEcoworks(src));
+    else if (src.type === "workcabin") all.push(...await fromWorkcabin(src));
+    else if (src.type === "successfactors") all.push(...await fromSuccessFactors(src));
+    else if (src.type === "gcjobs") all.push(...await fromGCJobs(src));
     else { err = `unknown source type "${src.type}"`; console.log("  " + err); }
   } catch (e) { err = e.message; console.log(`  ${src.id} failed: ${e.message}`); }
 
@@ -476,6 +660,23 @@ console.log(`\nCollected ${all.length} raw postings`);
 // Specialist" at a forestry company) rather than because the role itself is environmental.
 const TITLE_BLOCK = /\b(counsel|lawyer|paralegal|attorney|accountant|accounting|bookkeeper|payroll|auditor|actuary|underwriter|sales representative|account executive|business development|marketing manager|recruiter|talent acquisition|realtor|real estate|insurance broker|financial advisor|loan officer|barista|cashier|server|dishwasher|line cook|warehouse associate|forklift|truck driver|delivery driver|heavy duty (mechanic|technician)|heavy equipment|\bmechanic\b|millwright|welder|electrician|plumber|hvac|roofer|carpenter|mason|nurse|physician|pharmacist|dental|veterinari|paramedic|personal support worker|\bpsw\b|vice president|\bvp\b|\bdirector\b|head of|\bchief\b|\bsenior\b|\bmanager\b|customer service|network (&|and)? ?security|network specialist|network administrator|network engineer|systems administrator|\bit support\b|help desk)\b/i;
 
+// Second block list (added 2026-10-14): titles that matched a keyword but aren't a fit —
+// engineers & software/data roles, construction-materials labs, utility line-clearance
+// climbing / DZ-licence arborist work, ISA-certified roles, trades, leadership & fundraising,
+// faculty posts that need a PhD, food-safety / EHS, retail sales, film "vegetation artists".
+const TITLE_BLOCK_2 = new RegExp("\\b(" + [
+  "engineer\\w*", "ing[ée]nieur\\w*", "architect", "developer", "software", "programmer", "data engineer",
+  "embedded", "computer science", "buyer", "procurement", "superintendent", "supervisor", "foreperson",
+  "foreman", "climb\\w*", "tree trimmer", "dz", "az driver", "isa certified", "certified utility arborist",
+  "cua", "sales\\w*", "vendeu\\w*", "artist", "disaster", "damage", "mou?ld", "asbestos", "building envelope",
+  "concrete", "asphalt", "heavy duty", "het", "gutter", "window", "president", "executive director",
+  "fundrais\\w*", "donor", "philanthropy", "professor", "fsqa", "food safety", "ehs", "hse",
+  "health (and|&) safety", "stationary", "energy specialist", "mining", "canvass\\w*",
+  "early childhood", "ece", "rece", "child care", "childcare", "daycare", "administrative",
+].join("|") + ")\\b|(?<!crew )\\blead\\b", "i");
+// Upper-case "IT" only (case-sensitive) so "IT Field Technician" goes but nothing else does.
+const isITJob = t => /\bIT\b/.test(t);
+
 // "restoration" also means building/damage/disaster restoration — exclude those by employer.
 const BUILDING_RESTO = /building|masonry|concrete|property|disaster|\bdki\b|damage|abatement|remediation contractor|fire & flood|water damage/i;
 const isBuildingResto = j =>
@@ -484,20 +685,31 @@ const isBuildingResto = j =>
 
 // filter
 const todayStr = new Date().toISOString().slice(0, 10);
+// Canadian-only boards (WorkCabin, City of Toronto, U of T) often give a bare city ("Guelph")
+// with no province — skip the "is this in Canada?" text check for them.
+const canadaOnly = new Set(cfg.sources.filter(s => s.assume_canada).map(s => s.source_name || s.id));
+// A posting known to still be open (future closing date, or a board that removes expired
+// listings) may be older than the 7-day cap — up to OPEN_MAX_DAYS.
+const OPEN_MAX_MS = (cfg.max_days_open || 60) * 86400000;
+const fresh = j => ageOK(j.posted)
+  || (j.stillOpen && (now - new Date(j.posted).getTime()) <= OPEN_MAX_MS);
 let jobs = all.filter(j =>
-  j.url && j.title && j.posted && ageOK(j.posted)
+  j.url && j.title && j.posted && fresh(j)
   && wantedCats.has(j.category)
   && !TITLE_BLOCK.test(j.title)
+  && !TITLE_BLOCK_2.test(j.title)
+  && !isITJob(j.title)
   && !isBuildingResto(j)
-  && looksCanadian(j.location, j.summary || "")
+  && (canadaOnly.has(j.source) || looksCanadian(j.location, j.summary || ""))
   && !(j.closingDate && j.closingDate < todayStr)   // drop postings past their stated closing date
 );
 
 // dedupe: by normalized URL, then by title+org
 const seen = new Set();
-const key = j => (j.url.split("?")[0].toLowerCase()) + "|" + j.title.toLowerCase().slice(0, 40);
+// Drop the query string (tracking params) — unless the job id lives there (GC Jobs ?poster=N).
+const urlKey = u => /[?&](poster|jobid)=/i.test(u) ? u.toLowerCase() : u.split("?")[0].toLowerCase();
 jobs = jobs.filter(j => {
-  const k1 = j.url.split("?")[0].toLowerCase();
+  const k1 = urlKey(j.url);
   const k2 = (j.title + "@" + j.org).toLowerCase().replace(/\s+/g, "");
   if (seen.has(k1) || seen.has(k2)) return false;
   seen.add(k1); seen.add(k2);
