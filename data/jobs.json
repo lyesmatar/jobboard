@@ -1,22 +1,22 @@
 {
- "generated": "2026-10-30T05:59:01.441Z",
- "count": 130,
+ "generated": "2026-10-30T13:07:36.594Z",
+ "count": 140,
  "sources": [
   {
    "id": "jobbank-ca",
    "name": "Job Bank Canada",
-   "raw": 642,
+   "raw": 632,
    "state": "ok",
-   "message": "Fetched 642 raw postings this run.",
-   "kept": 11
+   "message": "Fetched 632 raw postings this run.",
+   "kept": 12
   },
   {
    "id": "adzuna-ca",
    "name": "Adzuna",
-   "raw": 569,
+   "raw": 582,
    "state": "ok",
-   "message": "Fetched 569 raw postings this run.",
-   "kept": 65
+   "message": "Fetched 582 raw postings this run.",
+   "kept": 74
   },
   {
    "id": "workcabin",
@@ -45,9 +45,9 @@
   {
    "id": "gcjobs",
    "name": "GC Jobs (federal)",
-   "raw": 452,
+   "raw": 446,
    "state": "ok",
-   "message": "Fetched 452 raw postings this run.",
+   "message": "Fetched 446 raw postings this run.",
    "kept": 26
   },
   {
@@ -85,9 +85,9 @@
   {
    "id": "goodwork",
    "name": "GoodWork.ca",
-   "raw": 95,
+   "raw": 94,
    "state": "ok",
-   "message": "Fetched 95 raw postings this run.",
+   "message": "Fetched 94 raw postings this run.",
    "kept": 0
   },
   {
@@ -100,6 +100,138 @@
   }
  ],
  "jobs": [
+  {
+   "id": "adzuna-5946723057",
+   "title": "Educational Assistant- Holy Trinity School",
+   "org": "Catholic Independent Schools Vancouver Archdiocese",
+   "location": "North Vancouver, Greater Vancouver",
+   "remote": "unknown",
+   "salaryMin": 47840,
+   "salaryMax": 74880,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5946723057?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-30T05:33:14Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "permanent",
+   "summary": "WHO WE ARE The Catholic Independent Schools of the Vancouver Archdiocese (the CISVA) operates 46 schools – 40 elementary and 6 high schools. Our schools are located throughout the Greater Vancouver Area, near the best sites and attractions that Vancouver and British Columbia has to offer. Our footprint extends over 250 kilometers from Powell River in the west to Chilliwack in the east. We are a culturally diverse faith-based family . We offer more than a place of work – we provide a call to you…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
+   "id": "adzuna-5946721445",
+   "title": "Education Assistant - C2627/169",
+   "org": "Saanich",
+   "location": "North Saanich, Capital",
+   "remote": "unknown",
+   "salaryMin": 62816,
+   "salaryMax": 62816,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5946721445?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-30T05:31:45Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "District Overview Driven by our goal of having students thrive in their personal achievements, Saanich Schools provides challenging and engaging educational programs within a safe and nurturing learning environment for the 8,000 students who live and learn here. Our school district is comprised of 18 schools with the singular focus of delivering high quality education so our students can realize their personal goals which include post-secondary and employment opportunities around Canada and the…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
+   "id": "adzuna-5946715217",
+   "title": "School of Public Health Sciences – Graduate Teaching Assistant – Winter 2027",
+   "org": "University of Waterloo",
+   "location": "Waterloo region, Ontario",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5946715217?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-30T05:25:01Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "At the University of Waterloo, we create and promote a culture where everyone can reach their full potential. As an employee, you get support & opportunities that empower you to advance your career. Explore how we can bring big ideas to life, together. The University is a welcoming workplace for those of all abilities, interests, and expertise. As part of our workforce, you can do what you do best, every day. Appointment Type: Graduate Teaching Assistant (GTA) Hiring Unit: School of Public Heal…",
+   "fit": "yes",
+   "fitWhy": []
+  },
+  {
+   "id": "adzuna-5946708721",
+   "title": "Education Assistant - C2627/171",
+   "org": "Saanich",
+   "location": "Sidney, Capital",
+   "remote": "unknown",
+   "salaryMin": 66081,
+   "salaryMax": 66081,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5946708721?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-30T05:17:38Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "District Overview Driven by our goal of having students thrive in their personal achievements, Saanich Schools provides challenging and engaging educational programs within a safe and nurturing learning environment for the 8,000 students who live and learn here. Our school district is comprised of 18 schools with the singular focus of delivering high quality education so our students can realize their personal goals which include post-secondary and employment opportunities around Canada and the…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
+   "id": "adzuna-5946708630",
+   "title": "Enova Power | Utility Arborist",
+   "org": "The MEARIE Group",
+   "location": "Kitchener, Waterloo region",
+   "remote": "unknown",
+   "salaryMin": 73091,
+   "salaryMax": 101067,
+   "salaryText": null,
+   "category": "environmental",
+   "url": "https://www.adzuna.ca/details/5946708630?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-30T05:17:28Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "Utility Arborist Enova Power Corp. is trusted and dedicated to delivering safe and reliable energy solutions that power our communities forward. Serving more than 165,000 residential and business customers in the Cities of Kitchener and Waterloo, Townships of Woolwich, Wilmot, and Wellesley, Enova Power Corp. is the 7th largest electricity distribution utility in Ontario. An opening exists in the Operations department at Victoria Street for the position of Utility Arborist. This position report…",
+   "fit": "yes",
+   "fitWhy": []
+  },
+  {
+   "id": "Job Bank Canada-id=554425",
+   "title": "conservation technician - forestry",
+   "org": "LA FONDATION FORET BOUCHER",
+   "location": "Gatineau (QC)",
+   "remote": "unknown",
+   "salaryMin": 47000,
+   "salaryMax": 47000,
+   "salaryText": "$47,000.00 annually",
+   "category": "environmental",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50614981",
+   "source": "Job Bank Canada",
+   "posted": "2026-10-30T04:00:00Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": null,
+   "fit": "yes",
+   "fitWhy": []
+  },
   {
    "id": "uoft-606652117",
    "title": "Research Associate (Limited Term, 1-year)",
@@ -254,6 +386,75 @@
    "fitWhy": []
   },
   {
+   "id": "ecoworks-785437409",
+   "title": "Environmental Remediation (Poop Scooper)",
+   "org": "A1 Pooper Scoopin",
+   "location": "Remote (CA)",
+   "remote": "remote",
+   "salaryMin": 52000,
+   "salaryMax": 93600,
+   "salaryText": "C$ 25 - C$ 45 / hour",
+   "category": "environmental",
+   "url": "https://ecoworks.eco.ca/jobs/785437409-environmental-remediation-poop-scooper",
+   "source": "ECOWorks (ECO Canada)",
+   "posted": "2026-10-29T13:05:46.079Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "Contract · Remote (CA)",
+   "fit": "yes",
+   "fitWhy": []
+  },
+  {
+   "id": "ecoworks-786331841",
+   "title": "Environmental Compliance Coordinator",
+   "org": "City of Windsor",
+   "location": "Windsor, Ontario, Canada",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": null,
+   "category": "environmental",
+   "url": "https://ecoworks.eco.ca/jobs/786331841-environmental-compliance-coordinator",
+   "source": "ECOWorks (ECO Canada)",
+   "posted": "2026-10-29T13:05:46.079Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "Full-time · Windsor, Ontario, Canada",
+   "fit": "no",
+   "fitWhy": [
+    "asks for a P.Eng / EIT engineering licence",
+    "asks for a P.Geo licence",
+    "asks for 8+ years of experience"
+   ]
+  },
+  {
+   "id": "ecoworks-703390672",
+   "title": "Technical Specialist, Wastewater Treatment",
+   "org": "AECOM",
+   "location": "Markham, Ontario, Canada",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": null,
+   "category": "environmental",
+   "url": "https://ecoworks.eco.ca/jobs/703390672-technical-specialist-wastewater-treatment",
+   "source": "ECOWorks (ECO Canada)",
+   "posted": "2026-10-29T13:05:46.079Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "Full-time · Markham, Ontario, Canada",
+   "fit": "no",
+   "fitWhy": [
+    "asks for 12+ years of experience"
+   ]
+  },
+  {
    "id": "Job Bank Canada-id=1556078",
    "title": "research assistant - post-secondary",
    "org": "Suncrest College.",
@@ -403,75 +604,6 @@
    "fitWhy": []
   },
   {
-   "id": "ecoworks-785437409",
-   "title": "Environmental Remediation (Poop Scooper)",
-   "org": "A1 Pooper Scoopin",
-   "location": "Remote (CA)",
-   "remote": "remote",
-   "salaryMin": 52000,
-   "salaryMax": 93600,
-   "salaryText": "C$ 25 - C$ 45 / hour",
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/785437409-environmental-remediation-poop-scooper",
-   "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-29T05:57:13.844Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "temporary",
-   "summary": "Contract · Remote (CA)",
-   "fit": "yes",
-   "fitWhy": []
-  },
-  {
-   "id": "ecoworks-786331841",
-   "title": "Environmental Compliance Coordinator",
-   "org": "City of Windsor",
-   "location": "Windsor, Ontario, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/786331841-environmental-compliance-coordinator",
-   "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-29T05:57:13.844Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Full-time · Windsor, Ontario, Canada",
-   "fit": "no",
-   "fitWhy": [
-    "asks for a P.Eng / EIT engineering licence",
-    "asks for a P.Geo licence",
-    "asks for 8+ years of experience"
-   ]
-  },
-  {
-   "id": "ecoworks-703390672",
-   "title": "Technical Specialist, Wastewater Treatment",
-   "org": "AECOM",
-   "location": "Markham, Ontario, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/703390672-technical-specialist-wastewater-treatment",
-   "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-29T05:57:13.844Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Full-time · Markham, Ontario, Canada",
-   "fit": "no",
-   "fitWhy": [
-    "asks for 12+ years of experience"
-   ]
-  },
-  {
    "id": "adzuna-5945496654",
    "title": "Nursing Lab Technician, Williams Lake - (00456.10)",
    "org": "The Lab Technician's primary duty",
@@ -512,29 +644,6 @@
    "summary": "Aspen View Public Schools, with a division office located in the town of Athabasca, is a rural school division providing diverse and innovative programming to students in a number of communities. The division is unique in that it is surrounded by a multitude of lakes, golf courses and trails that appeal to an active, outdoor lifestyle while still being in close proximity to larger urban centers. Thorhild Central School is a K–12 school located in the hamlet of Thorhild in north-central Alberta,…",
    "fit": "yes",
    "fitWhy": []
-  },
-  {
-   "id": "adzuna-5945496412",
-   "title": "Education Assistant",
-   "org": "Keewatin-Patricia District School Board",
-   "location": "Dryden, Kenora region",
-   "remote": "unknown",
-   "salaryMin": 54371,
-   "salaryMax": 54371,
-   "salaryText": null,
-   "category": "education",
-   "url": "https://www.adzuna.ca/details/5945496412?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-10-29T05:40:14Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Position: Education Assistant Hours of Work: Full-Time (1.0 fte) at 32.5 hours per week Location: New Prospect Public School Rate of Pay : $26.14/hr (unqualified) & $29.14/hr (qualified) Union Affiliation: OSSTF-ESPBU Start Date: November 9, 2026 GROW YOUR CAREER WITH KPDSB As one of the areas largest employers, Keewatin-Patricia District School Board (KPDSB) is situated in beautiful Northwestern Ontario. KPDSB serves the educational needs of approximately 5,000 students within 17 elementary an…",
-   "fit": "check",
-   "fitWhy": [
-    "school boards usually ask for an EA / ECE college certificate"
-   ]
   },
   {
    "id": "adzuna-5945495286",
@@ -625,6 +734,29 @@
    ]
   },
   {
+   "id": "adzuna-5945493462",
+   "title": "Educational Assistant Job ID 4422 - TEMPORARY",
+   "org": "Greater Saskatoon Catholic Schools",
+   "location": "Canada",
+   "remote": "unknown",
+   "salaryMin": 53081,
+   "salaryMax": 60777,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5945493462?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-29T05:35:47Z",
+   "closingDate": "2026-11-03",
+   "stillOpen": true,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/27/2026 Location: St. Mark School Date Available: ASAP Closing Date: 11/03/2026 CUPE 2268 JOB ID 4422 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Mark School DATE SUBMITTED TO SCHOOLS : October 27, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elementary school leve…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
    "id": "adzuna-5945492717",
    "title": "Geotechnical Field Technician",
    "org": "EXP",
@@ -646,6 +778,29 @@
    "fitWhy": []
   },
   {
+   "id": "adzuna-5945483829",
+   "title": "Educational Assistant Job ID 4380 - TEMPORARY",
+   "org": "Greater Saskatoon Catholic Schools",
+   "location": "Canada",
+   "remote": "unknown",
+   "salaryMin": 53081,
+   "salaryMax": 60777,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5945483829?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-29T05:28:17Z",
+   "closingDate": "2026-11-03",
+   "stillOpen": true,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/27/2026 Location: Ecole Sister O`Brien School Date Available: ASAP Closing Date: 11/03/2026 CUPE 2268 JOB ID 4380 - TEMPORARY - Revised JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Ecole Sister O'Brien School DATE SUBMITTED TO SCHOOLS : October 27, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs stud…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
    "id": "adzuna-5945473711",
    "title": "Medical Lab Technician",
    "org": "LifeLabs",
@@ -665,6 +820,29 @@
    "summary": "LifeLabs Medical Laboratory Services is seeking a Medical Laboratory Technician to join our team in Sudbury, Ontario. This is an important role in patient care and our business. This role will allow you to see the difference that you make in patients’ lives. Status: Part TimeSchedule: Flexible days and hoursAdditional requirements: NA Number of positions: 1Start Date: ASAP This vacancy is for an existing position. Your responsibilities will include: Responsible for carrying out a diverse range …",
    "fit": "yes",
    "fitWhy": []
+  },
+  {
+   "id": "adzuna-5945471788",
+   "title": "Educational Assistant Job ID 4420 - TEMPORARY",
+   "org": "Greater Saskatoon Catholic Schools",
+   "location": "Canada",
+   "remote": "unknown",
+   "salaryMin": 53081,
+   "salaryMax": 60777,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5945471788?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-29T05:10:04Z",
+   "closingDate": "2026-11-03",
+   "stillOpen": true,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/27/2026 Location: Bishop Roborecki School Date Available: ASAP Closing Date: 11/03/2026 CUPE 2268 JOB ID 4420 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : Bishop Roborecki School DATE SUBMITTED TO SCHOOLS : October 27, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the elemen…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "Job Bank Canada-id=546455",
@@ -996,27 +1174,6 @@
    "fitWhy": []
   },
   {
-   "id": "Job Bank Canada-id=549913",
-   "title": "aide, medical laboratory",
-   "org": "NOVALAB INC.",
-   "location": "Drummondville (QC)",
-   "remote": "unknown",
-   "salaryMin": 41600,
-   "salaryMax": 41600,
-   "salaryText": "$20.00 hourly",
-   "category": "research",
-   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50599079",
-   "source": "Job Bank Canada",
-   "posted": "2026-10-28T07:00:00Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": null,
-   "fit": "yes",
-   "fitWhy": []
-  },
-  {
    "id": "ecoworks-783736111",
    "title": "Graduate & Postdoc Opportunities",
    "org": "Trent University",
@@ -1028,7 +1185,7 @@
    "category": "research",
    "url": "https://ecoworks.eco.ca/jobs/783736111-graduate-postdoc-opportunities",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-28T05:57:13.844Z",
+   "posted": "2026-10-28T13:05:46.079Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
@@ -1051,7 +1208,7 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/784123402-technical-analyst-capital-condition-assessment-rehabilitation-wastewater",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-28T05:57:13.844Z",
+   "posted": "2026-10-28T13:05:46.079Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
@@ -1061,6 +1218,27 @@
    "fitWhy": [
     "asks for 5 years of experience — count your lab, GIS and field years"
    ]
+  },
+  {
+   "id": "Job Bank Canada-id=549913",
+   "title": "aide, medical laboratory",
+   "org": "NOVALAB INC.",
+   "location": "Drummondville (QC)",
+   "remote": "unknown",
+   "salaryMin": 41600,
+   "salaryMax": 41600,
+   "salaryText": "$20.00 hourly",
+   "category": "research",
+   "url": "https://www.jobbank.gc.ca/jobsearch/jobposting/50599079",
+   "source": "Job Bank Canada",
+   "posted": "2026-10-28T07:00:00Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": null,
+   "fit": "yes",
+   "fitWhy": []
   },
   {
    "id": "adzuna-5944360024",
@@ -1080,6 +1258,29 @@
    "vehicleRequired": false,
    "tenure": "temporary",
    "summary": "Living In Yukon, Thriving in Life Our goal is to support all learners in developing the essential skills, knowledge and personal qualities that they need to thrive in life. Are you passionate about shaping the future of education in the Yukon? The Department of Education is dedicated to providing high-quality education and lifelong learning opportunities for all Yukoners. We are committed to excellence, inclusivity, and innovation in every aspect of our work. The department plays a crucial role…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
+   "id": "adzuna-5944359542",
+   "title": ".5 Educational Assistant - St. Walburg",
+   "org": "Northwest School Division 203",
+   "location": "Canada",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5944359542?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-28T05:33:43Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "Position Type: Student Support Services/ Educational Assistant Date Posted: 10/26/2026 Location: St. Walburg School Closing Date: suitable pool St. Walburg School located in St. Walburg, SK is looking for a 50% part-time temporary Educational Assistant . This position is to commence as soon as possible and terminate on June 30, 2027. A Grade 12 diploma is required. One year of post-secondary training in a program such as Teacher Assistant, Youth Worker or Rehabilitation Worker or equivalent pos…",
    "fit": "check",
    "fitWhy": [
     "school boards usually ask for an EA / ECE college certificate"
@@ -1107,6 +1308,52 @@
    "fitWhy": []
   },
   {
+   "id": "adzuna-5944358470",
+   "title": "Full Time Temporary Educational Assistants",
+   "org": "Evergreen Catholic Schools",
+   "location": "Spruce Grove, Edmonton region",
+   "remote": "unknown",
+   "salaryMin": 43139,
+   "salaryMax": 60985,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5944358470?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-28T05:31:33Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "About Evergreen Catholic Separate School Division In Evergreen Catholic Schools, we educate in an atmosphere of faith, hope, and love to prepare our students to live as compassionate, confident, and contributing citizens. Located on Treaty 6 Territory, Evergreen Catholic Schools is a school division in the Province of Alberta that consists of eleven schools in five communities with over 4,100 students and 430 employees. Transformational education has become the driving force behind educational …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
+   "id": "adzuna-5944357613",
+   "title": "SS2026-54: Education Assistant Elementary",
+   "org": "West Vancouver",
+   "location": "Canada",
+   "remote": "unknown",
+   "salaryMin": 68952,
+   "salaryMax": 68952,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5944357613?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-28T05:29:48Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "POSTED: October 27 , 202 6 CLOSING DATE: 1:00pm, November 3 , 202 6 COMPETITION S S 202 6 - 54 EDUCATION ASSISTAN T Postings for the 202 6 -202 7 School Year Effective Immediately to June 29, 2027 Ridgeview Elementary 29.5 hours per week Salary starts at $33.15/hr at Step 1, plus 16% in lieu of benefits Why West Vancouver Schools? West Vancouver Schools, the premier place for learning, has a long-held reputation for excellence and innovation. Our motto endorses our vision that we aspire to pro…",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
    "id": "adzuna-5944357519",
    "title": "Temporary High School Math/Science Teacher Chestermere High School",
    "org": "Rocky View Schools",
@@ -1126,6 +1373,29 @@
    "summary": "Company Overview As a rapidly growing school division in Alberta, Rocky View Schools (RVS) supports the educational needs of more than 29,600 students from Kindergarten to Grade 12 in 53 schools to ensure they learn, belong and succeed. RVS is situated on the traditional territories of the Treaty 7 region of Southern Alberta including the Siksikaitsitapi (Siksika, Kainai, Piikani, Amskapi Pikuni), the Tsuut’ina, the Îyâxe Nakoda Nations (Bearspaw, Chiniki, Goodstoney), and the Rocky View Métis …",
    "fit": "yes",
    "fitWhy": []
+  },
+  {
+   "id": "adzuna-5944357277",
+   "title": "Part Time Temporary Educational Assistant",
+   "org": "Evergreen Catholic Schools",
+   "location": "Spruce Grove, Edmonton region",
+   "remote": "unknown",
+   "salaryMin": 43139,
+   "salaryMax": 60985,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5944357277?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-28T05:28:48Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "About Evergreen Catholic Separate School Division In Evergreen Catholic Schools, we educate in an atmosphere of faith, hope, and love to prepare our students to live as compassionate, confident, and contributing citizens. Located on Treaty 6 Territory, Evergreen Catholic Schools is a school division in the Province of Alberta that consists of eleven schools in five communities with over 4,100 students and 430 employees. Transformational education has become the driving force behind educational …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
   },
   {
    "id": "adzuna-5944356915",
@@ -1327,6 +1597,29 @@
    "fitWhy": []
   },
   {
+   "id": "adzuna-5944334290",
+   "title": "Educational Assistant Job ID 4417 - TEMPORARY",
+   "org": "Greater Saskatoon Catholic Schools",
+   "location": "Canada",
+   "remote": "unknown",
+   "salaryMin": 53081,
+   "salaryMax": 60777,
+   "salaryText": null,
+   "category": "education",
+   "url": "https://www.adzuna.ca/details/5944334290?utm_medium=api&utm_source=cc077b69",
+   "source": "Adzuna",
+   "posted": "2026-10-28T05:09:23Z",
+   "closingDate": "2026-11-02",
+   "stillOpen": true,
+   "vehicleRequired": false,
+   "tenure": "temporary",
+   "summary": "Position Type: Support Staff - Other/ Educational Assistant Date Posted: 10/26/2026 Location: St. Dominic School Date Available: ASAP Closing Date: 11/02/2026 CUPE 2268 JOB ID 4417 - TEMPORARY JOB CLASSIFICATION: Educational Assistant JOB LOCATION : St. Dominic School - Saskatoon, SK DATE SUBMITTED TO SCHOOLS : October 26, 2026 JOB SUMMARY: A position to assist students with intensive needs. REQUIRED QUALIFICATIONS: Training beyond Grade 12 related to supporting intensive needs students at the …",
+   "fit": "check",
+   "fitWhy": [
+    "school boards usually ask for an EA / ECE college certificate"
+   ]
+  },
+  {
    "id": "uoft-607465517",
    "title": "Fall 2026 Sessional Lecturer: HENT551 - Health Ecosystem (0.25 FCE)",
    "org": "University of Toronto",
@@ -1415,6 +1708,27 @@
    ]
   },
   {
+   "id": "ecoworks-783305218",
+   "title": "Entry Level Environmental Scientist",
+   "org": "Sola Engineering Inc.",
+   "location": "Vaughan, Ontario, Canada",
+   "remote": "unknown",
+   "salaryMin": null,
+   "salaryMax": null,
+   "salaryText": "C$ 47.84k - C$ 49.92k / year",
+   "category": "environmental",
+   "url": "https://ecoworks.eco.ca/jobs/783305218-entry-level-environmental-scientist",
+   "source": "ECOWorks (ECO Canada)",
+   "posted": "2026-10-27T13:05:46.079Z",
+   "closingDate": null,
+   "stillOpen": false,
+   "vehicleRequired": false,
+   "tenure": "unknown",
+   "summary": "Full-time · Vaughan, Ontario, Canada",
+   "fit": "yes",
+   "fitWhy": []
+  },
+  {
    "id": "gcjobs-2475319",
    "title": "Research Technologist - Mineral Processing",
    "org": "Natural Resources Canada - Lands and Minerals Sector - CanmetMINING",
@@ -1499,27 +1813,6 @@
    "fitWhy": [
     "school boards usually ask for an EA / ECE college certificate"
    ]
-  },
-  {
-   "id": "ecoworks-783305218",
-   "title": "Entry Level Environmental Scientist",
-   "org": "Sola Engineering Inc.",
-   "location": "Vaughan, Ontario, Canada",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": "C$ 47.84k - C$ 49.92k / year",
-   "category": "environmental",
-   "url": "https://ecoworks.eco.ca/jobs/783305218-entry-level-environmental-scientist",
-   "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-27T05:57:13.844Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Full-time · Vaughan, Ontario, Canada",
-   "fit": "yes",
-   "fitWhy": []
   },
   {
    "id": "adzuna-5943256311",
@@ -2042,7 +2335,7 @@
    "salaryMax": 72800,
    "salaryText": null,
    "category": "environmental",
-   "url": "https://www.adzuna.ca/land/ad/5941410111?se=GjCF0ybU8RGQ-s1xb079dA&utm_medium=api&utm_source=cc077b69&v=40999A3A9BCB2D736BA037E6CEB2FE374E6CE76F",
+   "url": "https://www.adzuna.ca/land/ad/5941410111?se=wAb4sWLU8RGbzOofqBVJtA&utm_medium=api&utm_source=cc077b69&v=40999A3A9BCB2D736BA037E6CEB2FE374E6CE76F",
    "source": "Adzuna",
    "posted": "2026-10-25T07:32:52Z",
    "closingDate": null,
@@ -2478,71 +2771,6 @@
    "fitWhy": []
   },
   {
-   "id": "adzuna-5939225805",
-   "title": "Field Technician",
-   "org": "Benchmark Data Solutions",
-   "location": "Edmonton, Edmonton region",
-   "remote": "remote",
-   "salaryMin": 80000,
-   "salaryMax": 90000,
-   "salaryText": null,
-   "category": "environmental",
-   "url": "https://www.adzuna.ca/details/5939225805?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-10-23T07:39:02Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "unknown",
-   "summary": "Job Description Job Description Field Technician – Grande Prairie, AB Benchmark Data Solutions is an Alberta-owned and operated company with over 20 years of experience providing remote communication services, primarily to the oil & gas industry. Our team-oriented, people-first approach focuses on leveraging cutting-edge technology to meet our customers’ needs while maintaining a safe and supportive work environment for our staff. We are seeking a skilled and experienced Field Technician with a…",
-   "fit": "yes",
-   "fitWhy": []
-  },
-  {
-   "id": "adzuna-5939219954",
-   "title": "Laboratory Technician C - Evening (Seasonal)",
-   "org": "AGAT Laboratories",
-   "location": "Thunder Bay, Ontario",
-   "remote": "unknown",
-   "salaryMin": null,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "research",
-   "url": "https://www.adzuna.ca/details/5939219954?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-10-23T07:36:26Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "temporary",
-   "summary": "Job Description Job Description Your future is bright at AGAT! At AGAT Laboratories, we are the next step in your career! By joining AGAT, you become part of a dynamic, purpose-driven team that fosters innovation, collaboration, and personal growth. Our dedicated professionals come together every day with passion and determination, leveraging cutting-edge science to deliver solutions that drive progress and create a more sustainable, healthier world. AGAT Laboratories is currently looking for t…",
-   "fit": "yes",
-   "fitWhy": []
-  },
-  {
-   "id": "adzuna-5939161233",
-   "title": "Educational assistant",
-   "org": "St Theresa Point Anisininew Nation",
-   "location": "Canada",
-   "remote": "unknown",
-   "salaryMin": 47611,
-   "salaryMax": null,
-   "salaryText": null,
-   "category": "education",
-   "url": "https://www.adzuna.ca/details/5939161233?utm_medium=api&utm_source=cc077b69",
-   "source": "Adzuna",
-   "posted": "2026-10-23T07:20:58Z",
-   "closingDate": null,
-   "stillOpen": false,
-   "vehicleRequired": false,
-   "tenure": "permanent",
-   "summary": "Education: Expérience: Education College, CEGEP or other non-university certificate or diploma from a program of 1 year to 2 years Tasks Help students individually or in small groups with assignments and reinforce learning and retention concepts under the supervision of classroom teacher Perform other duties assigned by school principal Supervise students during school and extracurricular activities Monitor students during recess and lunch hour Assist students with integration into the classroo…",
-   "fit": "check",
-   "fitWhy": [
-    "school boards usually ask for an EA / ECE college certificate"
-   ]
-  },
-  {
    "id": "ecoworks-779722178",
    "title": "Environmental Technologist",
    "org": "City of Surrey",
@@ -2554,7 +2782,7 @@
    "category": "environmental",
    "url": "https://ecoworks.eco.ca/jobs/779722178-environmental-technologist",
    "source": "ECOWorks (ECO Canada)",
-   "posted": "2026-10-23T05:57:13.844Z",
+   "posted": "2026-10-23T13:05:46.079Z",
    "closingDate": null,
    "stillOpen": false,
    "vehicleRequired": false,
